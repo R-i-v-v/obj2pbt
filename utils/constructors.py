@@ -48,3 +48,10 @@ def file_splitter(input_path, vertex_path, map_path):
             vertex_file.write(line[2:])
         elif line.startswith('f '):
             map_file.write(line[2:])
+
+    vertex_file.close()
+    map_file.close()
+
+    list_of_vertices = [n.strip() for n in open(vertex_path, 'r').readlines()]
+    list_of_maps = [n.strip() for n in open(map_path, 'r').readlines()]
+    return list_of_vertices, list_of_maps
