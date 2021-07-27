@@ -1,5 +1,5 @@
 from __future__ import division
-from math import pi, sqrt
+from math import sqrt
 import utils.constructors as construct
 
 
@@ -45,3 +45,6 @@ our_geometry = construct.circle_intersection((point_one[0], point_one[1], radius
 (one, two), (three, four) = our_geometry
 origin = (((one + three) / 2), ((two + four) / 2))
 print(origin)
+
+
+construct.file_splitter('input/input.obj', 'output/vertex.txt', 'output/map.txt')

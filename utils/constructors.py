@@ -1,3 +1,4 @@
+from __future__ import division
 from math import sqrt, pi
 
 d2r = pi / 180
@@ -34,3 +35,16 @@ def circle_intersection(circle1, circle2):
 
     return (xs1, ys1), (xs2, ys2)
 
+def file_splitter(input_path, vertex_path, map_path):
+    open(vertex_path, 'w').close()
+    open(map_path, 'w').close()
+    input_file = open(input_path, 'r')
+    vertex_file = open(vertex_path, 'a')
+    map_file = open(map_path, 'a')
+
+    input_lines = input_file.readlines()
+    for line in input_lines:
+        if line.startswith('v '):
+            vertex_file.write(line[2:])
+        elif line.startswith('f '):
+            map_file.write(line[2:])
