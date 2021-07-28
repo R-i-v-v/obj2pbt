@@ -12,7 +12,7 @@ for map in maps_by_line:
     for target_line, point in zip([int(s) for s in findall(r'-?\d+\.?\d*', map)], [a, b, c]):
         for value, index in zip([float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])], [0, 1, 2]):
             point[index] = value
-    
+
     # set lines
     A = sqrt(((b[0] - c[0]) ** 2) + ((b[1] - c[1]) ** 2) + ((b[2] - c[2]) ** 2))
     B = sqrt(((a[0] - c[0]) ** 2) + ((a[1] - c[1]) ** 2) + ((a[2] - c[2]) ** 2))
@@ -28,29 +28,25 @@ for map in maps_by_line:
     if longest_side == A:
         radius_one, radius_two = B, C
         point_one, point_two = c, b
+        tp_one, tp_two = 0.0, longest_side
+        tp_one_r, tp_two_r = B, C
     elif longest_side == B:
         radius_one, radius_two = A, C
         point_one, point_two = c, a
+        tp_one, tp_two = 0.0, longest_side
+        tp_one_r, tp_two_r = A, C
     else:
         radius_one, radius_two = A, B
         point_one, point_two = b, a
+        tp_one, tp_two = 0.0, longest_side
+        tp_one_r, tp_two_r = A, B
 
 
-    print(f'For the triangle made by map [{map}]...\nThe longest side has length {longest_side}.\nPoint 1: {point_one}\nPoint 2: {point_two}\nRadius 1: {radius_one}\nRadius 2: {radius_two}\n')
+    print(f'For the triangle made by map [{map}]...\nThe longest side has length {longest_side}.\nA: {A}, B: {B}, C: {C}\nPoint 1: {point_one}\nPoint 2: {point_two}\nRadius 1: {radius_one}\nRadius 2: {radius_two}')
 
-    b'''
-    THIS IS WHERE SHIT GETS FUCKED.
-    
-    This is what allowed our shit to work before, but it used only two dimensions.
-    We have three now.
-    We need to modify that god damn circle_intersection function to account for three
-       dimensions.
-    Somehow.
-    
-    our_geometry = construct.circle_intersection((point_one[0], point_one[1], radius_one),
-                                                 (point_two[0], point_two[1], radius_two))
+    our_geometry = construct.circle_intersection((tp_one, 0.0, tp_one_r),
+                                                 (tp_two, 0.0, tp_two_r))
 
     (one, two), (three, four) = our_geometry
     origin = (((one + three) / 2), ((two + four) / 2))
-    print(origin)
-    '''
+    print(f'Origin: {origin}\n')
