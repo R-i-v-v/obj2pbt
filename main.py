@@ -56,7 +56,6 @@ with scandir('input') as dirs:
 
             output_file.write(f"v {origin['x']} {origin['y']} {origin['z']}\n")
 
-            # print(f'For the triangle made by map [{triangle_map}]...\na — {a}\nb — {b}\nc — {c}\no — {origin}\n')
         output_file.close()
         output_string = f'{"output" if entry.name[:-4] == "input" else entry.name[:-4]}{"" if entry.name[:-4] == "input" else "_origins"}'
         print(f'Finished finding {len(open(f"output/{output_string}.obj", "r").readlines())} origins in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
