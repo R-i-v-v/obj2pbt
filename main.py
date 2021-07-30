@@ -34,9 +34,9 @@ with scandir('input') as dirs:
         current_line = 0
         for map in maps_by_line:
             a, b, c = {}, {}, {}  # reset points to empty dicts
-            for target_line, point in zip([int(s) for s in findall(r'-?\d+\.?\d*', map)], [a, b, c]):
+            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', map)]], [a, b, c]):
                 for value, index in zip([float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])], ["x", "y", "z"]):
-                    point[index] = value  # set dict structure to {'x': float(), 'y': float(), 'z': float()}
+                    point[index] = value
 
             # set lines
             AB = sqrt(((a['x'] - b['x']) ** 2) + ((a['y'] - b['y']) ** 2) + ((a['z'] - b['z']) ** 2))
