@@ -1,10 +1,13 @@
 from __future__ import division
+from time import time
+from decimal import Decimal
 from math import sqrt
 from re import findall
 from os import scandir
 
 with scandir('input') as dirs:
     for entry in dirs:
+        start_time = time()
         open('work/vertex.txt', 'w').close()
         open('work/map.txt', 'w').close()
         vertex_file = open('work/vertex.txt', 'a')
@@ -21,8 +24,8 @@ with scandir('input') as dirs:
         map_file.close()
 
         vertices_by_line = [n.strip() for n in open('work/vertex.txt', 'r').readlines()]
-        maps_by_line = [n.strip() for n in open('work/map.txt', 'r').readlines()]
-        print(f'Total vertex count: {len(vertices_by_line)}\nTotal f-map count: {len(maps_by_line)}')
+        face_maps_by_line = [n.strip() for n in open('work/map.txt', 'r').readlines()]
+        print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
 
         if entry.name == 'input.obj':
             open('output/output.obj', 'w').close()
@@ -32,9 +35,9 @@ with scandir('input') as dirs:
             output_file = open(f'output/{entry.name[:-4]}_origins.obj', 'a')
 
         current_line = 0
-        for map in maps_by_line:
+        for triangle_map in face_maps_by_line:
             a, b, c = {}, {}, {}  # reset points to empty dicts
-            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', map)]], [a, b, c]):
+            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]], [a, b, c]):
                 for value, index in zip([float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])], ["x", "y", "z"]):
                     point[index] = value
 
@@ -53,4 +56,7 @@ with scandir('input') as dirs:
 
             output_file.write(f"v {origin['x']} {origin['y']} {origin['z']}\n")
 
-            print(f'For the triangle made by map [{map}]...\na — {a}\nb — {b}\nc — {c}\no — {origin}\n')
+            # print(f'For the triangle made by map [{triangle_map}]...\na — {a}\nb — {b}\nc — {c}\no — {origin}\n')
+        output_file.close()
+        output_string = f'{"output" if entry.name[:-4] == "input" else entry.name[:-4]}{"" if entry.name[:-4] == "input" else "_origins"}'
+        print(f'Finished finding {len(open(f"output/{output_string}.obj", "r").readlines())} origins in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
