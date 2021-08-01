@@ -46,6 +46,9 @@ with scandir('input') as dirs:
             BC = sqrt(((b['x'] - c['x']) ** 2) + ((b['y'] - c['y']) ** 2) + ((b['z'] - c['z']) ** 2))
             AC = sqrt(((a['x'] - c['x']) ** 2) + ((a['y'] - c['y']) ** 2) + ((a['z'] - c['z']) ** 2))
 
+            if max(AB ** 2, BC ** 2, AC ** 2) == (AB ** 2 + BC ** 2 + AC ** 2 - max(AB ** 2, BC ** 2, AC ** 2)):
+                continue
+
             longest_side, point_one, point_two, radius_one, radius_two = (AB, b, a, BC, AC) if BC < AB and AC < AB else (BC, c, b, AC, AB) if AC < BC and AB < BC else (AC, c, a, BC, AB)
 
             h = 1 / 2 + (radius_one ** 2 - radius_two ** 2) / (2 * longest_side ** 2)
