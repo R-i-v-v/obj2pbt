@@ -22,10 +22,8 @@ with scandir('input') as dirs:
 
         # reset vertex, map, origins, and output if they exist
         # read input and output files into memory
-        open('work/vertex.txt', 'w').close()
-        open('work/map.txt', 'w').close()
-        open('work/origins.obj', 'w').close()
-        open(f'output/{entry.name[:-4]}', 'w').close()
+        open('work/vertex.txt', 'w').close(), open('work/map.txt', 'w').close()
+        open('work/origins.obj', 'w').close(), open(f'output/{entry.name[:-4]}', 'w').close()
         vertex_file = open('work/vertex.txt', 'a')
         map_file = open('work/map.txt', 'a')
         obj_file = open('work/origins.obj', 'a')
@@ -39,8 +37,7 @@ with scandir('input') as dirs:
                 vertex_file.write(line[2:])
             elif line.startswith('f '):
                 map_file.write(line[2:])
-        vertex_file.close()
-        map_file.close()
+        vertex_file.close(), map_file.close()
 
         # get vertices by line
         vertices_by_line = [n.strip() for n in open('work/vertex.txt', 'r').readlines()]
@@ -101,6 +98,5 @@ with scandir('input') as dirs:
             for point in [point_one, point_two]:
                 set_dict(origin, point, point_three, output_file)
 
-        obj_file.close()
-        output_file.close()
+        obj_file.close(), output_file.close()
         print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"output/{entry.name[:-4]}", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
