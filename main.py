@@ -15,6 +15,7 @@ def set_dict(o, point, opposite, file):
     }
     file.write(f'{dumps(output)}\n')
 
+
 # iterate through files in input directory
 with scandir('input') as dirs:
     for entry in dirs:
