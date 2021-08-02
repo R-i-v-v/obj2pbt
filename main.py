@@ -66,21 +66,25 @@ with scandir('input') as dirs:
             ac_v = {'x': a['x'] - c['x'], 'y': a['y'] - c['y'], 'z': a['z'] - c['z']}
             bc_v = {'x': b['x'] - c['x'], 'y': b['y'] - c['y'], 'z': b['z'] - c['z']}
 
-            # calculate lengths of AB, AC, and BC by squaring vectors
-            AB = sqrt((ab_v['x'] ** 2) + (ab_v['y'] ** 2) + (ab_v['z'] ** 2))
-            AC = sqrt((ac_v['x'] ** 2) + (ac_v['y'] ** 2) + (ac_v['z'] ** 2))
-            BC = sqrt((bc_v['x'] ** 2) + (bc_v['y'] ** 2) + (bc_v['z'] ** 2))
+            # calculate lengths AB, AC, and BC by squaring vectors and taking the root of the sum
+            ab_l = sqrt((ab_v['x'] ** 2) + (ab_v['y'] ** 2) + (ab_v['z'] ** 2))
+            ac_l = sqrt((ac_v['x'] ** 2) + (ac_v['y'] ** 2) + (ac_v['z'] ** 2))
+            bc_l = sqrt((bc_v['x'] ** 2) + (bc_v['y'] ** 2) + (bc_v['z'] ** 2))
 
             # if right triangle, write vertex corresponding to pi/2 radians to output file
-            if max(AB ** 2, BC ** 2, AC ** 2) == (AB ** 2 + BC ** 2 + AC ** 2 - max(AB ** 2, BC ** 2, AC ** 2)):
+            if max(ab_l ** 2,
+                   bc_l ** 2,
+                   ac_l ** 2) == (ab_l ** 2 + bc_l ** 2 + ac_l ** 2 - max(ab_l ** 2,
+                                                                          bc_l ** 2,
+                                                                          ac_l ** 2)):
                 rights_count += 1
                 flip = {}
                 if (ab_v['x'] * ac_v['x']) + (ab_v['y'] * ac_v['y']) + (ab_v['z'] * ac_v['z']) == 0:
-                    flip = a  # if AB/AC orthogonal, origin is a
+                    flip = a  # if vectors AB and AC are orthogonal, origin is a
                 elif (ab_v['x'] * bc_v['x']) + (ab_v['y'] * bc_v['y']) + (ab_v['z'] * bc_v['z']) == 0:
-                    flip = b  # if AB/BC orthogonal, origin is b
+                    flip = b  # if vectors AB and BC are orthogonal, origin is b
                 else:
-                    flip = c  # AC/BC must be orthogonal, thus origin is c
+                    flip = c  # vectors AC and BC must be orthogonal, thus origin is c
                 obj_file.write(f"v {flip['x']} {flip['y']} {flip['z']}\n")
                 set_dict({'x': flip['x'], 'y': flip['y'], 'z': flip['z']},
                          b if flip == a else c if flip == b else a,
@@ -90,7 +94,7 @@ with scandir('input') as dirs:
 
             # we need to get the longest side, as well as the two points it falls in between
             # we need to use the two other sides as sphere radii
-            longest_side, point_one, point_two, point_three, radius_one, radius_two = (AB, b, a, c, BC, AC) if BC < AB and AC < AB else (BC, c, b, a, AC, AB) if AC < BC and AB < BC else (AC, c, a, b, BC, AB)
+            longest_side, point_one, point_two, point_three, radius_one, radius_two = (ab_l, b, a, c, bc_l, ac_l) if bc_l < ab_l and ac_l < ab_l else (bc_l, c, b, a, ac_l, ab_l) if ac_l < bc_l and ab_l < bc_l else (ac_l, c, a, b, bc_l, ab_l)
 
             # i don't know what h represents, but it's required for the intersection equation below.
             h = 1 / 2 + (radius_one ** 2 - radius_two ** 2) / (2 * longest_side ** 2)
