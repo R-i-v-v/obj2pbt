@@ -7,11 +7,23 @@ from os import scandir
 from json import dumps
 
 
+b'''
+
+1- does it matter which of the scaling factors is negative? if so, how do i determine that?
+2- how the hell does that point triplet to euler angles even WORK!?
+3- do we need to swap values due to the fact that cinema4d and core handle depth and height differently?
+4- does set_dict() have to be THAT fat?
+
+'''
+
+
 def set_dict(o, point, opposite, file):
     output = {
-        'o': o,  # origin point
-        'a': point,  # one of longest_side's endpoints
-        'b': opposite  # point opposite the origin
+        'o': {'x': o['x'] * 10, 'y': o['y'] * 10, 'z': o['z'] * 10},  # origin point and scale factors
+        'a_o': sqrt((point['x'] - o['x']) ** 2 + (point['y'] - o['y']) ** 2 + (point['z'] - o['z']) ** 2) / 10,
+        'b_o': sqrt((opposite['x'] - o['x']) ** 2 + (opposite['y'] - o['y']) ** 2 + (opposite['z'] - o['z']) ** 2) / 10,
+        'a': {'x': point['x'] * 10, 'y': point['y'] * 10, 'z': point['z'] * 10},  # one of longest_side's endpoints
+        'b': {'x': opposite['x'] * 10, 'y': opposite['y'] * 10, 'z': opposite['z'] * 10}  # point opposite the origin
     }
     file.write(f'{dumps(output)}\n')
 
