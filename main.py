@@ -13,7 +13,7 @@ b'''
 2- how the hell does that point triplet to euler angles even WORK!?
 3- do we need to swap values due to the fact that cinema4d and core handle depth and height differently?
 4- does set_dict() have to be THAT fat?
-
+ 
 '''
 
 
