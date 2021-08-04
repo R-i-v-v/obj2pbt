@@ -1,29 +1,30 @@
 from __future__ import division
 from time import time
 from decimal import Decimal
-from math import sqrt
+from math import sqrt, atan, degrees as d
 from re import findall
 from os import scandir
-from json import dumps
+from json import dumps, loads
+import numpy as np
 
 
 b'''
 
-1- does it matter which of the scaling factors is negative? if so, how do i determine that?
 2- how the hell does that point triplet to euler angles even WORK!?
 3- do we need to swap values due to the fact that cinema4d and core handle depth and height differently?
-4- does set_dict() have to be THAT fat?
 
 '''
 
+# identity matrix
+I = [[1, 0, 0],
+     [0, 1, 0],
+     [0, 0, 1]]
 
-def set_dict(o, point, opposite, file):
+def set_dict(origin, point, polar, file):
     output = {
-        'o': {'x': o['x'] * 10, 'y': o['y'] * 10, 'z': o['z'] * 10},  # origin point and scale factors
-        'a_o': sqrt((point['x'] - o['x']) ** 2 + (point['y'] - o['y']) ** 2 + (point['z'] - o['z']) ** 2) / 10,
-        'b_o': sqrt((opposite['x'] - o['x']) ** 2 + (opposite['y'] - o['y']) ** 2 + (opposite['z'] - o['z']) ** 2) / 10,
-        'a': {'x': point['x'] * 10, 'y': point['y'] * 10, 'z': point['z'] * 10},  # one of longest_side's endpoints
-        'b': {'x': opposite['x'] * 10, 'y': opposite['y'] * 10, 'z': opposite['z'] * 10}  # point opposite the origin
+        'o': origin,  # origin point and scale factors
+        'a': point,  # one of longest_side's endpoints
+        'b': polar,  # point opposite the origin
     }
     file.write(f'{dumps(output)}\n')
 
@@ -35,14 +36,15 @@ with scandir('input') as dirs:
 
         # reset vertex, map, origins, and output if they exist
         # read input and output files into memory
-        open('work/vertex.txt', 'w').close(), open('work/map.txt', 'w').close()
-        open('work/origins.obj', 'w').close(), open(f'output/{entry.name[:-4]}', 'w').close()
+        open('work/vertex.txt', 'w').close(), open('work/map.txt', 'w').close(), open('work/triplets', 'w').close()
+        open('work/origins.obj', 'w').close(), open(f'output/{entry.name[:-4]}.pbt', 'w').close()
         vertex_file = open('work/vertex.txt', 'a')
         map_file = open('work/map.txt', 'a')
+        triplets = open('work/triplets', 'a')
         obj_file = open('work/origins.obj', 'a')
         input_file = open(f'input/{entry.name}', 'r')
         input_lines = input_file.readlines()
-        output_file = open(f'output/{entry.name[:-4]}', 'a')
+        output_file = open(f'output/{entry.name[:-4]}.pbt', 'a')
 
         # extract vertices and faces from input .obj file
         for line in input_lines:
@@ -63,15 +65,15 @@ with scandir('input') as dirs:
                 for value, index in zip([float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])], ["x", "y", "z"]):
                     point[index] = value
 
-            # get vectors AB, AC, and BC
-            ab_v = {'x': a['x'] - b['x'], 'y': a['y'] - b['y'], 'z': a['z'] - b['z']}
-            ac_v = {'x': a['x'] - c['x'], 'y': a['y'] - c['y'], 'z': a['z'] - c['z']}
-            bc_v = {'x': b['x'] - c['x'], 'y': b['y'] - c['y'], 'z': b['z'] - c['z']}
+            # make dicts for vectors AB, AC, and BC
+            ab_v = [a['x'] - b['x'], a['y'] - b['y'], a['z'] - b['z']]
+            ac_v = [a['x'] - c['x'], a['y'] - c['y'], a['z'] - c['z']]
+            bc_v = [b['x'] - c['x'], b['y'] - c['y'], b['z'] - c['z']]
 
             # calculate lengths AB, AC, and BC by squaring vectors and taking the root of their sum
-            ab_l = sqrt((ab_v['x'] ** 2) + (ab_v['y'] ** 2) + (ab_v['z'] ** 2))
-            ac_l = sqrt((ac_v['x'] ** 2) + (ac_v['y'] ** 2) + (ac_v['z'] ** 2))
-            bc_l = sqrt((bc_v['x'] ** 2) + (bc_v['y'] ** 2) + (bc_v['z'] ** 2))
+            ab_l = sqrt((ab_v[0] ** 2) + (ab_v[1] ** 2) + (ab_v[2] ** 2))
+            ac_l = sqrt((ac_v[0] ** 2) + (ac_v[1] ** 2) + (ac_v[2] ** 2))
+            bc_l = sqrt((bc_v[0] ** 2) + (bc_v[1] ** 2) + (bc_v[2] ** 2))
 
             # if right triangle, write vertex corresponding to pi/2 radians to output file
             if max(ab_l ** 2,
@@ -80,18 +82,13 @@ with scandir('input') as dirs:
                                                                           bc_l ** 2,
                                                                           ac_l ** 2)):
                 rights_count += 1
-                flip = {}  # what the hell even ARE dot products, anyway??
-                if (ab_v['x'] * ac_v['x']) + (ab_v['y'] * ac_v['y']) + (ab_v['z'] * ac_v['z']) == 0:
-                    flip = a  # if vectors AB and AC are orthogonal, origin is a
-                elif (ab_v['x'] * bc_v['x']) + (ab_v['y'] * bc_v['y']) + (ab_v['z'] * bc_v['z']) == 0:
-                    flip = b  # if vectors AB and BC are orthogonal, origin is b
-                else:
-                    flip = c  # vectors AC and BC must be orthogonal, thus origin is c
+                flip = {}  # dot products checking if vectors orthogonal
+                flip = a if not np.dot(ab_v, ac_v) else b if not np.dot(ab_v, bc_v) else c
                 obj_file.write(f"v {flip['x']} {flip['y']} {flip['z']}\n")
                 set_dict(flip,
                          b if flip == a else c if flip == b else a,
                          c if flip == a else a if flip == b else b,
-                         output_file)
+                         triplets)
                 continue  # move on and start from the top with the next triangle
 
             # get the longest side, as well as the two points it falls in between
@@ -109,7 +106,46 @@ with scandir('input') as dirs:
             obj_file.write(f"v {origin['x']} {origin['y']} {origin['z']}\n")
 
             for point in [point_one, point_two]:
-                set_dict(origin, point, point_three, output_file)
+                set_dict(origin, point, point_three, triplets)
 
-        obj_file.close(), output_file.close()
-        print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"output/{entry.name[:-4]}", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
+        obj_file.close(), triplets.close()
+        print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"work/triplets", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
+
+        triplets_by_line = [n.strip() for n in open('work/triplets', 'r').readlines()]
+        for line in triplets_by_line:
+            triplet = loads(line)
+            o = [n for n in triplet['o'].values()]
+            a, b = [n for n in triplet['a'].values()], [n for n in triplet['b'].values()]
+            v_ao, v_ab = np.subtract(o, a), np.subtract(o, b)
+            ao_x_ab, ao_c_ab = np.cross(v_ao, v_ab), np.dot(v_ao, v_ab)
+
+            # skew-symmetric cross-product matrix of v
+            v_x = [[0, -ao_x_ab[2], ao_x_ab[1]],
+                   [ao_x_ab[2], 0, -ao_x_ab[0]],
+                   [-ao_x_ab[1], ao_x_ab[0], 0]]
+
+            # v_x ^ 2
+            v_x_2 = [[0, -ao_x_ab[2] ** 2, ao_x_ab[1] ** 2],
+                     [ao_x_ab[2] ** 2, 0, -ao_x_ab[0] ** 2],
+                     [-ao_x_ab[1] ** 2, ao_x_ab[0] ** 2, 0]]
+
+            # calculates last matrix with v_x_2
+            for row in v_x_2:
+                for item in row:
+                    item = item * (1 / (1 + ao_c_ab))
+
+            # adds all three together
+            R = [[0, 0, 0],
+                 [0, 0, 0],
+                 [0, 0, 0]]
+            for x in range(3):
+                for y in range(3):
+                    R[x][y] = I[x][y] + v_x[x][y] + v_x_2[x][y]
+
+            # angles (in radians)
+            # NOTE: not finished. need to do comparisions of numerators and denominators
+            alpha = atan(R[1][0] / R[0][0])
+            beta = atan(-R[2][0] / sqrt((R[2][1] ** 2) + (R[2][2] ** 2)))
+            gamma = atan(R[2][1] / R[2][2])
+            print(f'{d(alpha)}, {d(beta)}, {d(gamma)}')
+        output_file.close()
