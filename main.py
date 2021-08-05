@@ -1,12 +1,11 @@
 from __future__ import division
 from time import time
 from decimal import Decimal
-from math import sqrt, atan, degrees as d
+from math import sin, cos, asin, acos, atan2, sqrt, pi, degrees as d
 from re import findall
 from os import scandir
 from json import dumps, loads
 import numpy as np
-
 
 b'''
 
@@ -15,10 +14,45 @@ b'''
 
 '''
 
-# identity matrix
-I = [[1, 0, 0],
-     [0, 1, 0],
-     [0, 0, 1]]
+
+def normalize(v):
+    return v / np.linalg.norm(v)
+
+
+def quaternion_to_euler(q):
+    x, y, z, w = q[0], q[1], q[2], q[3]
+    t0 = +2.0 * (w * x + y * z)
+    t1 = +1.0 - 2.0 * (x * x + y * y)
+    roll = atan2(t0, t1)
+    t2 = +2.0 * (w * y - z * x)
+    t2 = +1.0 if t2 > +1.0 else t2
+    t2 = -1.0 if t2 < -1.0 else t2
+    pitch = asin(t2)
+    t3 = +2.0 * (w * z + x * y)
+    t4 = +1.0 - 2.0 * (y * y + z * z)
+    yaw = atan2(t3, t4)
+    return [roll, pitch, yaw]
+
+
+def vectors_to_quaternion(v):
+    v_oa, v_ob = v[0], v[1]
+    oa_x_ob, oa_d_ob = np.cross(v_oa, v_ob), np.dot(v_oa, v_ob)
+
+    mag_of_v_oa, mag_of_v_ob = sqrt(v_oa[0] ** 2 + v_oa[1] ** 2 + v_oa[2] ** 2), sqrt(v_ob[0] ** 2 + v_ob[1] ** 2 + v_ob[2] ** 2)
+    theta = acos(oa_d_ob / (mag_of_v_oa * mag_of_v_ob))
+    oa_x_ob_norm = normalize(oa_x_ob)
+
+    q1 = oa_x_ob_norm[0] * sin(theta / 2)
+    q2 = oa_x_ob_norm[1] * sin(theta / 2)
+    q3 = oa_x_ob_norm[2] * sin(theta / 2)
+    q4 = cos(theta / 2)
+
+    return [q1, q2, q3, q4]
+
+
+def points_to_vectors(o, a, b):
+    v_oa, v_ob = np.subtract(a, o), np.subtract(b, o)
+    return [v_oa, v_ob]
 
 
 def set_dict(origin, point, polar, file):
@@ -40,6 +74,11 @@ def find_right_angle(a, b, c):
         return c
     else:
         return None
+
+# identity matrix
+I = [[1, 0, 0],
+     [0, 1, 0],
+     [0, 0, 1]]
 
 # iterate through files in input directory
 with scandir('input') as dirs:
@@ -85,7 +124,6 @@ with scandir('input') as dirs:
                          b if right_check == a else c if right_check == b else a,
                          c if right_check == a else a if right_check == b else b,
                          triplets)
-                print('good right triangle from the getgo!')
                 continue
 
             # get vectors AB, AC, and BC
@@ -114,7 +152,6 @@ with scandir('input') as dirs:
                 split_check = find_right_angle(origin, point, point_three)
                 if split_check:
                     set_dict(origin, point, point_three, triplets)
-                    print('good split!')
                 else:
                     exit()
 
@@ -124,9 +161,8 @@ with scandir('input') as dirs:
         for line in triplets_by_line:
             triplet = loads(line)
             o, a, b = triplet['o'], triplet['a'], triplet['b']
-            v_ao, v_ab = np.subtract(o, a), np.subtract(o, b)
-            ao_x_ab, ao_d_ab = np.cross(v_ao, v_ab), np.dot(v_ao, v_ab)
-            # print(f'o: {o}\na: {a}\nb: {b}\n')
+            # print([d(n) for n in quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b)))])
+            print(quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b))))
 
         obj_file.close(), triplets.close()
         print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
