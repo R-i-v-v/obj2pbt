@@ -20,6 +20,7 @@ I = [[1, 0, 0],
      [0, 1, 0],
      [0, 0, 1]]
 
+
 def set_dict(origin, point, polar, file):
     output = {
         'o': origin,  # origin point and scale factors
@@ -28,6 +29,17 @@ def set_dict(origin, point, polar, file):
     }
     file.write(f'{dumps(output)}\n')
 
+
+def find_right_angle(a, b, c):
+    v_ab, v_ac, v_bc = np.subtract(b, a), np.subtract(c, a), np.subtract(c, b)
+    if -0.001 < np.dot(v_ab, v_ac) < 0.001:
+        return a
+    elif -0.001 < np.dot(v_ab, v_bc) < 0.001:
+        return b
+    elif -0.001 < np.dot(v_ac, v_bc) < 0.001:
+        return c
+    else:
+        return None
 
 # iterate through files in input directory
 with scandir('input') as dirs:
@@ -57,39 +69,30 @@ with scandir('input') as dirs:
         # get vertices by line
         vertices_by_line = [n.strip() for n in open('work/vertex.txt', 'r').readlines()]
         face_maps_by_line = [n.strip() for n in open('work/map.txt', 'r').readlines()]
-        print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
 
         for triangle_map in face_maps_by_line:  # iterate through each f-map line
-            a, b, c = {}, {}, {}  # reset points to empty dicts
+            a, b, c = [], [], []  # reset points to empty dicts
             for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]], [a, b, c]):
-                for value, index in zip([float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])], ["x", "y", "z"]):
-                    point[index] = value
-
-            # make dicts for vectors AB, AC, and BC
-            ab_v = [a['x'] - b['x'], a['y'] - b['y'], a['z'] - b['z']]
-            ac_v = [a['x'] - c['x'], a['y'] - c['y'], a['z'] - c['z']]
-            bc_v = [b['x'] - c['x'], b['y'] - c['y'], b['z'] - c['z']]
-
-            # calculate lengths AB, AC, and BC by squaring vectors and taking the root of their sum
-            ab_l = sqrt((ab_v[0] ** 2) + (ab_v[1] ** 2) + (ab_v[2] ** 2))
-            ac_l = sqrt((ac_v[0] ** 2) + (ac_v[1] ** 2) + (ac_v[2] ** 2))
-            bc_l = sqrt((bc_v[0] ** 2) + (bc_v[1] ** 2) + (bc_v[2] ** 2))
+                for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])]:
+                    point.append(value)
 
             # if right triangle, write vertex corresponding to pi/2 radians to output file
-            if max(ab_l ** 2,
-                   bc_l ** 2,
-                   ac_l ** 2) == (ab_l ** 2 + bc_l ** 2 + ac_l ** 2 - max(ab_l ** 2,
-                                                                          bc_l ** 2,
-                                                                          ac_l ** 2)):
+            right_check = find_right_angle(a, b, c)
+            if right_check:
                 rights_count += 1
-                flip = {}  # dot products checking if vectors orthogonal
-                flip = a if not np.dot(ab_v, ac_v) else b if not np.dot(ab_v, bc_v) else c
-                obj_file.write(f"v {flip['x']} {flip['y']} {flip['z']}\n")
-                set_dict(flip,
-                         b if flip == a else c if flip == b else a,
-                         c if flip == a else a if flip == b else b,
+                obj_file.write(f"v {right_check[0]} {right_check[1]} {right_check[2]}\n")
+                set_dict(right_check,
+                         b if right_check == a else c if right_check == b else a,
+                         c if right_check == a else a if right_check == b else b,
                          triplets)
-                continue  # move on and start from the top with the next triangle
+                print('good right triangle from the getgo!')
+                continue
+
+            # get vectors AB, AC, and BC
+            ab_v, ac_v, bc_v = np.subtract(a, b), np.subtract(a, c), np.subtract(b, c)
+
+            # calculate lengths AB, AC, and BC by squaring vectors and taking the root of their sum
+            ab_l, ac_l, bc_l = np.sqrt(ab_v.dot(ab_v)), np.sqrt(ac_v.dot(ac_v)), np.sqrt(bc_v.dot(bc_v))
 
             # get the longest side, as well as the two points it falls in between
             # get the point opposite the longest side and use other two sides as sphere radii
@@ -100,52 +103,32 @@ with scandir('input') as dirs:
 
             # compute the x, y, and z coordinates of the point that lies at the center of
             # the circle of intersection between two spheres of aforementioned radii
-            origin = {}
-            for coord in ['x', 'y', 'z']:
-                origin[coord] = point_one[coord] + h * (point_two[coord] - point_one[coord])
-            obj_file.write(f"v {origin['x']} {origin['y']} {origin['z']}\n")
+            origin = []
+            for coord in range(3):
+                origin.append(point_one[coord] + h * (point_two[coord] - point_one[coord]))
+            obj_file.write(f"v {origin[0]} {origin[1]} {origin[2]}\n")
 
+            # split up triangle into two ALLEGEDLY right triangles
+            # add each right triangle as two lines in triplets file
             for point in [point_one, point_two]:
-                set_dict(origin, point, point_three, triplets)
+                split_check = find_right_angle(origin, point, point_three)
+                if split_check:
+                    set_dict(origin, point, point_three, triplets)
+                    print('good split!')
+                else:
+                    exit()
 
-        obj_file.close(), triplets.close()
-        print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"work/triplets", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time()-start_time)*1000,3)} ms.\n')
 
+        triplets.close()
         triplets_by_line = [n.strip() for n in open('work/triplets', 'r').readlines()]
         for line in triplets_by_line:
             triplet = loads(line)
-            o = [n for n in triplet['o'].values()]
-            a, b = [n for n in triplet['a'].values()], [n for n in triplet['b'].values()]
+            o, a, b = triplet['o'], triplet['a'], triplet['b']
             v_ao, v_ab = np.subtract(o, a), np.subtract(o, b)
-            ao_x_ab, ao_c_ab = np.cross(v_ao, v_ab), np.dot(v_ao, v_ab)
+            ao_x_ab, ao_d_ab = np.cross(v_ao, v_ab), np.dot(v_ao, v_ab)
+            # print(f'o: {o}\na: {a}\nb: {b}\n')
 
-            # skew-symmetric cross-product matrix of v
-            v_x = [[0, -ao_x_ab[2], ao_x_ab[1]],
-                   [ao_x_ab[2], 0, -ao_x_ab[0]],
-                   [-ao_x_ab[1], ao_x_ab[0], 0]]
-
-            # v_x ^ 2
-            v_x_2 = [[0, -ao_x_ab[2] ** 2, ao_x_ab[1] ** 2],
-                     [ao_x_ab[2] ** 2, 0, -ao_x_ab[0] ** 2],
-                     [-ao_x_ab[1] ** 2, ao_x_ab[0] ** 2, 0]]
-
-            # calculates last matrix with v_x_2
-            for row in v_x_2:
-                for item in row:
-                    item = item * (1 / (1 + ao_c_ab))
-
-            # adds all three together
-            R = [[0, 0, 0],
-                 [0, 0, 0],
-                 [0, 0, 0]]
-            for x in range(3):
-                for y in range(3):
-                    R[x][y] = I[x][y] + v_x[x][y] + v_x_2[x][y]
-
-            # angles (in radians)
-            # NOTE: not finished. need to do comparisions of numerators and denominators
-            alpha = atan(R[1][0] / R[0][0])
-            beta = atan(-R[2][0] / sqrt((R[2][1] ** 2) + (R[2][2] ** 2)))
-            gamma = atan(R[2][1] / R[2][2])
-            print(f'{d(alpha)}, {d(beta)}, {d(gamma)}')
+        obj_file.close(), triplets.close()
+        print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
+        print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"work/triplets", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time() - start_time) * 1000, 3)} ms.\n')
         output_file.close()
