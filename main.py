@@ -7,7 +7,8 @@ from json import dumps, loads
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
-
+# triangle splitting function courtesy of waffle#3956
+# converts three points in 3D space into euler angles that core can handle, in theory
 def triangle(a, b, c):
     ba, ca = np.subtract(b, a), np.subtract(c, a)
     dot = np.dot(ba, ca)
