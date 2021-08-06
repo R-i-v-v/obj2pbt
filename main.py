@@ -1,7 +1,7 @@
 from __future__ import division
 from time import time
 from decimal import Decimal
-from math import sin, cos, asin, acos, atan2, sqrt, pi, degrees as d
+from math import sin, cos, asin, acos, atan2, degrees as d
 from re import findall
 from os import scandir
 from json import dumps, loads
@@ -14,6 +14,7 @@ b'''
 
 '''
 
+np.set_printoptions(16)
 
 def normalize(v):
     return v / np.linalg.norm(v)
@@ -38,7 +39,7 @@ def vectors_to_quaternion(v):
     v_oa, v_ob = v[0], v[1]
     oa_x_ob, oa_d_ob = np.cross(v_oa, v_ob), np.dot(v_oa, v_ob)
 
-    mag_of_v_oa, mag_of_v_ob = sqrt(v_oa[0] ** 2 + v_oa[1] ** 2 + v_oa[2] ** 2), sqrt(v_ob[0] ** 2 + v_ob[1] ** 2 + v_ob[2] ** 2)
+    mag_of_v_oa, mag_of_v_ob = np.sqrt(v_oa.dot(v_oa)), np.sqrt(v_ob.dot(v_ob))
     theta = acos(oa_d_ob / (mag_of_v_oa * mag_of_v_ob))
     oa_x_ob_norm = normalize(oa_x_ob)
 
@@ -74,11 +75,6 @@ def find_right_angle(a, b, c):
         return c
     else:
         return None
-
-# identity matrix
-I = [[1, 0, 0],
-     [0, 1, 0],
-     [0, 0, 1]]
 
 # iterate through files in input directory
 with scandir('input') as dirs:
@@ -150,21 +146,23 @@ with scandir('input') as dirs:
             # add each right triangle as two lines in triplets file
             for point in [point_one, point_two]:
                 split_check = find_right_angle(origin, point, point_three)
-                if split_check:
+                if split_check:  # check that split makes right angles
                     set_dict(origin, point, point_three, triplets)
-                else:
-                    exit()
+                else:  # if the program somehow manages to get here..
+                    exit()  # ..then it deserves to die.
+            
 
-
+        b''''''
         triplets.close()
         triplets_by_line = [n.strip() for n in open('work/triplets', 'r').readlines()]
         for line in triplets_by_line:
             triplet = loads(line)
             o, a, b = triplet['o'], triplet['a'], triplet['b']
-            # print([d(n) for n in quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b)))])
-            print(quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b))))
+            print([d(n) for n in quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b)))])
+            # print(quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b))))
 
         obj_file.close(), triplets.close()
         print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
         print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"work/triplets", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time() - start_time) * 1000, 3)} ms.\n')
         output_file.close()
+        b''''''
