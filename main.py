@@ -1,68 +1,52 @@
 from __future__ import division
 from time import time
 from decimal import Decimal
-from math import sin, cos, asin, acos, atan2, degrees as d
 from re import findall
 from os import scandir
 from json import dumps, loads
 import numpy as np
-
-b'''
-
-2- how the hell does that point triplet to euler angles even WORK!?
-3- do we need to swap values due to the fact that cinema4d and core handle depth and height differently?
-
-'''
-
-np.set_printoptions(16)
-
-def normalize(v):
-    return v / np.linalg.norm(v)
+from scipy.spatial.transform import Rotation as R
 
 
-def quaternion_to_euler(q):
-    x, y, z, w = q[0], q[1], q[2], q[3]
-    t0 = +2.0 * (w * x + y * z)
-    t1 = +1.0 - 2.0 * (x * x + y * y)
-    roll = atan2(t0, t1)
-    t2 = +2.0 * (w * y - z * x)
-    t2 = +1.0 if t2 > +1.0 else t2
-    t2 = -1.0 if t2 < -1.0 else t2
-    pitch = asin(t2)
-    t3 = +2.0 * (w * z + x * y)
-    t4 = +1.0 - 2.0 * (y * y + z * z)
-    yaw = atan2(t3, t4)
-    return [roll, pitch, yaw]
+def triangle(a, b, c):
+    ba, ca = np.subtract(b, a), np.subtract(c, a)
+    dot = np.dot(ba, ca)
+    flip = False
+    if dot > 0:
+        if dot >= np.dot(ba, ba):
+            b, c, ba, ca = c, b, ca, ba
+        else:
+            flip = True
+    else:
+        a, c = c, a
+        ba, ca = np.subtract(b, a), np.negative(ca)
+        dot = np.dot(ba, ca)
+    dot /= ba.dot(ba)
+    p = np.subtract(ca, np.multiply(ba, dot))
+    len0, len1 = np.linalg.norm(ba), np.linalg.norm(p)
+    y, z = np.divide(p, len1), np.divide(ba, len0)
+    x = np.cross(y, z)
+    width1 = dot * len0
+    width2 = (1 - dot) * len0
 
-
-def vectors_to_quaternion(v):
-    v_oa, v_ob = v[0], v[1]
-    oa_x_ob, oa_d_ob = np.cross(v_oa, v_ob), np.dot(v_oa, v_ob)
-
-    mag_of_v_oa, mag_of_v_ob = np.sqrt(v_oa.dot(v_oa)), np.sqrt(v_ob.dot(v_ob))
-    theta = acos(oa_d_ob / (mag_of_v_oa * mag_of_v_ob))
-    oa_x_ob_norm = normalize(oa_x_ob)
-
-    q1 = oa_x_ob_norm[0] * sin(theta / 2)
-    q2 = oa_x_ob_norm[1] * sin(theta / 2)
-    q3 = oa_x_ob_norm[2] * sin(theta / 2)
-    q4 = cos(theta / 2)
-
-    return [q1, q2, q3, q4]
-
-
-def points_to_vectors(o, a, b):
-    v_oa, v_ob = np.subtract(a, o), np.subtract(b, o)
-    return [v_oa, v_ob]
-
-
-def set_dict(origin, point, polar, file):
-    output = {
-        'o': origin,  # origin point and scale factors
-        'a': point,  # one of longest_side's endpoints
-        'b': polar,  # point opposite the origin
-    }
-    file.write(f'{dumps(output)}\n')
+    position1 = np.add(
+        np.subtract([(c[0] + a[0]) * .5, (c[1] + a[1]) * .5, (c[2] + a[2]) * .5], np.multiply(y, len1 / 2)),
+        np.multiply(z, width1 / 2))
+    position2 = np.subtract(
+        np.subtract([(c[0] + b[0]) * .5, (c[1] + b[1]) * .5, (c[2] + b[2]) * .5], np.multiply(y, len1 / 2)),
+        np.multiply(z, width2 / 2))
+    scale1 = np.divide([width1, len1, 0], 100)
+    scale2 = np.divide([len1, width2, 0], 100)
+    matrix1 = np.transpose([z, -y, x])
+    matrix2 = np.transpose([-y, -z, x])
+    if flip:
+        matrix1 = np.transpose([-z, -y, -x])
+        matrix2 = np.transpose([-y, z, -x])
+        scale1 = np.divide([width2, len1, 0], 100)
+        scale2 = np.divide([len1, width1, 0], 100)
+    rotation1 = R.from_matrix(matrix1).as_euler('xyz', degrees=True)*[-1, -1, 1]
+    rotation2 = R.from_matrix(matrix2).as_euler('xyz', degrees=True)*[-1, -1, 1]
+    return [position1, position2, scale1, scale2, rotation1, rotation2]
 
 
 def find_right_angle(a, b, c):
@@ -75,6 +59,8 @@ def find_right_angle(a, b, c):
         return c
     else:
         return None
+
+np.set_printoptions(16)
 
 # iterate through files in input directory
 with scandir('input') as dirs:
@@ -111,58 +97,22 @@ with scandir('input') as dirs:
                 for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])]:
                     point.append(value)
 
-            # if right triangle, write vertex corresponding to pi/2 radians to output file
-            right_check = find_right_angle(a, b, c)
-            if right_check:
-                rights_count += 1
-                obj_file.write(f"v {right_check[0]} {right_check[1]} {right_check[2]}\n")
-                set_dict(right_check,
-                         b if right_check == a else c if right_check == b else a,
-                         c if right_check == a else a if right_check == b else b,
-                         triplets)
-                continue
-
-            # get vectors AB, AC, and BC
-            ab_v, ac_v, bc_v = np.subtract(a, b), np.subtract(a, c), np.subtract(b, c)
-
-            # calculate lengths AB, AC, and BC by squaring vectors and taking the root of their sum
-            ab_l, ac_l, bc_l = np.sqrt(ab_v.dot(ab_v)), np.sqrt(ac_v.dot(ac_v)), np.sqrt(bc_v.dot(bc_v))
-
-            # get the longest side, as well as the two points it falls in between
-            # get the point opposite the longest side and use other two sides as sphere radii
-            longest_side, point_one, point_two, point_three, radius_one, radius_two = (ab_l, b, a, c, bc_l, ac_l) if bc_l < ab_l and ac_l < ab_l else (bc_l, c, b, a, ac_l, ab_l) if ac_l < bc_l and ab_l < bc_l else (ac_l, c, a, b, bc_l, ab_l)
-
-            # i don't know what h represents, but it's required for the intersection equation below.
-            h = 1 / 2 + (radius_one ** 2 - radius_two ** 2) / (2 * longest_side ** 2)
-
-            # compute the x, y, and z coordinates of the point that lies at the center of
-            # the circle of intersection between two spheres of aforementioned radii
-            origin = []
-            for coord in range(3):
-                origin.append(point_one[coord] + h * (point_two[coord] - point_one[coord]))
-            obj_file.write(f"v {origin[0]} {origin[1]} {origin[2]}\n")
-
-            # split up triangle into two ALLEGEDLY right triangles
-            # add each right triangle as two lines in triplets file
-            for point in [point_one, point_two]:
-                split_check = find_right_angle(origin, point, point_three)
-                if split_check:  # check that split makes right angles
-                    set_dict(origin, point, point_three, triplets)
-                else:  # if the program somehow manages to get here..
-                    exit()  # ..then it deserves to die.
-            
-
-        b''''''
-        triplets.close()
-        triplets_by_line = [n.strip() for n in open('work/triplets', 'r').readlines()]
-        for line in triplets_by_line:
-            triplet = loads(line)
-            o, a, b = triplet['o'], triplet['a'], triplet['b']
-            print([d(n) for n in quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b)))])
-            # print(quaternion_to_euler(vectors_to_quaternion(points_to_vectors(o, a, b))))
+            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(a, b, c)
+            o_dict = {
+                'one': {
+                    'pos': list(position_one),
+                    'scale': list(np.multiply(scale_one, 10)),
+                    'rot': list(rotation_one)
+                },
+                'two': {
+                    'pos': list(position_two),
+                    'scale': list(np.multiply(scale_two, 10)),
+                    'rot': list(rotation_two)
+                }
+            }
+            triplets.write(f'{dumps(o_dict)}\n')
 
         obj_file.close(), triplets.close()
         print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
         print(f'Found {len(open(f"work/origins.obj", "r").readlines())} origins and {len(open(f"work/triplets", "r").readlines())} triangles.\n{rights_count} right triangles.\nFinished in {round(Decimal(time() - start_time) * 1000, 3)} ms.\n')
         output_file.close()
-        b''''''
