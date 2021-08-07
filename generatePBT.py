@@ -32,7 +32,7 @@ class PBT:
         self.meshes_by_id.append(new_mesh)
         return new_mesh
     
-    def add_mesh(self, name, mesh_name, position, rotation, scale, parent_id):
+    def add_mesh(self, name, mesh_name, position, rotation, scale, parent_id, group_id):
         mesh_to_add = Object(name, position, rotation, scale, parent_id, self.get_mesh_id_for_name(mesh_name))
 
         if mesh_to_add.parent_id is None:
@@ -138,7 +138,7 @@ class PBT:
       RootId: {self.root_id}
       Objects {{
         Id: {self.root_id}
-        Name: "Group"
+        Name: "Folder"
         Transform {{
           Location {{
           }}
@@ -176,11 +176,3 @@ class PBT:
   SerializationVersion: 92
 }}"""
         return pbt
-
-
-
-b'''
-myPBT = PBT({"template_name": 'EpicPythonGeneratedTemplate'})
-myPBT.add_mesh('testMesh', 'sm_cube_002', {"position": [100,200,300], "rotation": None, "scale": None, "parent_id": None})
-print(myPBT.generate_pbt())
-'''

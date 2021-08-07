@@ -43,7 +43,7 @@ def triangle(a, b, c):
         scale_1, scale_2 = np.divide([width_2, len_1, 0], 100), np.divide([len_1, width_1, 0], 100)
     rotation_1 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True)*[-1, -1, 1]
     rotation_2 = R.from_matrix(matrix_2).as_euler('xyz', degrees=True)*[-1, -1, 1]
-    return (position_1, position_2, scale_1, scale_2, rotation_1, rotation_2)
+    return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
 
 
 def find_right_angle(a, b, c):
@@ -66,7 +66,7 @@ with scandir('input') as dirs:
         start_time = time()
         pbt_output = PBT(name='ebic_python_generated_template')
 
-        # reset vertex, map, origins, and output if they exist
+        # reset vertex, map, and output if they exist
         # read input and output files into memory
         open('work/vertex.txt', 'w').close(), open('work/map.txt', 'w').close()
         open(f'output/{entry.name[:-4]}.pbt', 'w').close()
@@ -74,12 +74,15 @@ with scandir('input') as dirs:
         input_file, output_file = open(f'input/{entry.name}', 'r'), open(f'output/{entry.name[:-4]}.pbt', 'a')
         input_lines = input_file.readlines()
 
-        # extract vertices and faces from input .obj file
+        # extract vertices, face-maps, and groups from input .obj file
+        object_number = 1
         for line in input_lines:
             if line.startswith('v '):
                 vertex_file.write(line[2:])
+            elif line.startswith('g '):
+                object_number += 1
             elif line.startswith('f '):
-                map_file.write(line[2:])
+                map_file.write(f'{line[1:].strip()} {object_number-1}\n')
         vertex_file.close(), map_file.close()
 
         # get vertices by line
@@ -88,13 +91,14 @@ with scandir('input') as dirs:
 
         for triangle_map in face_maps_by_line:  # iterate through each face map
             a, b, c = [], [], []  # reset vectors to empty lists
-            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]], [a, b, c]):
+            maps_gs = [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]
+            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in maps_gs[:3]], [a, b, c]):
                 for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])]:
                     point.append(value)
-
+            group = int(maps_gs[3])
             position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(a, b, c)
             for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):
-                pbt_output.add_mesh('testMesh', 'sm_cube_002', position, rotation, np.multiply(scale, 10), None)
+                pbt_output.add_mesh('testMesh', 'sm_cube_002', position, rotation, np.multiply(scale, 10), None, group)
 
         output_file.write(pbt_output.generate_pbt())
 
