@@ -1,72 +1,63 @@
 import random
 
-def generateId():
-    return str((random.random() * pow(10,12)))[0:10]
+def generate_id():
+    return f'{random.randrange(10**19, 10**20)}'
 
 class Object:
-    def __init__(self, tableParams):
-        self.name = tableParams["name"]
-        self.position = tableParams["position"]
-        self.rotation = tableParams["rotation"]
-        self.scale = tableParams["scale"]
-        self.parentId = tableParams["parentId"]
-        self.meshId = tableParams["meshId"]
-        self.id = generateId()
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
+        self.name = name
+        self.position = position
+        self.rotation = rotation
+        self.scale = scale
+        self.parent_id = parent_id
+        self.mesh_id = mesh_id
+        self.id = generate_id()
 
-class pbtGenerator:
-    def __init__(self, tableParams):
-        self.templateName = tableParams["templateName"]
-        self.templateId = generateId()
-        self.rootId = generateId()
+class PBT:
+    def __init__(self, name):
+        self.template_name = name
+        self.template_id = generate_id()
+        self.root_id = generate_id()
         self.objects = []
-        self.meshIds = []
+        self.meshes_by_id = []
     
-    def getMeshIdForName(self, meshName):
-        for mesh in self.meshIds:
-            if (mesh.name == meshName):
-                return mesh.id
-        newMeshId = {"id": generateId(), "name": meshName}
-        self.meshIds.append(newMeshId)
-        return newMeshId
+    def get_mesh_id_for_name(self, mesh_name):
+        for mesh in self.meshes_by_id:
+            if mesh['name'] == mesh_name:
+                return mesh['id']
+        new_mesh = {"id": generate_id(), "name": mesh_name}
+        self.meshes_by_id.append(new_mesh)
+        return new_mesh
     
-    def addMesh(self, name, meshName, tableParams):
-        meshToAdd = Object(
-        {
-            "name": name,
-            "position": tableParams["position"],
-            "rotation": tableParams["rotation"],
-            "scale": tableParams["scale"],
-            "parentId": tableParams["parentId"],
-            "meshId": self.getMeshIdForName(meshName),
-            "id": generateId()
-        })
+    def add_mesh(self, name, mesh_name, position, rotation, scale, parent_id):
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.get_mesh_id_for_name(mesh_name))
 
-        if (meshToAdd.parentId is None):
-            meshToAdd.parentId = self.rootId
+        if mesh_to_add.parent_id is None:
+            mesh_to_add.parent_id = self.root_id
 
-        if (meshToAdd.position is None):
-            meshToAdd.position = [0,0,0]
+        if mesh_to_add.position is None:
+            mesh_to_add.position = [0, 0, 0]
 
-        if (meshToAdd.rotation is None):
-            meshToAdd.rotation = [0,0,0]
+        if mesh_to_add.rotation is None:
+            mesh_to_add.rotation = [0, 0, 0]
 
-        if (meshToAdd.scale is None):
-            meshToAdd.scale = [1,1,1]
+        if mesh_to_add.scale is None:
+            mesh_to_add.scale = [1, 1, 1]
         
-        self.objects.append(meshToAdd)
-        return meshToAdd
+        self.objects.append(mesh_to_add)
+        return mesh_to_add
     
-    def childrenToString(self):
-        childrenString = ""
+    def children_to_string(self):
+        children_string = ""
         for object in self.objects:
-            childrenString += "\n ChildIds: " + object.id
-        return childrenString
+            children_string += "\n ChildIds: " + object.id
+        return children_string
 
-    def allObjectsPBT(self):
-        allObjectsString = ""
+    def all_objects_pbt(self):
+        all_objects_string = ""
 
         for object in self.objects:
-            objectString = f'''
+            object_string = f"""
                             Objects {{
                                 Id: {object.id}
                                 Name: "{object.name}"
@@ -87,7 +78,7 @@ class pbtGenerator:
                                         Z: {object.scale[2]}
                                     }}
                                 }}
-                                ParentId: {self.rootId}    
+                                ParentId: {self.root_id}    
                                 Collidable_v2 {{
                                     Value: "mc:ecollisionsetting:inheritfromparent"
                                 }}
@@ -102,7 +93,7 @@ class pbtGenerator:
                                 }}
                                 CoreMesh {{
                                     MeshAsset {{
-                                        Id: {object.meshId['id']}
+                                        Id: {object.mesh_id}
                                     }}
                                     Teams {{
                                         IsTeamCollisionEnabled: true
@@ -117,38 +108,38 @@ class pbtGenerator:
                                     }}
                                 }}
                             }} \n
-                            '''
-            allObjectsString += objectString
-        return allObjectsString
+                            """
+            all_objects_string += object_string
+        return all_objects_string
 
-    def objectAssetsPBT(self):     
-        assetsString = ""
-        for meshId in self.meshIds:
-            meshAssetString = f'''
+    def object_assets_pbt(self):     
+        assets_string = ""
+        for mesh in self.meshes_by_id:
+            mesh_asset_string = f"""
                 Assets {{
-                    Id: {meshId['id']}
-                    Name: "{meshId['name']}"
+                    Id: {mesh['id']}
+                    Name: "{mesh['name']}"
                     PlatformAssetType: 1
                     PrimaryAsset {{
                         AssetType: "StaticMeshAssetRef"
-                        AssetId: "{meshId['name']}"
+                        AssetId: "{mesh['name']}"
                     }}
                 }}
-            '''
-            assetsString += meshAssetString
-        return assetsString
+            """
+            assets_string += mesh_asset_string
+        return assets_string
 
-    def generatePBT(self):
-        pbt = f'''
+    def generate_pbt(self):
+        pbt = f"""
             Assets {{
-                Id: {self.templateId}
-                Name: "{self.templateName}"
+                Id: {self.template_id}
+                Name: "{self.template_name}"
                 PlatformAssetType: 5
                 TemplateAsset {{
                     ObjectBlock {{
-                        RootId: {self.rootId}
+                        RootId: {self.root_id}
                         Objects {{
-                            Id: {self.rootId}
+                            Id: {self.root_id}
                             Name: "Group"
                             Transform {{
                                 Location {{
@@ -161,14 +152,14 @@ class pbtGenerator:
                                     Z: 1
                                 }}
                             }}
-                            {self.childrenToString()}
+                            {self.children_to_string()}
                             Folder {{
                                 IsGroup: true
                             }}
                         }}
-                        {self.allObjectsPBT()}
+                        {self.all_objects_pbt()}
                     }}
-                    {self.objectAssetsPBT()}
+                    {self.object_assets_pbt()}
                     PrimaryAssetId {{
                         AssetType: "None"
                         AssetId: "None"
@@ -176,12 +167,13 @@ class pbtGenerator:
                 }}
                 SerializationVersion: 92
             }}
-        '''
+        """
         return pbt
 
 
 
-
-myPBT = pbtGenerator({"templateName": 'EpicPythonGeneratedTemplate'})
-myPBT.addMesh('testMesh', 'sm_cube_002', {"position": [100,200,300], "rotation": None, "scale": None, "parentId": None})
-print(myPBT.generatePBT())
+b'''
+myPBT = PBT({"template_name": 'EpicPythonGeneratedTemplate'})
+myPBT.add_mesh('testMesh', 'sm_cube_002', {"position": [100,200,300], "rotation": None, "scale": None, "parent_id": None})
+print(myPBT.generate_pbt())
+'''
