@@ -1,12 +1,12 @@
 Assets {
-  Id: 35895672678843558321
+  Id: 94686435457764837620
   Name: "ebic_python_generated_template"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 67456020394518465322
+      RootId: 52315796765181829829
       Objects {
-        Id: 67456020394518465322
+        Id: 52315796765181829829
         Name: "Folder"
         Transform {
           Location {
@@ -19,294 +19,295 @@ Assets {
             Z: 1
           }
         }
-        ChildIds: 41612602139498947794
-        ChildIds: 65829168932686959877
-        ChildIds: 94042981187404158426
-        ChildIds: 26126713810193195620
-        ChildIds: 83819676545950857739
-        ChildIds: 62423856520239489568
-        ChildIds: 14200542372057309801
-        ChildIds: 98977490067631978976
-        ChildIds: 28527571282137450133
-        ChildIds: 93286668511892647838
-        ChildIds: 89019677376653176429
-        ChildIds: 95843480236216062265
-        ChildIds: 85977660150439884660
-        ChildIds: 42689727028360861826
-        ChildIds: 66037697665376144347
-        ChildIds: 15910735139311884826
-        ChildIds: 48436454179611825061
-        ChildIds: 69532092468122241464
-        ChildIds: 75004943132212340777
-        ChildIds: 44871253650907585250
-        ChildIds: 64666767409497635685
-        ChildIds: 55482641725412810924
-        ChildIds: 25549061279208044696
-        ChildIds: 99223772178765204244
-        ChildIds: 65039860436755927811
-        ChildIds: 12339038735194987456
-        ChildIds: 99765718613955248467
-        ChildIds: 46359141887571902189
-        ChildIds: 66949755131617675798
-        ChildIds: 96792870921589788461
-        ChildIds: 14730581419485794002
-        ChildIds: 59886786313552162620
-        ChildIds: 85504377708061009014
-        ChildIds: 21429473949176712926
-        ChildIds: 87026955307269867840
-        ChildIds: 86548083556746211663
-        ChildIds: 18969217727282593290
-        ChildIds: 95800971708953050429
-        ChildIds: 18774741273263153169
-        ChildIds: 20299006564980442697
-        ChildIds: 50705419786280469568
-        ChildIds: 93747866849556065105
-        ChildIds: 95594350609291637765
-        ChildIds: 73884886998830825357
-        ChildIds: 34859699059907769228
-        ChildIds: 77990806586506923853
-        ChildIds: 52546768115943901965
-        ChildIds: 83128381073753032487
-        ChildIds: 96955383830629535298
-        ChildIds: 56004841323928921563
-        ChildIds: 61555316720476257508
-        ChildIds: 96077246814980908415
-        ChildIds: 32529190226918996559
-        ChildIds: 57491993423293177295
-        ChildIds: 90116747881499114285
-        ChildIds: 19578344768944993127
-        ChildIds: 74030395961624804312
-        ChildIds: 21859919041475519358
-        ChildIds: 48871493054015156108
-        ChildIds: 95765203771354636595
-        ChildIds: 87874412035013520794
-        ChildIds: 70478250063756208005
-        ChildIds: 43171321555953463081
-        ChildIds: 13979668215366990219
-        ChildIds: 31453493977304861450
-        ChildIds: 30843947994265402427
-        ChildIds: 97767283373165817163
-        ChildIds: 55989588262305654019
-        ChildIds: 31248088027023842279
-        ChildIds: 97441389066423494674
-        ChildIds: 24901581260918862185
-        ChildIds: 10289912551199787897
-        ChildIds: 31757477020679437846
-        ChildIds: 40108792513831700044
-        ChildIds: 20326928805157035078
-        ChildIds: 89049785532421448406
-        ChildIds: 31844886262823214237
-        ChildIds: 36505980548109098949
-        ChildIds: 56565496993958266218
-        ChildIds: 33638772294089676476
-        ChildIds: 70094815376980804688
-        ChildIds: 12469048941136668002
-        ChildIds: 41525516568489799161
-        ChildIds: 37177079749992968456
-        ChildIds: 17018092877314143459
-        ChildIds: 18860386476462528240
-        ChildIds: 88769497885716260316
-        ChildIds: 46682592325914075370
-        ChildIds: 60831839883124527089
-        ChildIds: 15862383661036701003
-        ChildIds: 18335215189934659574
-        ChildIds: 93683382507719259557
-        ChildIds: 23002094419909909729
-        ChildIds: 66103484782320948321
-        ChildIds: 51640755894010007386
-        ChildIds: 92192859518546180330
-        ChildIds: 39891308461206930574
-        ChildIds: 39974179230409087609
-        ChildIds: 55014712102574192209
-        ChildIds: 13214590800479210281
-        ChildIds: 39974501132095080988
-        ChildIds: 52935154917859273121
-        ChildIds: 53208328253191838727
-        ChildIds: 33853874451816407100
-        ChildIds: 76532579025857548365
-        ChildIds: 64203391548454148273
-        ChildIds: 80202113954376830353
-        ChildIds: 57332441227395904680
-        ChildIds: 75510067466498292382
-        ChildIds: 74206911585476762220
-        ChildIds: 62633253909434414605
-        ChildIds: 13788641660188749691
-        ChildIds: 41096290008542789811
-        ChildIds: 62744712412970681290
-        ChildIds: 57265015399740839685
-        ChildIds: 37864403207692093286
-        ChildIds: 88665890101336374891
-        ChildIds: 13243771163885774556
-        ChildIds: 70601868117969704470
-        ChildIds: 73004905999919993789
-        ChildIds: 55227376101832012030
-        ChildIds: 26562731755914886822
-        ChildIds: 92140461662811932191
-        ChildIds: 49356759409399964897
-        ChildIds: 91399190743977072013
-        ChildIds: 52490227328550319726
-        ChildIds: 54517249937712923371
-        ChildIds: 14331617841919244198
-        ChildIds: 81769770973729236632
-        ChildIds: 89066145904620187031
-        ChildIds: 70996388963097776047
-        ChildIds: 97759043423576561703
-        ChildIds: 47297074545016549786
-        ChildIds: 93001622146629132904
-        ChildIds: 24700596305845648489
-        ChildIds: 64269129517064135048
-        ChildIds: 87665351556686772437
-        ChildIds: 97765671081997882724
-        ChildIds: 86805527611325332429
-        ChildIds: 90739293047068684287
-        ChildIds: 13559730892435028657
-        ChildIds: 92677137225699367565
-        ChildIds: 33093163371695925088
-        ChildIds: 88547489971229857027
-        ChildIds: 46768404382086922285
-        ChildIds: 36989951008852473879
-        ChildIds: 37575517015079798074
-        ChildIds: 25851013230657270901
-        ChildIds: 47989480930277637841
-        ChildIds: 57626090487477552703
-        ChildIds: 70486034966817761799
-        ChildIds: 15239764830942965886
-        ChildIds: 96381063122323852759
-        ChildIds: 24915306751282703164
-        ChildIds: 43555225182997160837
-        ChildIds: 22700181237455989323
-        ChildIds: 24344505537232726384
-        ChildIds: 95684568962049759504
-        ChildIds: 86073810685759223929
-        ChildIds: 69112885195444461682
-        ChildIds: 79332489904627150985
-        ChildIds: 53429736107906807941
-        ChildIds: 36156393727379990528
-        ChildIds: 55931668031269008028
-        ChildIds: 45523803676841408728
-        ChildIds: 17054091782337297469
-        ChildIds: 86106875884555301972
-        ChildIds: 33146595767000835988
-        ChildIds: 22609347618094811246
-        ChildIds: 71502966071916014915
-        ChildIds: 73475805515465948020
-        ChildIds: 35768889813423608739
-        ChildIds: 35286699118829301552
-        ChildIds: 53115769056569777664
-        ChildIds: 83938577574384260256
-        ChildIds: 72987887384637269619
-        ChildIds: 49537739775024323695
-        ChildIds: 53036634026046421215
-        ChildIds: 75345852873774071766
-        ChildIds: 27075280309689759709
-        ChildIds: 20911245373427966479
-        ChildIds: 31921381217720265183
-        ChildIds: 28455804184979110947
-        ChildIds: 34837818587074774166
-        ChildIds: 71441099777176861005
-        ChildIds: 16733079548975230294
-        ChildIds: 96214668111723656547
-        ChildIds: 44696813819900319706
-        ChildIds: 35738309792575711430
-        ChildIds: 25181907754743513087
-        ChildIds: 84029412094838893082
-        ChildIds: 80584874357544937483
-        ChildIds: 85041866964650759660
-        ChildIds: 79582353047109385125
-        ChildIds: 67315902601931797665
-        ChildIds: 61298136906331555182
-        ChildIds: 71986362656872200714
-        ChildIds: 86779775356973367326
-        ChildIds: 59774512469805815787
-        ChildIds: 34602184171843244499
-        ChildIds: 43787060528730682200
-        ChildIds: 57065248671598733020
-        ChildIds: 14025432215547398696
-        ChildIds: 76103810261104918489
-        ChildIds: 53553808461867408759
-        ChildIds: 72694457169242341061
-        ChildIds: 24870465441599454778
-        ChildIds: 53402359653188034872
-        ChildIds: 71147753057265468274
-        ChildIds: 44038148183695330344
-        ChildIds: 31091328722411285865
-        ChildIds: 11059445931906053759
-        ChildIds: 82553348517679450481
-        ChildIds: 40626921182128465167
-        ChildIds: 75221130248138861034
-        ChildIds: 18104499400582891984
-        ChildIds: 26527109511658021058
-        ChildIds: 17027490260391680189
-        ChildIds: 24451908320765543120
-        ChildIds: 44601885795916960875
-        ChildIds: 25632942106296654262
-        ChildIds: 17717947361233616100
-        ChildIds: 88656994515864295940
-        ChildIds: 34692947905620949308
-        ChildIds: 70523548940324512219
-        ChildIds: 10934466144676268616
-        ChildIds: 78551763605448742810
-        ChildIds: 39950858402757276864
-        ChildIds: 76979367819356902678
-        ChildIds: 81429181856726831314
-        ChildIds: 38090999013930365695
-        ChildIds: 22626782128281753826
-        ChildIds: 54709991329564744595
-        ChildIds: 31947418008434406787
-        ChildIds: 71797190338753024642
-        ChildIds: 14457478478754195762
-        ChildIds: 46380889611141629703
-        ChildIds: 45268502717474960949
-        ChildIds: 56017249266635944740
-        ChildIds: 43308465271716752147
-        ChildIds: 70097295135398632607
-        ChildIds: 95076273390401324833
-        ChildIds: 29887087985734085488
-        ChildIds: 49523691214341978150
-        ChildIds: 83167133115904018689
-        ChildIds: 70558900970922200012
-        ChildIds: 81077572168629297277
-        ChildIds: 65461256191906231245
-        ChildIds: 95554688924963699183
-        ChildIds: 55988617142244800389
-        ChildIds: 14547704668263295437
-        ChildIds: 68034501560806984894
-        ChildIds: 54491810218110703184
-        ChildIds: 82860971155745701158
-        ChildIds: 60518005304962973658
-        ChildIds: 74081391156658525305
-        ChildIds: 30058656393605149115
-        ChildIds: 33075507983868959093
-        ChildIds: 23906651487937476474
-        ChildIds: 94747845154405715626
-        ChildIds: 43544390407679190862
-        ChildIds: 26432220000490749508
-        ChildIds: 68564472437993729266
-        ChildIds: 20347476730050748855
-        ChildIds: 51008668043402631713
-        ChildIds: 38877957718429319744
-        ChildIds: 35765159062250750391
-        ChildIds: 73995407442718940880
-        ChildIds: 72478915444593478308
-        ChildIds: 10889169242856016661
-        ChildIds: 78299897842218465587
-        ChildIds: 30914665808731572421
-        ChildIds: 13488783885699504569
-        ChildIds: 64856604007152866705
-        ChildIds: 53726897231218208538
-        ChildIds: 20708825134942734783
-        ChildIds: 20272256877402290351
-        ChildIds: 88424252138698478990
-        ChildIds: 81506825413498703081
-        ChildIds: 37565512519381377644
-        ChildIds: 67143851768696470101
-        ChildIds: 68007691046892376444
-        ChildIds: 62196883315257477589
-        ChildIds: 87347595840429124194
-        ChildIds: 91842773510388375357
-        ChildIds: 27082808688779372690
-        ChildIds: 61754586697847483787
-        ChildIds: 51502968887001957393
+        ParentId: 11485074567630338381
+        ChildIds: 65023761269759135909
+        ChildIds: 68972285144481843659
+        ChildIds: 43349546840291089388
+        ChildIds: 78595711766696345298
+        ChildIds: 88457701251303081275
+        ChildIds: 96097532016923881987
+        ChildIds: 81597601340624664884
+        ChildIds: 55978227585182078176
+        ChildIds: 14479505462795869154
+        ChildIds: 43231514324539160728
+        ChildIds: 24572957331033842122
+        ChildIds: 25967856646439395946
+        ChildIds: 65438484948585558381
+        ChildIds: 60261350969270698021
+        ChildIds: 49422935773829851998
+        ChildIds: 14732468989352482205
+        ChildIds: 39225319331539772980
+        ChildIds: 16126775173618736914
+        ChildIds: 36943777158974574156
+        ChildIds: 92767683416637207469
+        ChildIds: 68349079127688653986
+        ChildIds: 83516377259197879945
+        ChildIds: 33600249950229286322
+        ChildIds: 47462442316862798213
+        ChildIds: 12258937991238755306
+        ChildIds: 73184153927283355772
+        ChildIds: 67408409315216534653
+        ChildIds: 93273467166185894654
+        ChildIds: 80466245634530189996
+        ChildIds: 44139512879356757413
+        ChildIds: 19723901341047470099
+        ChildIds: 38627387657127801004
+        ChildIds: 11564071579387012148
+        ChildIds: 28664186956736650414
+        ChildIds: 93483590213493202375
+        ChildIds: 48494649427004929140
+        ChildIds: 75598767876905649633
+        ChildIds: 32812420305486823464
+        ChildIds: 23421937233145766776
+        ChildIds: 23019000488201306050
+        ChildIds: 97994471691886246943
+        ChildIds: 10728221040316579917
+        ChildIds: 55706802253522258178
+        ChildIds: 44607124809697964642
+        ChildIds: 18397971957468848662
+        ChildIds: 65778257246532535086
+        ChildIds: 11149990940434881300
+        ChildIds: 55959247633840162766
+        ChildIds: 76118544183679741269
+        ChildIds: 53729776332320236903
+        ChildIds: 71170458251681982210
+        ChildIds: 25239120233822592055
+        ChildIds: 24798495014132401606
+        ChildIds: 26455447056589451922
+        ChildIds: 46667634191565442668
+        ChildIds: 52819156207208685789
+        ChildIds: 79599518276993549421
+        ChildIds: 67137514961595892581
+        ChildIds: 47772448372915738507
+        ChildIds: 76113364210775313373
+        ChildIds: 86424264697286423122
+        ChildIds: 14634318548340307264
+        ChildIds: 53954735100768644840
+        ChildIds: 98123850150352754850
+        ChildIds: 19282928243450807514
+        ChildIds: 17993134385672813131
+        ChildIds: 12583814852384830882
+        ChildIds: 29375496748489565367
+        ChildIds: 79614106733955351553
+        ChildIds: 35050840127590282254
+        ChildIds: 30671953180436829822
+        ChildIds: 49439698808798778058
+        ChildIds: 88659374786054007435
+        ChildIds: 50519659676776616329
+        ChildIds: 94037764249864525495
+        ChildIds: 92234395582657047771
+        ChildIds: 10689471231855674216
+        ChildIds: 29902978898091158564
+        ChildIds: 90775804866602715317
+        ChildIds: 63542157679634962760
+        ChildIds: 98473089094128666917
+        ChildIds: 86703078565280090793
+        ChildIds: 98386420254943268542
+        ChildIds: 48691753242532464105
+        ChildIds: 71888268755565638681
+        ChildIds: 43325832726559937123
+        ChildIds: 23124503118159220797
+        ChildIds: 47243128838161416084
+        ChildIds: 93910502022212015499
+        ChildIds: 74623120490652678181
+        ChildIds: 33484666069955745800
+        ChildIds: 43109225475007643294
+        ChildIds: 41483297243887588209
+        ChildIds: 71450913486365457563
+        ChildIds: 13847530360622122967
+        ChildIds: 32462562183059652070
+        ChildIds: 50212395291805691971
+        ChildIds: 56410613114604462072
+        ChildIds: 36033937708146671443
+        ChildIds: 63093165067333909791
+        ChildIds: 60175728147736279359
+        ChildIds: 29354740473058758801
+        ChildIds: 54724794089114773667
+        ChildIds: 23762467788809038954
+        ChildIds: 98565220359431277874
+        ChildIds: 85318992982939913708
+        ChildIds: 63626381415411498917
+        ChildIds: 72110515189632867931
+        ChildIds: 19639040432916033212
+        ChildIds: 18838814617431925413
+        ChildIds: 90638800625759340932
+        ChildIds: 36293891436684392647
+        ChildIds: 98622840843046967530
+        ChildIds: 97102719857993814730
+        ChildIds: 57175624125776553467
+        ChildIds: 31051942558270785215
+        ChildIds: 22687312052071193710
+        ChildIds: 35693480359803495341
+        ChildIds: 85661593878442640555
+        ChildIds: 11759982116807017078
+        ChildIds: 67855072088868571324
+        ChildIds: 44855814041661063536
+        ChildIds: 11867908456826130152
+        ChildIds: 61524227278194258492
+        ChildIds: 18756734538237290955
+        ChildIds: 68079561955459839530
+        ChildIds: 50592806226689220462
+        ChildIds: 44620728363832954501
+        ChildIds: 60853149749958081003
+        ChildIds: 23891069128852988629
+        ChildIds: 15048818665546152267
+        ChildIds: 43987854044452324036
+        ChildIds: 34827433547484392855
+        ChildIds: 59723740467709542915
+        ChildIds: 19384873154483204190
+        ChildIds: 19352931302467777521
+        ChildIds: 11900029154764053256
+        ChildIds: 76729096177102807409
+        ChildIds: 30905979266396658960
+        ChildIds: 65345807635986465511
+        ChildIds: 18069401424188406911
+        ChildIds: 73593443909156344707
+        ChildIds: 60347461748099470866
+        ChildIds: 42808715260877561819
+        ChildIds: 79782231040595279292
+        ChildIds: 99860090467503554478
+        ChildIds: 18151424247135658634
+        ChildIds: 41321673828610493546
+        ChildIds: 13296440043166992458
+        ChildIds: 77382516587673630680
+        ChildIds: 28956751659037470810
+        ChildIds: 63655894582180324881
+        ChildIds: 93583872696455700511
+        ChildIds: 17149516873958008277
+        ChildIds: 26807515832784025429
+        ChildIds: 19569690341406259598
+        ChildIds: 64313149711525102868
+        ChildIds: 75333323948192548500
+        ChildIds: 54577335304151467873
+        ChildIds: 68596019150182341277
+        ChildIds: 33145056192816368006
+        ChildIds: 64001559562333878689
+        ChildIds: 46233052035579106486
+        ChildIds: 58273744232705096506
+        ChildIds: 94382582218570932348
+        ChildIds: 42414466124913344085
+        ChildIds: 92620513607350126503
+        ChildIds: 22627520089590122091
+        ChildIds: 21980792318386436776
+        ChildIds: 59143170832423907057
+        ChildIds: 72414427351178688803
+        ChildIds: 38547263641600951628
+        ChildIds: 80827318912678375607
+        ChildIds: 34061600933684980240
+        ChildIds: 56320210347981867080
+        ChildIds: 75243638629657398785
+        ChildIds: 35025937088976275821
+        ChildIds: 12781801439098515576
+        ChildIds: 54751542020997257060
+        ChildIds: 80731058666008116068
+        ChildIds: 61645932938332985288
+        ChildIds: 59546070023105840929
+        ChildIds: 47491641766916071151
+        ChildIds: 69385876229344489467
+        ChildIds: 51958729669201442656
+        ChildIds: 34635270637990879113
+        ChildIds: 99929106004189102087
+        ChildIds: 49620219388185905149
+        ChildIds: 53082856685692686417
+        ChildIds: 98771403431043433976
+        ChildIds: 54768798700238469865
+        ChildIds: 47299369578603224634
+        ChildIds: 18547173062113978349
+        ChildIds: 70411783550684628159
+        ChildIds: 16428135255521365679
+        ChildIds: 10278939494998426049
+        ChildIds: 26937996445071268653
+        ChildIds: 26128261219909818546
+        ChildIds: 74404882392693349999
+        ChildIds: 12313511676398625395
+        ChildIds: 21391539918092221070
+        ChildIds: 56705658798296744559
+        ChildIds: 83636144204701610683
+        ChildIds: 20856471908818681152
+        ChildIds: 78369771120807877415
+        ChildIds: 62069526358813038117
+        ChildIds: 52994501310143568310
+        ChildIds: 56997691299009747998
+        ChildIds: 18721058421054209339
+        ChildIds: 68016700956501772613
+        ChildIds: 40641061116957264611
+        ChildIds: 69096457318573976110
+        ChildIds: 89613469326909085468
+        ChildIds: 11266551921063255257
+        ChildIds: 55541699707626812297
+        ChildIds: 13523613588384582550
+        ChildIds: 19164432148452317276
+        ChildIds: 33408853566733507921
+        ChildIds: 39237784671999480124
+        ChildIds: 50471751913362392578
+        ChildIds: 42725353575824705474
+        ChildIds: 35713539289332654364
+        ChildIds: 21403712475261365843
+        ChildIds: 53631423479105451834
+        ChildIds: 77867679349575917275
+        ChildIds: 22159523501552704558
+        ChildIds: 69983424047612560128
+        ChildIds: 73799693713317372731
+        ChildIds: 40805885941421539707
+        ChildIds: 83869769197541240555
+        ChildIds: 92999779124327641552
+        ChildIds: 48574481538645809442
+        ChildIds: 36859610077200180740
+        ChildIds: 92607959686554906493
+        ChildIds: 32737282378094491812
+        ChildIds: 30015000365528382211
+        ChildIds: 76575083149634568997
+        ChildIds: 62914753045893956166
+        ChildIds: 31011311458237551004
+        ChildIds: 11693459344362978456
+        ChildIds: 34069597881930289096
+        ChildIds: 46742529316532866742
+        ChildIds: 58086445759367509811
+        ChildIds: 65645652068497320085
+        ChildIds: 19496744747831583714
+        ChildIds: 40918462583771136163
+        ChildIds: 37018066637551556799
+        ChildIds: 44509931844484623441
+        ChildIds: 82183426322236086593
+        ChildIds: 70926066391489765102
+        ChildIds: 22359365983732811369
+        ChildIds: 58990123680706912123
+        ChildIds: 96164129541081850149
+        ChildIds: 66023005329002765485
+        ChildIds: 23153182251025796211
+        ChildIds: 18297222567594462782
+        ChildIds: 25720494083013384901
+        ChildIds: 85570900179688604076
+        ChildIds: 29050840380206319086
+        ChildIds: 12769111106195622006
+        ChildIds: 46464104714922062478
+        ChildIds: 38061487175519154736
+        ChildIds: 71834730430554506201
+        ChildIds: 26952212168576258313
+        ChildIds: 81180451902381565984
+        ChildIds: 81207517243425709058
+        ChildIds: 22701869973527540070
+        ChildIds: 87000379445876345707
+        ChildIds: 10772387532425334017
+        ChildIds: 16413624002201161820
+        ChildIds: 10828896289433597624
+        ChildIds: 11683502572029199795
+        ChildIds: 42625238516576976088
+        ChildIds: 51529505242592120314
+        ChildIds: 69153955175149588667
+        ChildIds: 20297536604456668536
+        ChildIds: 14461339162273025801
+        ChildIds: 26187909454503013261
+        ChildIds: 58955105198812626941
+        ChildIds: 65032957795572018709
+        ChildIds: 76495360576209604191
+        ChildIds: 27047524203737515272
+        ChildIds: 99998295222061084210
+        ChildIds: 70361237831330294732
+        ChildIds: 48621010924124630857
+        ChildIds: 38840796020860301618
+        ChildIds: 35132613980636158076
+        ChildIds: 23941063902747663695
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -324,7 +325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 41612602139498947794
+        Id: 65023761269759135909
         Name: "testMesh"
         Transform {
           Location {
@@ -343,7 +344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -358,7 +359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: {'id': '90458398401802941088', 'name': 'sm_cube_002'}
+            Id: {'id': '20268313049526885363', 'name': 'sm_cube_002'}
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -374,7 +375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 65829168932686959877
+        Id: 68972285144481843659
         Name: "testMesh"
         Transform {
           Location {
@@ -393,7 +394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -408,7 +409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -424,7 +425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 94042981187404158426
+        Id: 43349546840291089388
         Name: "testMesh"
         Transform {
           Location {
@@ -443,7 +444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -458,7 +459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -474,7 +475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 26126713810193195620
+        Id: 78595711766696345298
         Name: "testMesh"
         Transform {
           Location {
@@ -493,7 +494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -508,7 +509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -524,7 +525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 83819676545950857739
+        Id: 88457701251303081275
         Name: "testMesh"
         Transform {
           Location {
@@ -543,7 +544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -558,7 +559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -574,7 +575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 62423856520239489568
+        Id: 96097532016923881987
         Name: "testMesh"
         Transform {
           Location {
@@ -593,7 +594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -608,7 +609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -624,7 +625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14200542372057309801
+        Id: 81597601340624664884
         Name: "testMesh"
         Transform {
           Location {
@@ -643,7 +644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -658,7 +659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -674,7 +675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 98977490067631978976
+        Id: 55978227585182078176
         Name: "testMesh"
         Transform {
           Location {
@@ -693,7 +694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -708,7 +709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -724,7 +725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 28527571282137450133
+        Id: 14479505462795869154
         Name: "testMesh"
         Transform {
           Location {
@@ -743,7 +744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -758,7 +759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -774,7 +775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 93286668511892647838
+        Id: 43231514324539160728
         Name: "testMesh"
         Transform {
           Location {
@@ -793,7 +794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -808,7 +809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -824,7 +825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 89019677376653176429
+        Id: 24572957331033842122
         Name: "testMesh"
         Transform {
           Location {
@@ -843,7 +844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -858,7 +859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -874,7 +875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95843480236216062265
+        Id: 25967856646439395946
         Name: "testMesh"
         Transform {
           Location {
@@ -893,7 +894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -908,7 +909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -924,7 +925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 85977660150439884660
+        Id: 65438484948585558381
         Name: "testMesh"
         Transform {
           Location {
@@ -943,7 +944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -958,7 +959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -974,7 +975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 42689727028360861826
+        Id: 60261350969270698021
         Name: "testMesh"
         Transform {
           Location {
@@ -993,7 +994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1008,7 +1009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1024,7 +1025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 66037697665376144347
+        Id: 49422935773829851998
         Name: "testMesh"
         Transform {
           Location {
@@ -1043,7 +1044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1058,7 +1059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1074,7 +1075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15910735139311884826
+        Id: 14732468989352482205
         Name: "testMesh"
         Transform {
           Location {
@@ -1093,7 +1094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1108,7 +1109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1124,7 +1125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 48436454179611825061
+        Id: 39225319331539772980
         Name: "testMesh"
         Transform {
           Location {
@@ -1143,7 +1144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1158,7 +1159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1174,7 +1175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 69532092468122241464
+        Id: 16126775173618736914
         Name: "testMesh"
         Transform {
           Location {
@@ -1193,7 +1194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1208,7 +1209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1224,7 +1225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 75004943132212340777
+        Id: 36943777158974574156
         Name: "testMesh"
         Transform {
           Location {
@@ -1243,7 +1244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1258,7 +1259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1274,7 +1275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 44871253650907585250
+        Id: 92767683416637207469
         Name: "testMesh"
         Transform {
           Location {
@@ -1293,7 +1294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1308,7 +1309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1324,7 +1325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 64666767409497635685
+        Id: 68349079127688653986
         Name: "testMesh"
         Transform {
           Location {
@@ -1343,7 +1344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1358,7 +1359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1374,7 +1375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55482641725412810924
+        Id: 83516377259197879945
         Name: "testMesh"
         Transform {
           Location {
@@ -1393,7 +1394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1408,7 +1409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1424,7 +1425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 25549061279208044696
+        Id: 33600249950229286322
         Name: "testMesh"
         Transform {
           Location {
@@ -1443,7 +1444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1458,7 +1459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1474,7 +1475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 99223772178765204244
+        Id: 47462442316862798213
         Name: "testMesh"
         Transform {
           Location {
@@ -1493,7 +1494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1508,7 +1509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1524,7 +1525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 65039860436755927811
+        Id: 12258937991238755306
         Name: "testMesh"
         Transform {
           Location {
@@ -1543,7 +1544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1558,7 +1559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1574,7 +1575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12339038735194987456
+        Id: 73184153927283355772
         Name: "testMesh"
         Transform {
           Location {
@@ -1593,7 +1594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1608,7 +1609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1624,7 +1625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 99765718613955248467
+        Id: 67408409315216534653
         Name: "testMesh"
         Transform {
           Location {
@@ -1643,7 +1644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1658,7 +1659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1674,7 +1675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 46359141887571902189
+        Id: 93273467166185894654
         Name: "testMesh"
         Transform {
           Location {
@@ -1693,7 +1694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1708,7 +1709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1724,7 +1725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 66949755131617675798
+        Id: 80466245634530189996
         Name: "testMesh"
         Transform {
           Location {
@@ -1743,7 +1744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1758,7 +1759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1774,7 +1775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 96792870921589788461
+        Id: 44139512879356757413
         Name: "testMesh"
         Transform {
           Location {
@@ -1793,7 +1794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1808,7 +1809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1824,7 +1825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14730581419485794002
+        Id: 19723901341047470099
         Name: "testMesh"
         Transform {
           Location {
@@ -1843,7 +1844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1858,7 +1859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1874,7 +1875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 59886786313552162620
+        Id: 38627387657127801004
         Name: "testMesh"
         Transform {
           Location {
@@ -1893,7 +1894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1908,7 +1909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1924,7 +1925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 85504377708061009014
+        Id: 11564071579387012148
         Name: "testMesh"
         Transform {
           Location {
@@ -1943,7 +1944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1958,7 +1959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -1974,7 +1975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 21429473949176712926
+        Id: 28664186956736650414
         Name: "testMesh"
         Transform {
           Location {
@@ -1993,7 +1994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2008,7 +2009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2024,7 +2025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 87026955307269867840
+        Id: 93483590213493202375
         Name: "testMesh"
         Transform {
           Location {
@@ -2043,7 +2044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2058,7 +2059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2074,7 +2075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 86548083556746211663
+        Id: 48494649427004929140
         Name: "testMesh"
         Transform {
           Location {
@@ -2093,7 +2094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2108,7 +2109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2124,7 +2125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18969217727282593290
+        Id: 75598767876905649633
         Name: "testMesh"
         Transform {
           Location {
@@ -2143,7 +2144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2158,7 +2159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2174,7 +2175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95800971708953050429
+        Id: 32812420305486823464
         Name: "testMesh"
         Transform {
           Location {
@@ -2193,7 +2194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2208,7 +2209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2224,7 +2225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18774741273263153169
+        Id: 23421937233145766776
         Name: "testMesh"
         Transform {
           Location {
@@ -2243,7 +2244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2258,7 +2259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2274,7 +2275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20299006564980442697
+        Id: 23019000488201306050
         Name: "testMesh"
         Transform {
           Location {
@@ -2293,7 +2294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2308,7 +2309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2324,7 +2325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 50705419786280469568
+        Id: 97994471691886246943
         Name: "testMesh"
         Transform {
           Location {
@@ -2343,7 +2344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2358,7 +2359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2374,7 +2375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 93747866849556065105
+        Id: 10728221040316579917
         Name: "testMesh"
         Transform {
           Location {
@@ -2393,7 +2394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2408,7 +2409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2424,7 +2425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95594350609291637765
+        Id: 55706802253522258178
         Name: "testMesh"
         Transform {
           Location {
@@ -2443,7 +2444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2458,7 +2459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2474,7 +2475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 73884886998830825357
+        Id: 44607124809697964642
         Name: "testMesh"
         Transform {
           Location {
@@ -2493,7 +2494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2508,7 +2509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2524,7 +2525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 34859699059907769228
+        Id: 18397971957468848662
         Name: "testMesh"
         Transform {
           Location {
@@ -2543,7 +2544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2558,7 +2559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2574,7 +2575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 77990806586506923853
+        Id: 65778257246532535086
         Name: "testMesh"
         Transform {
           Location {
@@ -2593,7 +2594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2608,7 +2609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2624,7 +2625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 52546768115943901965
+        Id: 11149990940434881300
         Name: "testMesh"
         Transform {
           Location {
@@ -2643,7 +2644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2658,7 +2659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2674,7 +2675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 83128381073753032487
+        Id: 55959247633840162766
         Name: "testMesh"
         Transform {
           Location {
@@ -2693,7 +2694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2708,7 +2709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2724,7 +2725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 96955383830629535298
+        Id: 76118544183679741269
         Name: "testMesh"
         Transform {
           Location {
@@ -2743,7 +2744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2758,7 +2759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2774,7 +2775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 56004841323928921563
+        Id: 53729776332320236903
         Name: "testMesh"
         Transform {
           Location {
@@ -2793,7 +2794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2808,7 +2809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2824,7 +2825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 61555316720476257508
+        Id: 71170458251681982210
         Name: "testMesh"
         Transform {
           Location {
@@ -2843,7 +2844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2858,7 +2859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2874,7 +2875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 96077246814980908415
+        Id: 25239120233822592055
         Name: "testMesh"
         Transform {
           Location {
@@ -2893,7 +2894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2908,7 +2909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2924,7 +2925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 32529190226918996559
+        Id: 24798495014132401606
         Name: "testMesh"
         Transform {
           Location {
@@ -2943,7 +2944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -2958,7 +2959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -2974,7 +2975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 57491993423293177295
+        Id: 26455447056589451922
         Name: "testMesh"
         Transform {
           Location {
@@ -2993,7 +2994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3008,7 +3009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3024,7 +3025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 90116747881499114285
+        Id: 46667634191565442668
         Name: "testMesh"
         Transform {
           Location {
@@ -3043,7 +3044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3058,7 +3059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3074,7 +3075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 19578344768944993127
+        Id: 52819156207208685789
         Name: "testMesh"
         Transform {
           Location {
@@ -3093,7 +3094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3108,7 +3109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3124,7 +3125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 74030395961624804312
+        Id: 79599518276993549421
         Name: "testMesh"
         Transform {
           Location {
@@ -3143,7 +3144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3158,7 +3159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3174,7 +3175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 21859919041475519358
+        Id: 67137514961595892581
         Name: "testMesh"
         Transform {
           Location {
@@ -3193,7 +3194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3208,7 +3209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3224,7 +3225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 48871493054015156108
+        Id: 47772448372915738507
         Name: "testMesh"
         Transform {
           Location {
@@ -3243,7 +3244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3258,7 +3259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3274,7 +3275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95765203771354636595
+        Id: 76113364210775313373
         Name: "testMesh"
         Transform {
           Location {
@@ -3293,7 +3294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3308,7 +3309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3324,7 +3325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 87874412035013520794
+        Id: 86424264697286423122
         Name: "testMesh"
         Transform {
           Location {
@@ -3343,7 +3344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3358,7 +3359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3374,7 +3375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70478250063756208005
+        Id: 14634318548340307264
         Name: "testMesh"
         Transform {
           Location {
@@ -3393,7 +3394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3408,7 +3409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3424,7 +3425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 43171321555953463081
+        Id: 53954735100768644840
         Name: "testMesh"
         Transform {
           Location {
@@ -3443,7 +3444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3458,7 +3459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3474,7 +3475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13979668215366990219
+        Id: 98123850150352754850
         Name: "testMesh"
         Transform {
           Location {
@@ -3493,7 +3494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3508,7 +3509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3524,7 +3525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31453493977304861450
+        Id: 19282928243450807514
         Name: "testMesh"
         Transform {
           Location {
@@ -3543,7 +3544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3558,7 +3559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3574,7 +3575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 30843947994265402427
+        Id: 17993134385672813131
         Name: "testMesh"
         Transform {
           Location {
@@ -3593,7 +3594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3608,7 +3609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3624,7 +3625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 97767283373165817163
+        Id: 12583814852384830882
         Name: "testMesh"
         Transform {
           Location {
@@ -3643,7 +3644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3658,7 +3659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3674,7 +3675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55989588262305654019
+        Id: 29375496748489565367
         Name: "testMesh"
         Transform {
           Location {
@@ -3693,7 +3694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3708,7 +3709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3724,7 +3725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31248088027023842279
+        Id: 79614106733955351553
         Name: "testMesh"
         Transform {
           Location {
@@ -3743,7 +3744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3758,7 +3759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3774,7 +3775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 97441389066423494674
+        Id: 35050840127590282254
         Name: "testMesh"
         Transform {
           Location {
@@ -3793,7 +3794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3808,7 +3809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3824,7 +3825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24901581260918862185
+        Id: 30671953180436829822
         Name: "testMesh"
         Transform {
           Location {
@@ -3843,7 +3844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3858,7 +3859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3874,7 +3875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10289912551199787897
+        Id: 49439698808798778058
         Name: "testMesh"
         Transform {
           Location {
@@ -3893,7 +3894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3908,7 +3909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3924,7 +3925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31757477020679437846
+        Id: 88659374786054007435
         Name: "testMesh"
         Transform {
           Location {
@@ -3943,7 +3944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -3958,7 +3959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -3974,7 +3975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 40108792513831700044
+        Id: 50519659676776616329
         Name: "testMesh"
         Transform {
           Location {
@@ -3993,7 +3994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4008,7 +4009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4024,7 +4025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20326928805157035078
+        Id: 94037764249864525495
         Name: "testMesh"
         Transform {
           Location {
@@ -4043,7 +4044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4058,7 +4059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4074,7 +4075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 89049785532421448406
+        Id: 92234395582657047771
         Name: "testMesh"
         Transform {
           Location {
@@ -4093,7 +4094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4108,7 +4109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4124,7 +4125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31844886262823214237
+        Id: 10689471231855674216
         Name: "testMesh"
         Transform {
           Location {
@@ -4143,7 +4144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4158,7 +4159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4174,7 +4175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 36505980548109098949
+        Id: 29902978898091158564
         Name: "testMesh"
         Transform {
           Location {
@@ -4193,7 +4194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4208,7 +4209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4224,7 +4225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 56565496993958266218
+        Id: 90775804866602715317
         Name: "testMesh"
         Transform {
           Location {
@@ -4243,7 +4244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4258,7 +4259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4274,7 +4275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 33638772294089676476
+        Id: 63542157679634962760
         Name: "testMesh"
         Transform {
           Location {
@@ -4293,7 +4294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4308,7 +4309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4324,7 +4325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70094815376980804688
+        Id: 98473089094128666917
         Name: "testMesh"
         Transform {
           Location {
@@ -4343,7 +4344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4358,7 +4359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4374,7 +4375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12469048941136668002
+        Id: 86703078565280090793
         Name: "testMesh"
         Transform {
           Location {
@@ -4393,7 +4394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4408,7 +4409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4424,7 +4425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 41525516568489799161
+        Id: 98386420254943268542
         Name: "testMesh"
         Transform {
           Location {
@@ -4443,7 +4444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4458,7 +4459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4474,7 +4475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 37177079749992968456
+        Id: 48691753242532464105
         Name: "testMesh"
         Transform {
           Location {
@@ -4493,7 +4494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4508,7 +4509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4524,7 +4525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17018092877314143459
+        Id: 71888268755565638681
         Name: "testMesh"
         Transform {
           Location {
@@ -4543,7 +4544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4558,7 +4559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4574,7 +4575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18860386476462528240
+        Id: 43325832726559937123
         Name: "testMesh"
         Transform {
           Location {
@@ -4593,7 +4594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4608,7 +4609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4624,7 +4625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 88769497885716260316
+        Id: 23124503118159220797
         Name: "testMesh"
         Transform {
           Location {
@@ -4643,7 +4644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4658,7 +4659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4674,7 +4675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 46682592325914075370
+        Id: 47243128838161416084
         Name: "testMesh"
         Transform {
           Location {
@@ -4693,7 +4694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4708,7 +4709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4724,7 +4725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 60831839883124527089
+        Id: 93910502022212015499
         Name: "testMesh"
         Transform {
           Location {
@@ -4743,7 +4744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4758,7 +4759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4774,7 +4775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15862383661036701003
+        Id: 74623120490652678181
         Name: "testMesh"
         Transform {
           Location {
@@ -4793,7 +4794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4808,7 +4809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4824,7 +4825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18335215189934659574
+        Id: 33484666069955745800
         Name: "testMesh"
         Transform {
           Location {
@@ -4843,7 +4844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4858,7 +4859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4874,7 +4875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 93683382507719259557
+        Id: 43109225475007643294
         Name: "testMesh"
         Transform {
           Location {
@@ -4893,7 +4894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4908,7 +4909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4924,7 +4925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 23002094419909909729
+        Id: 41483297243887588209
         Name: "testMesh"
         Transform {
           Location {
@@ -4943,7 +4944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -4958,7 +4959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -4974,7 +4975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 66103484782320948321
+        Id: 71450913486365457563
         Name: "testMesh"
         Transform {
           Location {
@@ -4993,7 +4994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5008,7 +5009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5024,7 +5025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 51640755894010007386
+        Id: 13847530360622122967
         Name: "testMesh"
         Transform {
           Location {
@@ -5043,7 +5044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5058,7 +5059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5074,7 +5075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 92192859518546180330
+        Id: 32462562183059652070
         Name: "testMesh"
         Transform {
           Location {
@@ -5093,7 +5094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5108,7 +5109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5124,7 +5125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 39891308461206930574
+        Id: 50212395291805691971
         Name: "testMesh"
         Transform {
           Location {
@@ -5143,7 +5144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5158,7 +5159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5174,7 +5175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 39974179230409087609
+        Id: 56410613114604462072
         Name: "testMesh"
         Transform {
           Location {
@@ -5193,7 +5194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5208,7 +5209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5224,7 +5225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55014712102574192209
+        Id: 36033937708146671443
         Name: "testMesh"
         Transform {
           Location {
@@ -5243,7 +5244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5258,7 +5259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5274,7 +5275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13214590800479210281
+        Id: 63093165067333909791
         Name: "testMesh"
         Transform {
           Location {
@@ -5293,7 +5294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5308,7 +5309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5324,7 +5325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 39974501132095080988
+        Id: 60175728147736279359
         Name: "testMesh"
         Transform {
           Location {
@@ -5343,7 +5344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5358,7 +5359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5374,7 +5375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 52935154917859273121
+        Id: 29354740473058758801
         Name: "testMesh"
         Transform {
           Location {
@@ -5393,7 +5394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5408,7 +5409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5424,7 +5425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53208328253191838727
+        Id: 54724794089114773667
         Name: "testMesh"
         Transform {
           Location {
@@ -5443,7 +5444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5458,7 +5459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5474,7 +5475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 33853874451816407100
+        Id: 23762467788809038954
         Name: "testMesh"
         Transform {
           Location {
@@ -5493,7 +5494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5508,7 +5509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5524,7 +5525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 76532579025857548365
+        Id: 98565220359431277874
         Name: "testMesh"
         Transform {
           Location {
@@ -5543,7 +5544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5558,7 +5559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5574,7 +5575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 64203391548454148273
+        Id: 85318992982939913708
         Name: "testMesh"
         Transform {
           Location {
@@ -5593,7 +5594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5608,7 +5609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5624,7 +5625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 80202113954376830353
+        Id: 63626381415411498917
         Name: "testMesh"
         Transform {
           Location {
@@ -5643,7 +5644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5658,7 +5659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5674,7 +5675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 57332441227395904680
+        Id: 72110515189632867931
         Name: "testMesh"
         Transform {
           Location {
@@ -5693,7 +5694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5708,7 +5709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5724,7 +5725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 75510067466498292382
+        Id: 19639040432916033212
         Name: "testMesh"
         Transform {
           Location {
@@ -5743,7 +5744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5758,7 +5759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5774,7 +5775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 74206911585476762220
+        Id: 18838814617431925413
         Name: "testMesh"
         Transform {
           Location {
@@ -5793,7 +5794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5808,7 +5809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5824,7 +5825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 62633253909434414605
+        Id: 90638800625759340932
         Name: "testMesh"
         Transform {
           Location {
@@ -5843,7 +5844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5858,7 +5859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5874,7 +5875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13788641660188749691
+        Id: 36293891436684392647
         Name: "testMesh"
         Transform {
           Location {
@@ -5893,7 +5894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5908,7 +5909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5924,7 +5925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 41096290008542789811
+        Id: 98622840843046967530
         Name: "testMesh"
         Transform {
           Location {
@@ -5943,7 +5944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -5958,7 +5959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -5974,7 +5975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 62744712412970681290
+        Id: 97102719857993814730
         Name: "testMesh"
         Transform {
           Location {
@@ -5993,7 +5994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6008,7 +6009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6024,7 +6025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 57265015399740839685
+        Id: 57175624125776553467
         Name: "testMesh"
         Transform {
           Location {
@@ -6043,7 +6044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6058,7 +6059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6074,7 +6075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 37864403207692093286
+        Id: 31051942558270785215
         Name: "testMesh"
         Transform {
           Location {
@@ -6093,7 +6094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6108,7 +6109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6124,7 +6125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 88665890101336374891
+        Id: 22687312052071193710
         Name: "testMesh"
         Transform {
           Location {
@@ -6143,7 +6144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6158,7 +6159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6174,7 +6175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13243771163885774556
+        Id: 35693480359803495341
         Name: "testMesh"
         Transform {
           Location {
@@ -6193,7 +6194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6208,7 +6209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6224,7 +6225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70601868117969704470
+        Id: 85661593878442640555
         Name: "testMesh"
         Transform {
           Location {
@@ -6243,7 +6244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6258,7 +6259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6274,7 +6275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 73004905999919993789
+        Id: 11759982116807017078
         Name: "testMesh"
         Transform {
           Location {
@@ -6293,7 +6294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6308,7 +6309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6324,7 +6325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55227376101832012030
+        Id: 67855072088868571324
         Name: "testMesh"
         Transform {
           Location {
@@ -6343,7 +6344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6358,7 +6359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6374,7 +6375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 26562731755914886822
+        Id: 44855814041661063536
         Name: "testMesh"
         Transform {
           Location {
@@ -6393,7 +6394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6408,7 +6409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6424,7 +6425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 92140461662811932191
+        Id: 11867908456826130152
         Name: "testMesh"
         Transform {
           Location {
@@ -6443,7 +6444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6458,7 +6459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6474,7 +6475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 49356759409399964897
+        Id: 61524227278194258492
         Name: "testMesh"
         Transform {
           Location {
@@ -6493,7 +6494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6508,7 +6509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6524,7 +6525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 91399190743977072013
+        Id: 18756734538237290955
         Name: "testMesh"
         Transform {
           Location {
@@ -6543,7 +6544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6558,7 +6559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6574,7 +6575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 52490227328550319726
+        Id: 68079561955459839530
         Name: "testMesh"
         Transform {
           Location {
@@ -6593,7 +6594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6608,7 +6609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6624,7 +6625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 54517249937712923371
+        Id: 50592806226689220462
         Name: "testMesh"
         Transform {
           Location {
@@ -6643,7 +6644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6658,7 +6659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6674,7 +6675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14331617841919244198
+        Id: 44620728363832954501
         Name: "testMesh"
         Transform {
           Location {
@@ -6693,7 +6694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6708,7 +6709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6724,7 +6725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 81769770973729236632
+        Id: 60853149749958081003
         Name: "testMesh"
         Transform {
           Location {
@@ -6743,7 +6744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6758,7 +6759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6774,7 +6775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 89066145904620187031
+        Id: 23891069128852988629
         Name: "testMesh"
         Transform {
           Location {
@@ -6793,7 +6794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6808,7 +6809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6824,7 +6825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70996388963097776047
+        Id: 15048818665546152267
         Name: "testMesh"
         Transform {
           Location {
@@ -6843,7 +6844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6858,7 +6859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6874,7 +6875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 97759043423576561703
+        Id: 43987854044452324036
         Name: "testMesh"
         Transform {
           Location {
@@ -6893,7 +6894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6908,7 +6909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6924,7 +6925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 47297074545016549786
+        Id: 34827433547484392855
         Name: "testMesh"
         Transform {
           Location {
@@ -6943,7 +6944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -6958,7 +6959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -6974,7 +6975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 93001622146629132904
+        Id: 59723740467709542915
         Name: "testMesh"
         Transform {
           Location {
@@ -6993,7 +6994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7008,7 +7009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7024,7 +7025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24700596305845648489
+        Id: 19384873154483204190
         Name: "testMesh"
         Transform {
           Location {
@@ -7043,7 +7044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7058,7 +7059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7074,7 +7075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 64269129517064135048
+        Id: 19352931302467777521
         Name: "testMesh"
         Transform {
           Location {
@@ -7093,7 +7094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7108,7 +7109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7124,7 +7125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 87665351556686772437
+        Id: 11900029154764053256
         Name: "testMesh"
         Transform {
           Location {
@@ -7143,7 +7144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7158,7 +7159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7174,7 +7175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 97765671081997882724
+        Id: 76729096177102807409
         Name: "testMesh"
         Transform {
           Location {
@@ -7193,7 +7194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7208,7 +7209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7224,7 +7225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 86805527611325332429
+        Id: 30905979266396658960
         Name: "testMesh"
         Transform {
           Location {
@@ -7243,7 +7244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7258,7 +7259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7274,7 +7275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 90739293047068684287
+        Id: 65345807635986465511
         Name: "testMesh"
         Transform {
           Location {
@@ -7293,7 +7294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7308,7 +7309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7324,7 +7325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13559730892435028657
+        Id: 18069401424188406911
         Name: "testMesh"
         Transform {
           Location {
@@ -7343,7 +7344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7358,7 +7359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7374,7 +7375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 92677137225699367565
+        Id: 73593443909156344707
         Name: "testMesh"
         Transform {
           Location {
@@ -7393,7 +7394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7408,7 +7409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7424,7 +7425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 33093163371695925088
+        Id: 60347461748099470866
         Name: "testMesh"
         Transform {
           Location {
@@ -7443,7 +7444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7458,7 +7459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7474,7 +7475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 88547489971229857027
+        Id: 42808715260877561819
         Name: "testMesh"
         Transform {
           Location {
@@ -7493,7 +7494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7508,7 +7509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7524,7 +7525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 46768404382086922285
+        Id: 79782231040595279292
         Name: "testMesh"
         Transform {
           Location {
@@ -7543,7 +7544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7558,7 +7559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7574,7 +7575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 36989951008852473879
+        Id: 99860090467503554478
         Name: "testMesh"
         Transform {
           Location {
@@ -7593,7 +7594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7608,7 +7609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7624,7 +7625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 37575517015079798074
+        Id: 18151424247135658634
         Name: "testMesh"
         Transform {
           Location {
@@ -7643,7 +7644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7658,7 +7659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7674,7 +7675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 25851013230657270901
+        Id: 41321673828610493546
         Name: "testMesh"
         Transform {
           Location {
@@ -7693,7 +7694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7708,7 +7709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7724,7 +7725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 47989480930277637841
+        Id: 13296440043166992458
         Name: "testMesh"
         Transform {
           Location {
@@ -7743,7 +7744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7758,7 +7759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7774,7 +7775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 57626090487477552703
+        Id: 77382516587673630680
         Name: "testMesh"
         Transform {
           Location {
@@ -7793,7 +7794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7808,7 +7809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7824,7 +7825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70486034966817761799
+        Id: 28956751659037470810
         Name: "testMesh"
         Transform {
           Location {
@@ -7843,7 +7844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7858,7 +7859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7874,7 +7875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 15239764830942965886
+        Id: 63655894582180324881
         Name: "testMesh"
         Transform {
           Location {
@@ -7893,7 +7894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7908,7 +7909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7924,7 +7925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 96381063122323852759
+        Id: 93583872696455700511
         Name: "testMesh"
         Transform {
           Location {
@@ -7943,7 +7944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -7958,7 +7959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -7974,7 +7975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24915306751282703164
+        Id: 17149516873958008277
         Name: "testMesh"
         Transform {
           Location {
@@ -7993,7 +7994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8008,7 +8009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8024,7 +8025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 43555225182997160837
+        Id: 26807515832784025429
         Name: "testMesh"
         Transform {
           Location {
@@ -8043,7 +8044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8058,7 +8059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8074,7 +8075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 22700181237455989323
+        Id: 19569690341406259598
         Name: "testMesh"
         Transform {
           Location {
@@ -8093,7 +8094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8108,7 +8109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8124,7 +8125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24344505537232726384
+        Id: 64313149711525102868
         Name: "testMesh"
         Transform {
           Location {
@@ -8143,7 +8144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8158,7 +8159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8174,7 +8175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95684568962049759504
+        Id: 75333323948192548500
         Name: "testMesh"
         Transform {
           Location {
@@ -8193,7 +8194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8208,7 +8209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8224,7 +8225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 86073810685759223929
+        Id: 54577335304151467873
         Name: "testMesh"
         Transform {
           Location {
@@ -8243,7 +8244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8258,7 +8259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8274,7 +8275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 69112885195444461682
+        Id: 68596019150182341277
         Name: "testMesh"
         Transform {
           Location {
@@ -8293,7 +8294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8308,7 +8309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8324,7 +8325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 79332489904627150985
+        Id: 33145056192816368006
         Name: "testMesh"
         Transform {
           Location {
@@ -8343,7 +8344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8358,7 +8359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8374,7 +8375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53429736107906807941
+        Id: 64001559562333878689
         Name: "testMesh"
         Transform {
           Location {
@@ -8393,7 +8394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8408,7 +8409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8424,7 +8425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 36156393727379990528
+        Id: 46233052035579106486
         Name: "testMesh"
         Transform {
           Location {
@@ -8443,7 +8444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8458,7 +8459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8474,7 +8475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55931668031269008028
+        Id: 58273744232705096506
         Name: "testMesh"
         Transform {
           Location {
@@ -8493,7 +8494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8508,7 +8509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8524,7 +8525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 45523803676841408728
+        Id: 94382582218570932348
         Name: "testMesh"
         Transform {
           Location {
@@ -8543,7 +8544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8558,7 +8559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8574,7 +8575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17054091782337297469
+        Id: 42414466124913344085
         Name: "testMesh"
         Transform {
           Location {
@@ -8593,7 +8594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8608,7 +8609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8624,7 +8625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 86106875884555301972
+        Id: 92620513607350126503
         Name: "testMesh"
         Transform {
           Location {
@@ -8643,7 +8644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8658,7 +8659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8674,7 +8675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 33146595767000835988
+        Id: 22627520089590122091
         Name: "testMesh"
         Transform {
           Location {
@@ -8693,7 +8694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8708,7 +8709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8724,7 +8725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 22609347618094811246
+        Id: 21980792318386436776
         Name: "testMesh"
         Transform {
           Location {
@@ -8743,7 +8744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8758,7 +8759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8774,7 +8775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 71502966071916014915
+        Id: 59143170832423907057
         Name: "testMesh"
         Transform {
           Location {
@@ -8793,7 +8794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8808,7 +8809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8824,7 +8825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 73475805515465948020
+        Id: 72414427351178688803
         Name: "testMesh"
         Transform {
           Location {
@@ -8843,7 +8844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8858,7 +8859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8874,7 +8875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 35768889813423608739
+        Id: 38547263641600951628
         Name: "testMesh"
         Transform {
           Location {
@@ -8893,7 +8894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8908,7 +8909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8924,7 +8925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 35286699118829301552
+        Id: 80827318912678375607
         Name: "testMesh"
         Transform {
           Location {
@@ -8943,7 +8944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -8958,7 +8959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -8974,7 +8975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53115769056569777664
+        Id: 34061600933684980240
         Name: "testMesh"
         Transform {
           Location {
@@ -8993,7 +8994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9008,7 +9009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9024,7 +9025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 83938577574384260256
+        Id: 56320210347981867080
         Name: "testMesh"
         Transform {
           Location {
@@ -9043,7 +9044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9058,7 +9059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9074,7 +9075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 72987887384637269619
+        Id: 75243638629657398785
         Name: "testMesh"
         Transform {
           Location {
@@ -9093,7 +9094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9108,7 +9109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9124,7 +9125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 49537739775024323695
+        Id: 35025937088976275821
         Name: "testMesh"
         Transform {
           Location {
@@ -9143,7 +9144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9158,7 +9159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9174,7 +9175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53036634026046421215
+        Id: 12781801439098515576
         Name: "testMesh"
         Transform {
           Location {
@@ -9193,7 +9194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9208,7 +9209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9224,7 +9225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 75345852873774071766
+        Id: 54751542020997257060
         Name: "testMesh"
         Transform {
           Location {
@@ -9243,7 +9244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9258,7 +9259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9274,7 +9275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 27075280309689759709
+        Id: 80731058666008116068
         Name: "testMesh"
         Transform {
           Location {
@@ -9293,7 +9294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9308,7 +9309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9324,7 +9325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20911245373427966479
+        Id: 61645932938332985288
         Name: "testMesh"
         Transform {
           Location {
@@ -9343,7 +9344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9358,7 +9359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9374,7 +9375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31921381217720265183
+        Id: 59546070023105840929
         Name: "testMesh"
         Transform {
           Location {
@@ -9393,7 +9394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9408,7 +9409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9424,7 +9425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 28455804184979110947
+        Id: 47491641766916071151
         Name: "testMesh"
         Transform {
           Location {
@@ -9443,7 +9444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9458,7 +9459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9474,7 +9475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 34837818587074774166
+        Id: 69385876229344489467
         Name: "testMesh"
         Transform {
           Location {
@@ -9493,7 +9494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9508,7 +9509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9524,7 +9525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 71441099777176861005
+        Id: 51958729669201442656
         Name: "testMesh"
         Transform {
           Location {
@@ -9543,7 +9544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9558,7 +9559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9574,7 +9575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 16733079548975230294
+        Id: 34635270637990879113
         Name: "testMesh"
         Transform {
           Location {
@@ -9593,7 +9594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9608,7 +9609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9624,7 +9625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 96214668111723656547
+        Id: 99929106004189102087
         Name: "testMesh"
         Transform {
           Location {
@@ -9643,7 +9644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9658,7 +9659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9674,7 +9675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 44696813819900319706
+        Id: 49620219388185905149
         Name: "testMesh"
         Transform {
           Location {
@@ -9693,7 +9694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9708,7 +9709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9724,7 +9725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 35738309792575711430
+        Id: 53082856685692686417
         Name: "testMesh"
         Transform {
           Location {
@@ -9743,7 +9744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9758,7 +9759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9774,7 +9775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 25181907754743513087
+        Id: 98771403431043433976
         Name: "testMesh"
         Transform {
           Location {
@@ -9793,7 +9794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9808,7 +9809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9824,7 +9825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 84029412094838893082
+        Id: 54768798700238469865
         Name: "testMesh"
         Transform {
           Location {
@@ -9843,7 +9844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9858,7 +9859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9874,7 +9875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 80584874357544937483
+        Id: 47299369578603224634
         Name: "testMesh"
         Transform {
           Location {
@@ -9893,7 +9894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9908,7 +9909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9924,7 +9925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 85041866964650759660
+        Id: 18547173062113978349
         Name: "testMesh"
         Transform {
           Location {
@@ -9943,7 +9944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -9958,7 +9959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -9974,7 +9975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 79582353047109385125
+        Id: 70411783550684628159
         Name: "testMesh"
         Transform {
           Location {
@@ -9993,7 +9994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10008,7 +10009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10024,7 +10025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 67315902601931797665
+        Id: 16428135255521365679
         Name: "testMesh"
         Transform {
           Location {
@@ -10043,7 +10044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10058,7 +10059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10074,7 +10075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 61298136906331555182
+        Id: 10278939494998426049
         Name: "testMesh"
         Transform {
           Location {
@@ -10093,7 +10094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10108,7 +10109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10124,7 +10125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 71986362656872200714
+        Id: 26937996445071268653
         Name: "testMesh"
         Transform {
           Location {
@@ -10143,7 +10144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10158,7 +10159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10174,7 +10175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 86779775356973367326
+        Id: 26128261219909818546
         Name: "testMesh"
         Transform {
           Location {
@@ -10193,7 +10194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10208,7 +10209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10224,7 +10225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 59774512469805815787
+        Id: 74404882392693349999
         Name: "testMesh"
         Transform {
           Location {
@@ -10243,7 +10244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10258,7 +10259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10274,7 +10275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 34602184171843244499
+        Id: 12313511676398625395
         Name: "testMesh"
         Transform {
           Location {
@@ -10293,7 +10294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10308,7 +10309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10324,7 +10325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 43787060528730682200
+        Id: 21391539918092221070
         Name: "testMesh"
         Transform {
           Location {
@@ -10343,7 +10344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10358,7 +10359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10374,7 +10375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 57065248671598733020
+        Id: 56705658798296744559
         Name: "testMesh"
         Transform {
           Location {
@@ -10393,7 +10394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10408,7 +10409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10424,7 +10425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14025432215547398696
+        Id: 83636144204701610683
         Name: "testMesh"
         Transform {
           Location {
@@ -10443,7 +10444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10458,7 +10459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10474,7 +10475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 76103810261104918489
+        Id: 20856471908818681152
         Name: "testMesh"
         Transform {
           Location {
@@ -10493,7 +10494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10508,7 +10509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10524,7 +10525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53553808461867408759
+        Id: 78369771120807877415
         Name: "testMesh"
         Transform {
           Location {
@@ -10543,7 +10544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10558,7 +10559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10574,7 +10575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 72694457169242341061
+        Id: 62069526358813038117
         Name: "testMesh"
         Transform {
           Location {
@@ -10593,7 +10594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10608,7 +10609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10624,7 +10625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24870465441599454778
+        Id: 52994501310143568310
         Name: "testMesh"
         Transform {
           Location {
@@ -10643,7 +10644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10658,7 +10659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10674,7 +10675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53402359653188034872
+        Id: 56997691299009747998
         Name: "testMesh"
         Transform {
           Location {
@@ -10693,7 +10694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10708,7 +10709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10724,7 +10725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 71147753057265468274
+        Id: 18721058421054209339
         Name: "testMesh"
         Transform {
           Location {
@@ -10743,7 +10744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10758,7 +10759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10774,7 +10775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 44038148183695330344
+        Id: 68016700956501772613
         Name: "testMesh"
         Transform {
           Location {
@@ -10793,7 +10794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10808,7 +10809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10824,7 +10825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31091328722411285865
+        Id: 40641061116957264611
         Name: "testMesh"
         Transform {
           Location {
@@ -10843,7 +10844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10858,7 +10859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10874,7 +10875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 11059445931906053759
+        Id: 69096457318573976110
         Name: "testMesh"
         Transform {
           Location {
@@ -10893,7 +10894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10908,7 +10909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10924,7 +10925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 82553348517679450481
+        Id: 89613469326909085468
         Name: "testMesh"
         Transform {
           Location {
@@ -10943,7 +10944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -10958,7 +10959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -10974,7 +10975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 40626921182128465167
+        Id: 11266551921063255257
         Name: "testMesh"
         Transform {
           Location {
@@ -10993,7 +10994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11008,7 +11009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11024,7 +11025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 75221130248138861034
+        Id: 55541699707626812297
         Name: "testMesh"
         Transform {
           Location {
@@ -11043,7 +11044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11058,7 +11059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11074,7 +11075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 18104499400582891984
+        Id: 13523613588384582550
         Name: "testMesh"
         Transform {
           Location {
@@ -11093,7 +11094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11108,7 +11109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11124,7 +11125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 26527109511658021058
+        Id: 19164432148452317276
         Name: "testMesh"
         Transform {
           Location {
@@ -11143,7 +11144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11158,7 +11159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11174,7 +11175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17027490260391680189
+        Id: 33408853566733507921
         Name: "testMesh"
         Transform {
           Location {
@@ -11193,7 +11194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11208,7 +11209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11224,7 +11225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 24451908320765543120
+        Id: 39237784671999480124
         Name: "testMesh"
         Transform {
           Location {
@@ -11243,7 +11244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11258,7 +11259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11274,7 +11275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 44601885795916960875
+        Id: 50471751913362392578
         Name: "testMesh"
         Transform {
           Location {
@@ -11293,7 +11294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11308,7 +11309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11324,7 +11325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 25632942106296654262
+        Id: 42725353575824705474
         Name: "testMesh"
         Transform {
           Location {
@@ -11343,7 +11344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11358,7 +11359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11374,7 +11375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 17717947361233616100
+        Id: 35713539289332654364
         Name: "testMesh"
         Transform {
           Location {
@@ -11393,7 +11394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11408,7 +11409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11424,7 +11425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 88656994515864295940
+        Id: 21403712475261365843
         Name: "testMesh"
         Transform {
           Location {
@@ -11443,7 +11444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11458,7 +11459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11474,7 +11475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 34692947905620949308
+        Id: 53631423479105451834
         Name: "testMesh"
         Transform {
           Location {
@@ -11493,7 +11494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11508,7 +11509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11524,7 +11525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70523548940324512219
+        Id: 77867679349575917275
         Name: "testMesh"
         Transform {
           Location {
@@ -11543,7 +11544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11558,7 +11559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11574,7 +11575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10934466144676268616
+        Id: 22159523501552704558
         Name: "testMesh"
         Transform {
           Location {
@@ -11593,7 +11594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11608,7 +11609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11624,7 +11625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 78551763605448742810
+        Id: 69983424047612560128
         Name: "testMesh"
         Transform {
           Location {
@@ -11643,7 +11644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11658,7 +11659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11674,7 +11675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 39950858402757276864
+        Id: 73799693713317372731
         Name: "testMesh"
         Transform {
           Location {
@@ -11693,7 +11694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11708,7 +11709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11724,7 +11725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 76979367819356902678
+        Id: 40805885941421539707
         Name: "testMesh"
         Transform {
           Location {
@@ -11743,7 +11744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11758,7 +11759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11774,7 +11775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 81429181856726831314
+        Id: 83869769197541240555
         Name: "testMesh"
         Transform {
           Location {
@@ -11793,7 +11794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11808,7 +11809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11824,7 +11825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 38090999013930365695
+        Id: 92999779124327641552
         Name: "testMesh"
         Transform {
           Location {
@@ -11843,7 +11844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11858,7 +11859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11874,7 +11875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 22626782128281753826
+        Id: 48574481538645809442
         Name: "testMesh"
         Transform {
           Location {
@@ -11893,7 +11894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11908,7 +11909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11924,7 +11925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 54709991329564744595
+        Id: 36859610077200180740
         Name: "testMesh"
         Transform {
           Location {
@@ -11943,7 +11944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -11958,7 +11959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -11974,7 +11975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 31947418008434406787
+        Id: 92607959686554906493
         Name: "testMesh"
         Transform {
           Location {
@@ -11993,7 +11994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12008,7 +12009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12024,7 +12025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 71797190338753024642
+        Id: 32737282378094491812
         Name: "testMesh"
         Transform {
           Location {
@@ -12043,7 +12044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12058,7 +12059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12074,7 +12075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14457478478754195762
+        Id: 30015000365528382211
         Name: "testMesh"
         Transform {
           Location {
@@ -12093,7 +12094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12108,7 +12109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12124,7 +12125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 46380889611141629703
+        Id: 76575083149634568997
         Name: "testMesh"
         Transform {
           Location {
@@ -12143,7 +12144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12158,7 +12159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12174,7 +12175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 45268502717474960949
+        Id: 62914753045893956166
         Name: "testMesh"
         Transform {
           Location {
@@ -12193,7 +12194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12208,7 +12209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12224,7 +12225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 56017249266635944740
+        Id: 31011311458237551004
         Name: "testMesh"
         Transform {
           Location {
@@ -12243,7 +12244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12258,7 +12259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12274,7 +12275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 43308465271716752147
+        Id: 11693459344362978456
         Name: "testMesh"
         Transform {
           Location {
@@ -12293,7 +12294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12308,7 +12309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12324,7 +12325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70097295135398632607
+        Id: 34069597881930289096
         Name: "testMesh"
         Transform {
           Location {
@@ -12343,7 +12344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12358,7 +12359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12374,7 +12375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95076273390401324833
+        Id: 46742529316532866742
         Name: "testMesh"
         Transform {
           Location {
@@ -12393,7 +12394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12408,7 +12409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12424,7 +12425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 29887087985734085488
+        Id: 58086445759367509811
         Name: "testMesh"
         Transform {
           Location {
@@ -12443,7 +12444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12458,7 +12459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12474,7 +12475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 49523691214341978150
+        Id: 65645652068497320085
         Name: "testMesh"
         Transform {
           Location {
@@ -12493,7 +12494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12508,7 +12509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12524,7 +12525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 83167133115904018689
+        Id: 19496744747831583714
         Name: "testMesh"
         Transform {
           Location {
@@ -12543,7 +12544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12558,7 +12559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12574,7 +12575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 70558900970922200012
+        Id: 40918462583771136163
         Name: "testMesh"
         Transform {
           Location {
@@ -12593,7 +12594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12608,7 +12609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12624,7 +12625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 81077572168629297277
+        Id: 37018066637551556799
         Name: "testMesh"
         Transform {
           Location {
@@ -12643,7 +12644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12658,7 +12659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12674,7 +12675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 65461256191906231245
+        Id: 44509931844484623441
         Name: "testMesh"
         Transform {
           Location {
@@ -12693,7 +12694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12708,7 +12709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12724,7 +12725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 95554688924963699183
+        Id: 82183426322236086593
         Name: "testMesh"
         Transform {
           Location {
@@ -12743,7 +12744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12758,7 +12759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12774,7 +12775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 55988617142244800389
+        Id: 70926066391489765102
         Name: "testMesh"
         Transform {
           Location {
@@ -12793,7 +12794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12808,7 +12809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12824,7 +12825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14547704668263295437
+        Id: 22359365983732811369
         Name: "testMesh"
         Transform {
           Location {
@@ -12843,7 +12844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12858,7 +12859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12874,7 +12875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 68034501560806984894
+        Id: 58990123680706912123
         Name: "testMesh"
         Transform {
           Location {
@@ -12893,7 +12894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12908,7 +12909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12924,7 +12925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 54491810218110703184
+        Id: 96164129541081850149
         Name: "testMesh"
         Transform {
           Location {
@@ -12943,7 +12944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -12958,7 +12959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -12974,7 +12975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 82860971155745701158
+        Id: 66023005329002765485
         Name: "testMesh"
         Transform {
           Location {
@@ -12993,7 +12994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13008,7 +13009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13024,7 +13025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 60518005304962973658
+        Id: 23153182251025796211
         Name: "testMesh"
         Transform {
           Location {
@@ -13043,7 +13044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13058,7 +13059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13074,7 +13075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 74081391156658525305
+        Id: 18297222567594462782
         Name: "testMesh"
         Transform {
           Location {
@@ -13093,7 +13094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13108,7 +13109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13124,7 +13125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 30058656393605149115
+        Id: 25720494083013384901
         Name: "testMesh"
         Transform {
           Location {
@@ -13143,7 +13144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13158,7 +13159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13174,7 +13175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 33075507983868959093
+        Id: 85570900179688604076
         Name: "testMesh"
         Transform {
           Location {
@@ -13193,7 +13194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13208,7 +13209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13224,7 +13225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 23906651487937476474
+        Id: 29050840380206319086
         Name: "testMesh"
         Transform {
           Location {
@@ -13243,7 +13244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13258,7 +13259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13274,7 +13275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 94747845154405715626
+        Id: 12769111106195622006
         Name: "testMesh"
         Transform {
           Location {
@@ -13293,7 +13294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13308,7 +13309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13324,7 +13325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 43544390407679190862
+        Id: 46464104714922062478
         Name: "testMesh"
         Transform {
           Location {
@@ -13343,7 +13344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13358,7 +13359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13374,7 +13375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 26432220000490749508
+        Id: 38061487175519154736
         Name: "testMesh"
         Transform {
           Location {
@@ -13393,7 +13394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13408,7 +13409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13424,7 +13425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 68564472437993729266
+        Id: 71834730430554506201
         Name: "testMesh"
         Transform {
           Location {
@@ -13443,7 +13444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13458,7 +13459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13474,7 +13475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20347476730050748855
+        Id: 26952212168576258313
         Name: "testMesh"
         Transform {
           Location {
@@ -13493,7 +13494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13508,7 +13509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13524,7 +13525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 51008668043402631713
+        Id: 81180451902381565984
         Name: "testMesh"
         Transform {
           Location {
@@ -13543,7 +13544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13558,7 +13559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13574,7 +13575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 38877957718429319744
+        Id: 81207517243425709058
         Name: "testMesh"
         Transform {
           Location {
@@ -13593,7 +13594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13608,7 +13609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13624,7 +13625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 35765159062250750391
+        Id: 22701869973527540070
         Name: "testMesh"
         Transform {
           Location {
@@ -13643,7 +13644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13658,7 +13659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13674,7 +13675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 73995407442718940880
+        Id: 87000379445876345707
         Name: "testMesh"
         Transform {
           Location {
@@ -13693,7 +13694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13708,7 +13709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13724,7 +13725,7 @@ Assets {
         }
       }
       Objects {
-        Id: 72478915444593478308
+        Id: 10772387532425334017
         Name: "testMesh"
         Transform {
           Location {
@@ -13743,7 +13744,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13758,7 +13759,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13774,7 +13775,7 @@ Assets {
         }
       }
       Objects {
-        Id: 10889169242856016661
+        Id: 16413624002201161820
         Name: "testMesh"
         Transform {
           Location {
@@ -13793,7 +13794,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13808,7 +13809,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13824,7 +13825,7 @@ Assets {
         }
       }
       Objects {
-        Id: 78299897842218465587
+        Id: 10828896289433597624
         Name: "testMesh"
         Transform {
           Location {
@@ -13843,7 +13844,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13858,7 +13859,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13874,7 +13875,7 @@ Assets {
         }
       }
       Objects {
-        Id: 30914665808731572421
+        Id: 11683502572029199795
         Name: "testMesh"
         Transform {
           Location {
@@ -13893,7 +13894,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13908,7 +13909,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13924,7 +13925,7 @@ Assets {
         }
       }
       Objects {
-        Id: 13488783885699504569
+        Id: 42625238516576976088
         Name: "testMesh"
         Transform {
           Location {
@@ -13943,7 +13944,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -13958,7 +13959,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -13974,7 +13975,7 @@ Assets {
         }
       }
       Objects {
-        Id: 64856604007152866705
+        Id: 51529505242592120314
         Name: "testMesh"
         Transform {
           Location {
@@ -13993,7 +13994,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14008,7 +14009,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14024,7 +14025,7 @@ Assets {
         }
       }
       Objects {
-        Id: 53726897231218208538
+        Id: 69153955175149588667
         Name: "testMesh"
         Transform {
           Location {
@@ -14043,7 +14044,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14058,7 +14059,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14074,7 +14075,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20708825134942734783
+        Id: 20297536604456668536
         Name: "testMesh"
         Transform {
           Location {
@@ -14093,7 +14094,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14108,7 +14109,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14124,7 +14125,7 @@ Assets {
         }
       }
       Objects {
-        Id: 20272256877402290351
+        Id: 14461339162273025801
         Name: "testMesh"
         Transform {
           Location {
@@ -14143,7 +14144,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14158,7 +14159,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14174,7 +14175,7 @@ Assets {
         }
       }
       Objects {
-        Id: 88424252138698478990
+        Id: 26187909454503013261
         Name: "testMesh"
         Transform {
           Location {
@@ -14193,7 +14194,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14208,7 +14209,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14224,7 +14225,7 @@ Assets {
         }
       }
       Objects {
-        Id: 81506825413498703081
+        Id: 58955105198812626941
         Name: "testMesh"
         Transform {
           Location {
@@ -14243,7 +14244,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14258,7 +14259,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14274,7 +14275,7 @@ Assets {
         }
       }
       Objects {
-        Id: 37565512519381377644
+        Id: 65032957795572018709
         Name: "testMesh"
         Transform {
           Location {
@@ -14293,7 +14294,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14308,7 +14309,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14324,7 +14325,7 @@ Assets {
         }
       }
       Objects {
-        Id: 67143851768696470101
+        Id: 76495360576209604191
         Name: "testMesh"
         Transform {
           Location {
@@ -14343,7 +14344,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14358,7 +14359,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14374,7 +14375,7 @@ Assets {
         }
       }
       Objects {
-        Id: 68007691046892376444
+        Id: 27047524203737515272
         Name: "testMesh"
         Transform {
           Location {
@@ -14393,7 +14394,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14408,7 +14409,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14424,7 +14425,7 @@ Assets {
         }
       }
       Objects {
-        Id: 62196883315257477589
+        Id: 99998295222061084210
         Name: "testMesh"
         Transform {
           Location {
@@ -14443,7 +14444,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14458,7 +14459,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14474,7 +14475,7 @@ Assets {
         }
       }
       Objects {
-        Id: 87347595840429124194
+        Id: 70361237831330294732
         Name: "testMesh"
         Transform {
           Location {
@@ -14493,7 +14494,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14508,7 +14509,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14524,7 +14525,7 @@ Assets {
         }
       }
       Objects {
-        Id: 91842773510388375357
+        Id: 48621010924124630857
         Name: "testMesh"
         Transform {
           Location {
@@ -14543,7 +14544,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14558,7 +14559,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14574,7 +14575,7 @@ Assets {
         }
       }
       Objects {
-        Id: 27082808688779372690
+        Id: 38840796020860301618
         Name: "testMesh"
         Transform {
           Location {
@@ -14593,7 +14594,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14608,7 +14609,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14624,7 +14625,7 @@ Assets {
         }
       }
       Objects {
-        Id: 61754586697847483787
+        Id: 35132613980636158076
         Name: "testMesh"
         Transform {
           Location {
@@ -14643,7 +14644,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14658,7 +14659,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14674,7 +14675,7 @@ Assets {
         }
       }
       Objects {
-        Id: 51502968887001957393
+        Id: 23941063902747663695
         Name: "testMesh"
         Transform {
           Location {
@@ -14693,7 +14694,7 @@ Assets {
             Z: 0.0
           }
         }
-        ParentId: 67456020394518465322    
+        ParentId: 52315796765181829829    
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -14708,7 +14709,7 @@ Assets {
         }
         CoreMesh {
           MeshAsset {
-            Id: 90458398401802941088
+            Id: 20268313049526885363
           }
           Teams {
             IsTeamCollisionEnabled: true
@@ -14725,7 +14726,7 @@ Assets {
       }
     }
     Assets {
-      Id: 90458398401802941088
+      Id: 20268313049526885363
       Name: "sm_cube_002"
       PlatformAssetType: 1
       PrimaryAsset {

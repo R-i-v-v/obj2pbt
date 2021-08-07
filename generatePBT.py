@@ -1,18 +1,26 @@
 import random
 
+anti_conflict = []
+
 
 def generate_id():
-    return f'{random.randrange(10**19, 10**20)}'
+    rando = random.randrange(10**19, 10**20)
+    if not rando in anti_conflict:
+        anti_conflict.append(rando)
+        return f'{rando}'
+    else:
+        generate_id()
 
 
 class Object:
-    def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id, group_id):
         self.name = name
         self.position = position
         self.rotation = rotation
         self.scale = scale
         self.parent_id = parent_id
         self.mesh_id = mesh_id
+        self.group_id = group_id
         self.id = generate_id()
 
 
@@ -24,16 +32,16 @@ class PBT:
         self.objects = []
         self.meshes_by_id = []
     
-    def get_mesh_id_for_name(self, mesh_name):
+    def get_mesh_id_for_name(self, mesh_name, group):
         for mesh in self.meshes_by_id:
             if mesh['name'] == mesh_name:
                 return mesh['id']
-        new_mesh = {"id": generate_id(), "name": mesh_name}
+        new_mesh = {"id": generate_id(), "name": mesh_name, "group": group}
         self.meshes_by_id.append(new_mesh)
-        return new_mesh
+        return new_mesh['id']
     
     def add_mesh(self, name, mesh_name, position, rotation, scale, parent_id, group_id):
-        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.get_mesh_id_for_name(mesh_name))
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.get_mesh_id_for_name(mesh_name, group_id), group_id)
 
         if mesh_to_add.parent_id is None:
             mesh_to_add.parent_id = self.root_id
@@ -150,6 +158,7 @@ class PBT:
             Z: 1
           }}
         }}
+        ParentId: {generate_id()}
         {self.children_to_string()}Collidable_v2 {{
           Value: "mc:ecollisionsetting:inheritfromparent"
         }}
