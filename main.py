@@ -75,14 +75,19 @@ with scandir('input') as dirs:
         input_lines = input_file.readlines()
 
         # extract vertices, face-maps, and groups from input .obj file
-        object_number = 1
+        object_number, g_count = 1, 0
+        merged_models = []
         for line in input_lines:
             if line.startswith('v '):
                 vertex_file.write(line[2:])
             elif line.startswith('g '):
                 object_number += 1
+                g_count += 1
+                merged_models.append(pbt_output.add_merged_model())
             elif line.startswith('f '):
                 map_file.write(f'{line[1:].strip()} {object_number-1}\n')
+        if g_count == 0:
+            merged_models.append(pbt_output.add_merged_model())
         vertex_file.close(), map_file.close()
 
         # get vertices by line
@@ -95,10 +100,19 @@ with scandir('input') as dirs:
             for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in maps_gs[:3]], [a, b, c]):
                 for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])]:
                     point.append(value)
-            group = int(maps_gs[3])
-            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(a, b, c)
+            group = 0 if int(maps_gs[3]) == 0 else int(maps_gs[3]) - 1
+            core_a = [a[2], a[0], a[1]]
+            core_b = [b[2], b[0], b[1]]
+            core_c = [c[2], c[0], c[1]]
+            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
             for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):
-                pbt_output.add_mesh('testMesh', 'sm_cube_002', position, rotation, np.multiply(scale, 10), None, group)
+                if position is not None and scale is not None and rotation is not None:
+                    if scale[2] == 0:
+                        scale[0], scale[1], scale[2] = 0.001, scale[0], scale[1]
+                        # scale[2] = 0.001
+                    merged_models[group].add_child('testMesh', "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                else:
+                    continue
 
         output_file.write(pbt_output.generate_pbt())
 

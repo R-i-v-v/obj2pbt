@@ -13,14 +13,13 @@ def generate_id():
 
 
 class Object:
-    def __init__(self, name, position, rotation, scale, parent_id, mesh_id, group_id):
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
         self.name = name
         self.position = position
         self.rotation = rotation
         self.scale = scale
         self.parent_id = parent_id
         self.mesh_id = mesh_id
-        self.group_id = group_id
         self.id = generate_id()
 
     def generate_pbt_part(self):
@@ -81,8 +80,8 @@ class MergedModel:
         self.children = []
         self.root = root
 
-    def add_child(self, name, mesh_name, position, rotation, scale, parent_id, group_id):
-        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name, group_id), group_id)
+    def add_child(self, name, mesh_name, position, rotation, scale, parent_id):
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name))
 
         if mesh_to_add.parent_id is None:
             mesh_to_add.parent_id = self.id
@@ -156,11 +155,11 @@ class PBT:
         self.objects = []
         self.meshes_by_id = []
     
-    def get_mesh_id_for_name(self, mesh_name, group):
+    def get_mesh_id_for_name(self, mesh_name):
         for mesh in self.meshes_by_id:
             if mesh['name'] == mesh_name:
                 return mesh['id']
-        new_mesh = {"id": generate_id(), "name": mesh_name, "group": group}
+        new_mesh = {"id": generate_id(), "name": mesh_name}
         self.meshes_by_id.append(new_mesh)
         return new_mesh['id']
 
@@ -168,25 +167,6 @@ class PBT:
         new_merged_model = MergedModel(self)
         self.objects.append(new_merged_model)
         return new_merged_model
-
-    
-    def add_mesh(self, name, mesh_name, position, rotation, scale, parent_id, group_id):
-        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.get_mesh_id_for_name(mesh_name, group_id), group_id)
-
-        if mesh_to_add.parent_id is None:
-            mesh_to_add.parent_id = self.root_id
-
-        if mesh_to_add.position is None:
-            mesh_to_add.position = [0, 0, 0]
-
-        if mesh_to_add.rotation is None:
-            mesh_to_add.rotation = [0, 0, 0]
-
-        if mesh_to_add.scale is None:
-            mesh_to_add.scale = [1, 1, 1]
-        
-        self.objects.append(mesh_to_add)
-        return mesh_to_add
     
     def children_to_string(self):
         children_string = ""
