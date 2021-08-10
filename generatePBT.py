@@ -33,9 +33,9 @@ class Object:
                         Z: {self.position[2]}
                     }}
                     Rotation {{
-                        Pitch: {self.rotation[0]}
-                        Yaw: {self.rotation[1]}
-                        Roll: {self.rotation[2]}
+                        Pitch: {self.rotation[1]}
+                        Yaw: {self.rotation[2]}
+                        Roll: {self.rotation[0]}
                     }}
                     Scale {{
                         X: {self.scale[0]}

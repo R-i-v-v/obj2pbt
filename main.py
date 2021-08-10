@@ -57,14 +57,13 @@ def find_right_angle(a, b, c):
     else:
         return None
 
-
 np.set_printoptions(16)
 
 # iterate through files in input directory
 with scandir('input') as dirs:
     for entry in dirs:
         start_time = time()
-        pbt_output = PBT(name='ebic_python_generated_template')
+        pbt_output = PBT(name=f'{entry.name[:-4]}')
 
         # reset vertex, map, and output if they exist
         # read input and output files into memory
@@ -108,11 +107,15 @@ with scandir('input') as dirs:
             for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):
                 if position is not None and scale is not None and rotation is not None:
                     if scale[2] == 0:
-                        scale[0], scale[1], scale[2] = 0.001, scale[0], scale[1]
+                        scale[0], scale[1], scale[2] = 0.0002, scale[0], scale[1]
                         # scale[2] = 0.001
+                    rotation[0] -= 90
+                    rotation[1] -= 90
+                    # rotation[2] += 5
                     merged_models[group].add_child('testMesh', "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
                 else:
                     continue
+
 
         output_file.write(pbt_output.generate_pbt())
 
