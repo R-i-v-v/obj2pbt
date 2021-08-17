@@ -9,7 +9,7 @@ from generatePBT import PBT
 
 # triangle splitting function courtesy of waffle#3956
 # converts three points in 3D space into euler angles that core can handle, in theory
-def triangle(a, b, c):
+def old_triangle(a, b, c):
     ba, ca = np.subtract(b, a), np.subtract(c, a)
     dot = np.dot(ba, ca)
     flip = False
@@ -43,6 +43,41 @@ def triangle(a, b, c):
         scale_1, scale_2 = np.divide([width_2, len_1, 0], 100), np.divide([len_1, width_1, 0], 100)
     rotation_1 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True)*[-1, -1, 1]
     rotation_2 = R.from_matrix(matrix_2).as_euler('xyz', degrees=True)*[-1, -1, 1]
+    return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
+
+
+def triangle(a, b, c):
+    ba, ca = np.subtract(b, a), np.subtract(c, a)
+    dot = np.dot(ba, ca)
+    flip = False
+    if dot > 0:
+        if dot >= np.dot(ba, ba):
+            b, c, ba, ca = c, b, ca, ba
+        else:
+            flip = True
+    else:
+        a, c = c, a
+        ba, ca = np.subtract(b, a), np.negative(ca)
+        dot = np.dot(ba, ca)
+    dot /= ba.dot(ba)
+    p = np.subtract(ca, np.multiply(ba, dot))
+    len_0, len_1 = np.linalg.norm(ba), np.linalg.norm(p)
+    y, z = np.divide(p, len_1), np.divide(ba, len_0)
+    x = np.cross(y, z)
+    width_1 = dot * len_0
+    width_2 = (1 - dot) * len_0
+
+    thickness = 50
+    r = np.multiply(x if flip else -x, thickness)
+
+    position_1 = np.add([(c[0] + a[0] + r[0]) * .5, (c[1] + a[1] + r[1]) * .5, (c[2] + a[2] + r[2]) * .5],
+                        np.multiply(z, dot * len_0 / 2))
+    position_2 = np.subtract([(c[0] + b[0] + r[0]) * .5, (c[1] + b[1] + r[1]) * .5, (c[2] + b[2] + r[2]) * .5],
+                             np.multiply(z, (1 - dot) * len_0 / 2))
+    scale_1, scale_2 = np.divide([thickness, len_1, dot * len_0], 100), np.divide([thickness, len_1, (1 - dot) * len_0], 100)
+    matrix_1, matrix_2 = np.transpose([x, -y, -z]), np.transpose([-x, -y, z])
+    rotation_1 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True) * [-1, -1, 1]
+    rotation_2 = R.from_matrix(matrix_2).as_euler('xyz', degrees=True) * [-1, -1, 1]
     return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
 
 
@@ -103,22 +138,27 @@ with scandir('input') as dirs:
             core_a = [a[2], a[0], a[1]]
             core_b = [b[2], b[0], b[1]]
             core_c = [c[2], c[0], c[1]]
-            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
+            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = old_triangle(core_a, core_b, core_c)
+            # position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(a, b, c)
             for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):
                 if position is not None and scale is not None and rotation is not None:
+                    b'''for wedges:'''
+                    # if scale[0] == 0.5:
+                    #     scale[0] = 0.0002
+
+                    b'''for planes:'''
                     if scale[2] == 0:
-                        scale[0], scale[1], scale[2] = 0.0002, scale[0], scale[1]
-                        # scale[2] = 0.001
-                    rotation[0] -= 90
-                    rotation[1] -= 90
-                    # rotation[2] += 5
-                    merged_models[group].add_child('testMesh', "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                        scale[2] = 0.0001
+
+                    # sm_plane_triangle_002 for right triangle plane
+                    # sm_wedge_002 for corner-aligned wedge
+                    merged_models[group].add_child('testMesh', "sm_plane_triangle_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                    # merged_models[group].add_child('testMesh', "sm_wedge_002", position, rotation, scale, None)
                 else:
                     continue
 
 
         output_file.write(pbt_output.generate_pbt())
-
         input_file.close(), output_file.close()
         print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
         print(f'Finished in {round(Decimal(time() - start_time) * 1000, 3)} ms.\n')
