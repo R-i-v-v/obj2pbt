@@ -7,7 +7,8 @@ import numpy as np
 from scipy.spatial.transform import Rotation as R
 from generatePBT import PBT
 
-# triangle splitting function courtesy of waffle#3956
+
+# triangle splitting and rotating function courtesy of waffle#3956
 # converts three points in 3D space into euler angles that core can handle, in theory
 def triangle(a, b, c):
     ba, ca = np.subtract(b, a), np.subtract(c, a)
@@ -52,6 +53,7 @@ def find_right_angle(a, b, c):
         return c
     else:
         return None
+
 
 np.set_printoptions(16)
 
@@ -100,13 +102,11 @@ with scandir('input') as dirs:
             core_b = [b[2], b[0], b[1]]
             core_c = [c[2], c[0], c[1]]
             position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
-            # position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(a, b, c)
-            for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):
+            for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):  # the following if statement only useful when we get right triangle checker implemented
                 if position is not None and scale is not None and rotation is not None:
                     merged_models[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
                 else:
                     continue
-
 
         output_file.write(pbt_output.generate_pbt())
         input_file.close(), output_file.close()
