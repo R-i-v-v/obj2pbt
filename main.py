@@ -30,7 +30,7 @@ def triangle(a, b, c):
     width_1 = dot * len_0
     width_2 = (1 - dot) * len_0
 
-    thickness = 1
+    thickness = 0.02
     r = np.multiply(x if flip else -x, thickness)
 
     position_1 = np.add([(c[0] + a[0] + r[0]) * .5, (c[1] + a[1] + r[1]) * .5, (c[2] + a[2] + r[2]) * .5], np.multiply(z, dot * len_0 / 2))
