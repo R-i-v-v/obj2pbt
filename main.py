@@ -1,12 +1,255 @@
 from __future__ import division
-from time import time
-from decimal import Decimal
 from re import findall
-from os import scandir
+from os import remove
+from os.path import splitext
+from pathlib import Path
+import tkinter as tk
+from tkinter import filedialog, Button
+from random import randrange
 import numpy as np
 from scipy.spatial.transform import Rotation as R
-from generatePBT import PBT
 
+
+class Object:
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
+        self.name = name
+        self.position = position
+        self.rotation = rotation
+        self.scale = scale
+        self.parent_id = parent_id
+        self.mesh_id = mesh_id
+        self.id = generate_id()
+
+    def generate_pbt_part(self):
+        return f"""Objects {{
+                    Id: {self.id}
+                    Name: "{self.name}"
+                    Transform {{
+                    Location {{
+                        X: {self.position[0]}
+                        Y: {self.position[1]}
+                        Z: {self.position[2]}
+                    }}
+                    Rotation {{
+                        Pitch: {self.rotation[1]}
+                        Yaw: {self.rotation[2]}
+                        Roll: {self.rotation[0]}
+                    }}
+                    Scale {{
+                        X: {self.scale[0]}
+                        Y: {self.scale[1]}
+                        Z: {self.scale[2]}
+                    }}
+                    }}
+                    ParentId: {self.parent_id}    
+                    Collidable_v2 {{
+                    Value: "mc:ecollisionsetting:inheritfromparent"
+                    }}
+                    Visible_v2 {{
+                    Value: "mc:evisibilitysetting:inheritfromparent"
+                    }}
+                    CameraCollidable {{
+                    Value: "mc:ecollisionsetting:inheritfromparent"
+                    }}
+                    EditorIndicatorVisibility {{
+                    Value: "mc:eindicatorvisibility:visiblewhenselected"
+                    }}
+                    CoreMesh {{
+                    MeshAsset {{
+                        Id: {self.mesh_id}
+                    }}
+                    Teams {{
+                        IsTeamCollisionEnabled: true
+                        IsEnemyCollisionEnabled: true
+                    }}
+                    StaticMesh {{
+                        Physics {{
+                        Mass: 100
+                        LinearDamping: 0.01
+                        }}
+                        BoundsScale: 1
+                    }}
+                    }}
+                }}\n      """
+
+
+class MergedModel:
+    def __init__(self, root):
+        self.id = generate_id()
+        self.children = []
+        self.root = root
+
+    def add_child(self, name, mesh_name, position, rotation, scale, parent_id):
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name))
+
+        if mesh_to_add.parent_id is None:
+            mesh_to_add.parent_id = self.id
+
+        if mesh_to_add.position is None:
+            mesh_to_add.position = [0, 0, 0]
+
+        if mesh_to_add.rotation is None:
+            mesh_to_add.rotation = [0, 0, 0]
+
+        if mesh_to_add.scale is None:
+            mesh_to_add.scale = [1, 1, 1]
+
+        self.children.append(mesh_to_add)
+        return mesh_to_add
+
+    def children_to_string(self):
+        children_string = ""
+        for object in self.children:
+            children_string += f"ChildIds: {object.id}\n        "
+        return children_string
+
+    def generate_pbt_part(self):
+        this_string = f"""
+                Objects {{
+                    Id: {self.id}
+                    Name: "MergedModel"
+                    Transform {{
+                        Location {{
+                        }}
+                        Rotation {{
+                        }}
+                        Scale {{
+                            X: {1}
+                            Y: {1}
+                            Z: {1}
+                        }}
+                    }}
+                    ParentId: {self.root.root_id}    
+                    {self.children_to_string()}
+                    Collidable_v2 {{
+                    Value: "mc:ecollisionsetting:inheritfromparent"
+                    }}
+                    Visible_v2 {{
+                    Value: "mc:evisibilitysetting:inheritfromparent"
+                    }}
+                    CameraCollidable {{
+                    Value: "mc:ecollisionsetting:inheritfromparent"
+                    }}
+                    EditorIndicatorVisibility {{
+                    Value: "mc:eindicatorvisibility:visiblewhenselected"
+                    }}
+                    Folder {{
+                        Model {{
+                        }}
+                    }}
+                }}\n      """
+        children_strings = ""
+        for object in self.children:
+            children_strings += object.generate_pbt_part()
+
+        return this_string + children_strings
+
+
+class PBT:
+    def __init__(self, name):
+        self.template_name = name
+        self.template_id = generate_id()
+        self.root_id = generate_id()
+        self.objects = []
+        self.meshes_by_id = []
+
+    def get_mesh_id_for_name(self, mesh_name):
+        for mesh in self.meshes_by_id:
+            if mesh['name'] == mesh_name:
+                return mesh['id']
+        new_mesh = {"id": generate_id(), "name": mesh_name}
+        self.meshes_by_id.append(new_mesh)
+        return new_mesh['id']
+
+    def add_merged_model(self):
+        new_merged_model = MergedModel(self)
+        self.objects.append(new_merged_model)
+        return new_merged_model
+
+    def children_to_string(self):
+        children_string = ""
+        for object in self.objects:
+            children_string += f"ChildIds: {object.id}\n        "
+        return children_string
+
+    def all_objects_pbt(self):
+        all_objects_string = ""
+
+        for object in self.objects:
+            object_string = object.generate_pbt_part()
+            all_objects_string += object_string
+        return all_objects_string
+
+    def object_assets_pbt(self):
+        assets_string = ""
+        for mesh in self.meshes_by_id:
+            mesh_asset_string = f"""Assets {{
+      Id: {mesh['id']}
+      Name: "{mesh['name']}"
+      PlatformAssetType: 1
+      PrimaryAsset {{
+        AssetType: "StaticMeshAssetRef"
+        AssetId: "{mesh['name']}"
+      }}
+    }}"""
+            assets_string += mesh_asset_string
+        return assets_string
+
+    def generate_pbt(self):
+        pbt = f"""Assets {{
+  Id: {self.template_id}
+  Name: "{self.template_name}"
+  PlatformAssetType: 5
+  TemplateAsset {{
+    ObjectBlock {{
+      RootId: {self.root_id}
+      Objects {{
+        Id: {self.root_id}
+        Name: "Folder"
+        Transform {{
+          Scale {{
+            X: 1
+            Y: 1
+            Z: 1
+          }}
+        }}
+        ParentId: {generate_id()}
+        {self.children_to_string()}Collidable_v2 {{
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }}
+        Visible_v2 {{
+          Value: "mc:evisibilitysetting:inheritfromparent"
+        }}
+        CameraCollidable {{
+          Value: "mc:ecollisionsetting:inheritfromparent"
+        }}
+        EditorIndicatorVisibility {{
+          Value: "mc:eindicatorvisibility:visiblewhenselected"
+        }}
+        Folder {{
+          IsGroup: true
+        }}
+      }}
+      {self.all_objects_pbt()[:-2]}}}
+    {self.object_assets_pbt()}
+    PrimaryAssetId {{
+      AssetType: "None"
+      AssetId: "None"
+    }}
+  }}
+  SerializationVersion: 92
+}}"""
+        return pbt
+
+
+def generate_id():
+    global anti_conflict
+    rando = randrange(10 ** 18, 10 ** 19)
+    if not rando in anti_conflict:
+        anti_conflict.append(rando)
+        return f'{rando}'
+    else:
+        generate_id()
 
 # triangle splitting and rotating function courtesy of waffle#3956
 # converts three points in 3D space into euler angles that core can handle, in theory
@@ -43,72 +286,74 @@ def triangle(a, b, c):
     return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
 
 
-def find_right_angle(a, b, c):
-    v_ab, v_ac, v_bc = np.subtract(b, a), np.subtract(c, a), np.subtract(c, b)
-    if -0.001 < np.dot(v_ab, v_ac) < 0.001:
-        return a
-    elif -0.001 < np.dot(v_ab, v_bc) < 0.001:
-        return b
-    elif -0.001 < np.dot(v_ac, v_bc) < 0.001:
-        return c
-    else:
-        return None
+def fuck_you(path):
+    global root
+    entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
+    parent = str(Path(path).parent)
+    pbt_output = PBT(name=f'{entry_name}')
 
+    # reset vertex, map, and output if they exist
+    # read input and output files into memory
+    open(f'{parent}/vertex.txt', 'w').close(), open(f'{parent}/map.txt', 'w').close()
+    open(f'{parent}/{entry_name}.pbt', 'w').close()
+    vertex_file, map_file = open(f'{parent}/vertex.txt', 'a'), open(f'{parent}/map.txt', 'a')
+    input_file, output_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a')
+    input_lines = input_file.readlines()
+
+    # extract vertices, face-maps, and groups from input .obj file
+    object_number, g_count = 1, 0
+    merged_models = []
+    for line in input_lines:
+        if line.startswith('v '):
+            vertex_file.write(line[2:])
+        elif line.startswith('g '):
+            object_number += 1
+            g_count += 1
+            merged_models.append(pbt_output.add_merged_model())
+        elif line.startswith('f '):
+            map_file.write(f'{line[1:].strip()} {object_number - 1}\n')
+    if g_count == 0:
+        merged_models.append(pbt_output.add_merged_model())
+    vertex_file.close(), map_file.close()
+
+    # get vertices by line
+    vertices_by_line = [n.strip() for n in open(f'{parent}/vertex.txt', 'r').readlines()]
+    face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
+
+    for triangle_map in face_maps_by_line:  # iterate through each face map
+        a, b, c = [], [], []  # reset vectors to empty lists
+        maps_gs = [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]
+        for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in maps_gs[:3]], [a, b, c]):
+            for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line - 1])]:
+                point.append(value)
+        group = 0 if int(maps_gs[3]) == 0 else int(maps_gs[3]) - 1
+        core_a = [a[2], a[0], a[1]]
+        core_b = [b[2], b[0], b[1]]
+        core_c = [c[2], c[0], c[1]]
+        position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
+        for position, scale, rotation in zip([position_one, position_two],
+                                             [scale_one, scale_two],
+                                             [rotation_one, rotation_two]):
+            # the following if statement only useful when we get right triangle checker implemented
+            if position is not None and scale is not None and rotation is not None:
+                merged_models[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+            else:
+                continue
+
+    output_file.write(pbt_output.generate_pbt())
+    remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt')
+    input_file.close(), output_file.close()
+    root.destroy()
+
+
+def open_fuck_you():
+    fuck_you_file_path = filedialog.askopenfilename()
+    fuck_you(fuck_you_file_path)
 
 np.set_printoptions(16)
-
-# iterate through files in input directory
-with scandir('input') as dirs:
-    for entry in dirs:
-        start_time = time()
-        pbt_output = PBT(name=f'{entry.name[:-4]}')
-
-        # reset vertex, map, and output if they exist
-        # read input and output files into memory
-        open('work/vertex.txt', 'w').close(), open('work/map.txt', 'w').close()
-        open(f'output/{entry.name[:-4]}.pbt', 'w').close()
-        vertex_file, map_file = open('work/vertex.txt', 'a'), open('work/map.txt', 'a')
-        input_file, output_file = open(f'input/{entry.name}', 'r'), open(f'output/{entry.name[:-4]}.pbt', 'a')
-        input_lines = input_file.readlines()
-
-        # extract vertices, face-maps, and groups from input .obj file
-        object_number, g_count = 1, 0
-        merged_models = []
-        for line in input_lines:
-            if line.startswith('v '):
-                vertex_file.write(line[2:])
-            elif line.startswith('g '):
-                object_number += 1
-                g_count += 1
-                merged_models.append(pbt_output.add_merged_model())
-            elif line.startswith('f '):
-                map_file.write(f'{line[1:].strip()} {object_number-1}\n')
-        if g_count == 0:
-            merged_models.append(pbt_output.add_merged_model())
-        vertex_file.close(), map_file.close()
-
-        # get vertices by line
-        vertices_by_line = [n.strip() for n in open('work/vertex.txt', 'r').readlines()]
-        face_maps_by_line = [n.strip() for n in open('work/map.txt', 'r').readlines()]
-
-        for triangle_map in face_maps_by_line:  # iterate through each face map
-            a, b, c = [], [], []  # reset vectors to empty lists
-            maps_gs = [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]
-            for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in maps_gs[:3]], [a, b, c]):
-                for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line-1])]:
-                    point.append(value)
-            group = 0 if int(maps_gs[3]) == 0 else int(maps_gs[3]) - 1
-            core_a = [a[2], a[0], a[1]]
-            core_b = [b[2], b[0], b[1]]
-            core_c = [c[2], c[0], c[1]]
-            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
-            for position, scale, rotation in zip([position_one, position_two], [scale_one, scale_two], [rotation_one, rotation_two]):  # the following if statement only useful when we get right triangle checker implemented
-                if position is not None and scale is not None and rotation is not None:
-                    merged_models[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
-                else:
-                    continue
-
-        output_file.write(pbt_output.generate_pbt())
-        input_file.close(), output_file.close()
-        print(f'<{entry.name}> {len(vertices_by_line)} vertices and {len(face_maps_by_line)} faces')
-        print(f'Finished in {round(Decimal(time() - start_time) * 1000, 3)} ms.\n')
+anti_conflict = []
+root = tk.Tk()
+root.title('.obj to .pbt')
+root.geometry('60x39')
+btn = Button(root, text='select .obj', width=10, height=1, font=('Helvetica bold', 14), fg='black', command=open_fuck_you).place(x=0, y=0)
+root.mainloop()
