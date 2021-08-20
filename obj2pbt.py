@@ -4,12 +4,22 @@ from os import remove
 from os.path import splitext
 from pathlib import Path
 import tkinter as tk
-from tkinter import filedialog, Button
+from tkinter import filedialog, Button, ttk
 from random import randrange
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
 
+np.set_printoptions(16)
+anti_conflict, root = [], tk.Tk()
+root.title('.obj to .pbt')
+root.geometry('60x63')
+
+progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
+progress_bar.place(x=0, y=40)
+
+
+# pbt generator courtesy of Aphrim#1337
 class Object:
     def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
         self.name = name
@@ -73,7 +83,7 @@ class Object:
                 }}\n      """
 
 
-class MergedModel:
+class Folder:
     def __init__(self, root):
         self.id = generate_id()
         self.children = []
@@ -107,7 +117,7 @@ class MergedModel:
         this_string = f"""
                 Objects {{
                     Id: {self.id}
-                    Name: "MergedModel"
+                    Name: "Folder"
                     Transform {{
                         Location {{
                         }}
@@ -134,8 +144,7 @@ class MergedModel:
                     Value: "mc:eindicatorvisibility:visiblewhenselected"
                     }}
                     Folder {{
-                        Model {{
-                        }}
+                        IsFilePartition: true
                     }}
                 }}\n      """
         children_strings = ""
@@ -161,10 +170,10 @@ class PBT:
         self.meshes_by_id.append(new_mesh)
         return new_mesh['id']
 
-    def add_merged_model(self):
-        new_merged_model = MergedModel(self)
-        self.objects.append(new_merged_model)
-        return new_merged_model
+    def add_folder(self):
+        new_folder = Folder(self)
+        self.objects.append(new_folder)
+        return new_folder
 
     def children_to_string(self):
         children_string = ""
@@ -242,6 +251,15 @@ class PBT:
         return pbt
 
 
+def open_file():
+    file_path = filedialog.askopenfilename()
+    run(file_path)
+
+
+btn = Button(root, text='select .obj', width=10, height=1, font=('Helvetica bold', 14), fg='black', command=open_file)
+btn.place(x=0, y=0)
+
+
 def generate_id():
     global anti_conflict
     rando = randrange(10 ** 18, 10 ** 19)
@@ -250,6 +268,7 @@ def generate_id():
         return f'{rando}'
     else:
         generate_id()
+
 
 # triangle splitting and rotating function courtesy of waffle#3956
 # converts three points in 3D space into euler angles that core can handle, in theory
@@ -286,8 +305,8 @@ def triangle(a, b, c):
     return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
 
 
-def fuck_you(path):
-    global root
+def run(path):
+    global root, progress_bar
     entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
     parent = str(Path(path).parent)
     pbt_output = PBT(name=f'{entry_name}')
@@ -302,23 +321,24 @@ def fuck_you(path):
 
     # extract vertices, face-maps, and groups from input .obj file
     object_number, g_count = 1, 0
-    merged_models = []
+    folders = []
     for line in input_lines:
         if line.startswith('v '):
             vertex_file.write(line[2:])
         elif line.startswith('g '):
             object_number += 1
             g_count += 1
-            merged_models.append(pbt_output.add_merged_model())
+            folders.append(pbt_output.add_folder())
         elif line.startswith('f '):
             map_file.write(f'{line[1:].strip()} {object_number - 1}\n')
     if g_count == 0:
-        merged_models.append(pbt_output.add_merged_model())
+        folders.append(pbt_output.add_folder())
     vertex_file.close(), map_file.close()
 
-    # get vertices by line
+    # get vertices and face-maps by line
     vertices_by_line = [n.strip() for n in open(f'{parent}/vertex.txt', 'r').readlines()]
     face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
+    progress_bar['maximum'] = len(face_maps_by_line)
 
     for triangle_map in face_maps_by_line:  # iterate through each face map
         a, b, c = [], [], []  # reset vectors to empty lists
@@ -331,12 +351,14 @@ def fuck_you(path):
         core_b = [b[2], b[0], b[1]]
         core_c = [c[2], c[0], c[1]]
         position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
+        progress_bar['value'] += 1
+        root.update_idletasks()
         for position, scale, rotation in zip([position_one, position_two],
                                              [scale_one, scale_two],
                                              [rotation_one, rotation_two]):
             # the following if statement only useful when we get right triangle checker implemented
             if position is not None and scale is not None and rotation is not None:
-                merged_models[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                folders[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
             else:
                 continue
 
@@ -346,14 +368,4 @@ def fuck_you(path):
     root.destroy()
 
 
-def open_fuck_you():
-    fuck_you_file_path = filedialog.askopenfilename()
-    fuck_you(fuck_you_file_path)
-
-np.set_printoptions(16)
-anti_conflict = []
-root = tk.Tk()
-root.title('.obj to .pbt')
-root.geometry('60x39')
-btn = Button(root, text='select .obj', width=10, height=1, font=('Helvetica bold', 14), fg='black', command=open_fuck_you).place(x=0, y=0)
 root.mainloop()
