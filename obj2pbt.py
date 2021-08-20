@@ -10,6 +10,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation as R
 
 
+# program headed by Rivvnik#1111
 np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
 root.title('.obj to .pbt')
