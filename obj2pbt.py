@@ -362,6 +362,11 @@ def run(path):
             else:
                 continue
 
+    progress_bar.place_forget()
+    root.update()
+    lbl = ttk.Label(root, text='wrapping up...', font=('Helvetica bold', 8))
+    lbl.place(x=0, y=40)
+    root.update()
     output_file.write(pbt_output.generate_pbt())
     remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt')
     input_file.close(), output_file.close()
