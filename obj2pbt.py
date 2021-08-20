@@ -13,7 +13,7 @@ from scipy.spatial.transform import Rotation as R
 np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
 root.title('.obj to .pbt')
-root.geometry('60x39')
+root.geometry('60x83')
 
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
 
@@ -251,11 +251,12 @@ class PBT:
 
 
 def open_file():
+    root.withdraw()
     file_path = filedialog.askopenfilename()
     run(file_path)
 
 
-btn = Button(root, text='select .obj', width=10, height=1, font=('Helvetica bold', 14), fg='black', command=open_file)
+btn = Button(root, text='select\ntriangulated\n.obj file', width=10, height=3, font=('Helvetica bold', 14), fg='black', command=open_file)
 btn.place(x=0, y=0)
 
 
@@ -339,6 +340,7 @@ def run(path):
     face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
 
     btn.place_forget()
+    root.deiconify()
     progress_bar.place(x=0, y=0)
     root.geometry('60x21')
     root.update()
