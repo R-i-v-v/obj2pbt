@@ -13,10 +13,9 @@ from scipy.spatial.transform import Rotation as R
 np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
 root.title('.obj to .pbt')
-root.geometry('60x63')
+root.geometry('60x39')
 
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
-progress_bar.place(x=0, y=40)
 
 
 # pbt generator courtesy of Aphrim#1337
@@ -306,7 +305,7 @@ def triangle(a, b, c):
 
 
 def run(path):
-    global root, progress_bar
+    global root, progress_bar, btn
     entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
     parent = str(Path(path).parent)
     pbt_output = PBT(name=f'{entry_name}')
@@ -338,6 +337,11 @@ def run(path):
     # get vertices and face-maps by line
     vertices_by_line = [n.strip() for n in open(f'{parent}/vertex.txt', 'r').readlines()]
     face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
+
+    btn.place_forget()
+    progress_bar.place(x=0, y=0)
+    root.geometry('60x21')
+    root.update()
     progress_bar['maximum'] = len(face_maps_by_line)
 
     for triangle_map in face_maps_by_line:  # iterate through each face map
@@ -365,7 +369,7 @@ def run(path):
     progress_bar.place_forget()
     root.update()
     lbl = ttk.Label(root, text='wrapping up...', font=('Helvetica bold', 8))
-    lbl.place(x=0, y=40)
+    lbl.place(x=0, y=0)
     root.update()
     output_file.write(pbt_output.generate_pbt())
     remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt')
