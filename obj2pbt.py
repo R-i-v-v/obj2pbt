@@ -297,9 +297,9 @@ def triangle(a, b, c):
     thickness = 0.02
     r = np.multiply(x if flip else -x, thickness)
 
-    position_1 = np.add([(c[0] + a[0] + r[0]) * .5, (c[1] + a[1] + r[1]) * .5, (c[2] + a[2] + r[2]) * .5], np.multiply(z, dot * len_0 / 2))
-    position_2 = np.subtract([(c[0] + b[0] + r[0]) * .5, (c[1] + b[1] + r[1]) * .5, (c[2] + b[2] + r[2]) * .5], np.multiply(z, (1 - dot) * len_0 / 2))
-    scale_1, scale_2 = np.divide([thickness, len_1, dot * len_0], 100), np.divide([thickness, len_1, (1 - dot) * len_0], 100)
+    position_1 = np.add([(c[0] + a[0] + r[0]) * .5, (c[1] + a[1] + r[1]) * .5, (c[2] + a[2] + r[2]) * .5], np.multiply(z, width_1 / 2))
+    position_2 = np.subtract([(c[0] + b[0] + r[0]) * .5, (c[1] + b[1] + r[1]) * .5, (c[2] + b[2] + r[2]) * .5], np.multiply(z, width_2 / 2))
+    scale_1, scale_2 = np.divide([thickness, len_1, width_1], 100), np.divide([thickness, len_1, width_2], 100)
     matrix_1, matrix_2 = np.transpose([x, -y, -z]), np.transpose([-x, -y, z])
     rotation_1 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True) * [-1, -1, 1]
     rotation_2 = R.from_matrix(matrix_2).as_euler('xyz', degrees=True) * [-1, -1, 1]
@@ -354,9 +354,9 @@ def run(path):
             for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line - 1])]:
                 point.append(value)
         group = 0 if int(maps_gs[3]) == 0 else int(maps_gs[3]) - 1
-        core_a = [a[2], a[0], a[1]]
-        core_b = [b[2], b[0], b[1]]
-        core_c = [c[2], c[0], c[1]]
+        core_a = [a[2], -a[0], a[1]]
+        core_b = [b[2], -b[0], b[1]]
+        core_c = [c[2], -c[0], c[1]]
         position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
         progress_bar['value'] += 1
         root.update_idletasks()
