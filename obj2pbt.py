@@ -63,6 +63,12 @@ class Object:
                                 B: {min(1, self.color[2])}
                             }}
                         }}
+                        Overrides {{
+                            Name: "ma:Shared_BaseMaterial:id"
+                            AssetReference {{
+                                Id: 6942069420
+                            }}
+                        }}
                     }}
                     Collidable_v2 {{
                     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -254,6 +260,15 @@ class PBT:
       }}
       {self.all_objects_pbt()[:-2]}}}
     {self.object_assets_pbt()}
+    Assets {{
+      Id: 6942069420
+      Name: "Basic Material"
+      PlatformAssetType: 2
+      PrimaryAsset {{
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_basic_pbr_material_001"
+      }}
+    }}
     PrimaryAssetId {{
       AssetType: "None"
       AssetId: "None"
@@ -412,12 +427,11 @@ def run(path):
         color = [0,0,0] #Final color
         texture_cords = []
         if group in textures_by_index:
-            if texture_name in textures_by_index:
-                texture_name = textures_by_index[group]
-                if 0 in textures[texture_name]:
-                    texture_image = textures[texture_name][0]
-                if 1 in textures[texture_name]:
-                    diffuse_color = textures[texture_name][1]
+            texture_name = textures_by_index[group]
+            if 0 in textures[texture_name]:
+                texture_image = textures[texture_name][0]
+            if 1 in textures[texture_name]:
+                diffuse_color = textures[texture_name][1]
 
 
         for vI, vertex in enumerate(triangle_map.split()[:-1]): # Loop through all the triangles in the face
@@ -435,6 +449,7 @@ def run(path):
                     texture_cords.append(cords)
 
         if len(texture_cords) > 0:
+
             center = {}
             x1,x2,x3 = texture_cords[0][0], texture_cords[1][0], texture_cords[2][0]
             y1,y2,y3 = texture_cords[0][1], texture_cords[2][1], texture_cords[2][1]
