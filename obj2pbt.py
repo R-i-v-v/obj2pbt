@@ -14,7 +14,7 @@ np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
 root.title('.obj to .pbt')
 root.geometry('60x83')
-
+root.iconbitmap('icon.ico')
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
 
 
