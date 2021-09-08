@@ -9,7 +9,6 @@ from random import randrange
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
-
 # program headed by Rivvnik#1111
 np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
@@ -271,38 +270,79 @@ def generate_id():
         generate_id()
 
 
-# triangle splitting and rotating function courtesy of waffle#3956
-# converts three points in 3D space into euler angles that core can handle, in theory
+# Function given by Waffle and revised/commented by Zanth. See docs for details
 def triangle(a, b, c):
-    ba, ca = np.subtract(b, a), np.subtract(c, a)
-    dot = np.dot(ba, ca)
-    flip = False
-    if dot > 0:
-        if dot >= np.dot(ba, ba):
-            b, c, ba, ca = c, b, ca, ba
-        else:
-            flip = True
+
+    ab, ac, bc = np.subtract(b, a), np.subtract(c, a), np.subtract(c, b)  # vectors between the points
+
+    # by comparing the lengths of the sides, we can determine the largest angle
+    # remember: we want angle c to be the largest
+    len_ab, len_ac, len_bc = np.linalg.norm(ab), np.linalg.norm(ac), np.linalg.norm(bc)
+
+    # if angle a is the largest, swap c and a
+    if len_bc > len_ab and len_bc > len_ac:
+        c, a = a, c
+        bc, ab = -ab, -bc
+        len_bc, len_ab = len_ab, len_bc
+        ac = -ac
+
+    # if angle b is the largest, swap c and b
+    elif len_ac > len_ab and len_ac > len_bc:
+        c, b = b, c
+        ac, ab = ab, ac
+        len_ac, len_ab = len_ab, len_ac
+        bc = -bc
+
+    # if angle c is the largest, or there is an equilateral triangle...
     else:
-        a, c = c, a
-        ba, ca = np.subtract(b, a), np.negative(ca)
-        dot = np.dot(ba, ca)
-    dot /= ba.dot(ba)
-    p = np.subtract(ca, np.multiply(ba, dot))
-    len_0, len_1 = np.linalg.norm(ba), np.linalg.norm(p)
-    y, z = np.divide(p, len_1), np.divide(ba, len_0)
-    x = np.cross(y, z)
-    width_1 = dot * len_0
-    width_2 = (1 - dot) * len_0
+        pass
 
-    thickness = 0.02
-    r = np.multiply(x if flip else -x, thickness)
+    # calculates angle c to test if it's a right triangle
+    ac_unit = np.divide(ac, np.linalg.norm(ac))
+    bc_unit = np.divide(bc, np.linalg.norm(bc))
+    dot_product = np.dot(ac_unit, bc_unit)
+    angle_c = np.arccos(dot_product)
 
-    position_1 = np.add([(c[0] + a[0] + r[0]) * .5, (c[1] + a[1] + r[1]) * .5, (c[2] + a[2] + r[2]) * .5], np.multiply(z, width_1 / 2))
-    position_2 = np.subtract([(c[0] + b[0] + r[0]) * .5, (c[1] + b[1] + r[1]) * .5, (c[2] + b[2] + r[2]) * .5], np.multiply(z, width_2 / 2))
-    scale_1, scale_2 = np.divide([thickness, len_1, width_1], 100), np.divide([thickness, len_1, width_2], 100)
+    # if angle c is a right angle if and only if the triangle is a right triangle
+    if angle_c == np.pi / 2:
+
+        # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
+        # which is always point c in our program
+        position = c
+
+        # scale calculation
+        scale = np.divide([0.02, len_ac, len_bc], 100)
+
+        # rotation calculation
+        z = -bc_unit                            # z is the unit vector of -bc, aka -bc hat. Length vector of triangle
+        y = -ac_unit                            # y is the unit vector of -ac, aka -ac hat. Width vector of triangle
+        x = np.cross(y, z)                      # x is the cross product of x and y
+        matrix = np.transpose([-x, -y, z])      # matrix is the rotation matrix of the triangle
+        rotation = R.from_matrix(matrix).as_euler('xyz', degrees=True) * [-1, -1, 1]
+
+        return position, None, scale, None, rotation, None
+
+    z = np.divide(ab, len_ab)               # z is the unit vector of ab, aka ab hat
+    l1 = np.multiply(np.dot(ac, z), z)      # l1 is the length vector of triangle_0
+    l2 = np.subtract(l1, ab)                # l2 is the length vector of triangle_1
+    p = np.subtract(ac, l1)                 # p is the width vector. This is the vector that splits the two triangles
+    width = np.linalg.norm(p)               # width is the magnitude of p. It is the length of the shared side
+
+    y = np.divide(p, width)                 # y is the unit vector of p, aka p hat
+    x = np.cross(y, z)                      # x is the cross product of y and z
+
+    # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
+    # which is the same for both triangles, since they share the point where their right angles occur
+    position_1 = position_2 = np.add(a, l1)
+
+    # scale calculation
+    scale_1, scale_2 = np.divide([0.02, width, np.linalg.norm(l1)], 100), np.divide([0.02, width, np.linalg.norm(l2)], 100)
+
+    # Rotation calculation
     matrix_1, matrix_2 = np.transpose([x, -y, -z]), np.transpose([-x, -y, z])
-    rotation_1 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True) * [-1, -1, 1]
-    rotation_2 = R.from_matrix(matrix_2).as_euler('xyz', degrees=True) * [-1, -1, 1]
+    rotation_1, rotation_2 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True) * [-1, -1, 1], \
+                             R.from_matrix(matrix_2).as_euler('xyz', degrees=True) * [-1, -1, 1]
+
     return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
 
 
@@ -357,15 +397,15 @@ def run(path):
         core_a = [a[2], -a[0], a[1]]
         core_b = [b[2], -b[0], b[1]]
         core_c = [c[2], -c[0], c[1]]
+
         position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c)
         progress_bar['value'] += 1
         root.update_idletasks()
         for position, scale, rotation in zip([position_one, position_two],
                                              [scale_one, scale_two],
                                              [rotation_one, rotation_two]):
-            # the following if statement only useful when we get right triangle checker implemented
             if position is not None and scale is not None and rotation is not None:
-                folders[group].add_child('testMesh', "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                folders[group].add_child('testMesh', "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
             else:
                 continue
 
