@@ -6,17 +6,19 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, Button, ttk
 from random import randrange
+import ctypes
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
 # program headed by Rivvnik#1111
 np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
-root.title('.obj to .pbt')
-root.geometry('60x83')
-root.iconbitmap('icon.ico')
+myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)  # set taskbar icon
+root.title('.obj to .pbt')  # set window title
+root.geometry('60x83')  # set window geometry
+root.iconbitmap('icon.ico')  # set window icon
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
-
 
 # pbt generator courtesy of Aphrim#1337
 class Object:
