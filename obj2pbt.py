@@ -5,7 +5,7 @@ from base64 import b64decode
 from os.path import splitext
 from pathlib import Path
 import tkinter as tk
-from tkinter import filedialog, Button, ttk
+from tkinter import filedialog, ttk
 from random import randrange
 import ctypes
 import numpy as np
