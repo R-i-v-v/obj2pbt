@@ -16,11 +16,11 @@ np.set_printoptions(16)
 anti_conflict, root = [], tk.Tk()
 myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)  # set taskbar icon
-root.title('.obj to .pbt')  # set window title
-root.geometry('60x103')  # set window geometry
+root.title('obj2pbt')  # set window title
+root.geometry('60x123')  # set window geometry
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
 
-# RIDICULOUS code block for making the icon work as --onefile
+# RIDICULOUS code block for making the icon work with --onefile
 # this massive string below is the program's icon as a Base64 string.
 icon_in_base_64 = """AAABAAEAAAAAAAEAIADHaAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAA
 AAFvck5UAc+id5oAAGiBSURBVHja7b0HeFzllT4+6r33NkXTR7KxDTaYakroGBKSbEiDZJOQTkJC
@@ -738,13 +738,15 @@ def open_file():
     file_path = filedialog.askopenfilename()
     run(file_path)
 
-
-btn = Button(root, text='select\ntriangulated\n.obj file', width=10, height=3, font=('Helvetica bold', 14), fg='black', command=open_file)
+btn_style = ttk.Style()
+btn_style.configure('TButton', font=('Helvetica bold', 14))
+btn = ttk.Button(root, text='select\ntriangulated\n.obj file', width=10, style='TButton', command=open_file)
 btn.place(x=0, y=0)
-optimize = tk.IntVar(value=1)
-check_box = ttk.Checkbutton(root, text="Optimize objects", variable=optimize, onvalue=1, offvalue=0)
-check_box.place(x=3, y=83)
-
+optimize, texturize = tk.IntVar(value=1), tk.IntVar(value=0)
+optimize_box = ttk.Checkbutton(root, text="Optimize objects", variable=optimize, onvalue=1, offvalue=0)
+optimize_box.place(x=3, y=80)
+texturize_box = ttk.Checkbutton(root, text="Add textures", variable=texturize, onvalue=1, offvalue=0)
+texturize_box.place(x=3, y=100)
 
 def generate_id():
     global anti_conflict
@@ -867,6 +869,8 @@ def run(path):
     face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
 
     btn.place_forget()
+    optimize_box.place_forget()
+    texturize_box.place_forget()
     root.deiconify()
     progress_bar.place(x=0, y=0)
     root.geometry('60x21')
