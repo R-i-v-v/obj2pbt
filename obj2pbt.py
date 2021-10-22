@@ -1,8 +1,8 @@
 from __future__ import division
-from re import findall
+from re import findall, sub
 from os import remove
 from base64 import b64decode
-from os.path import splitext
+from os.path import splitext, isabs
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog, ttk
@@ -10,6 +10,8 @@ from random import randrange
 import ctypes
 import numpy as np
 from scipy.spatial.transform import Rotation as R
+from PIL import Image
+from math import floor, sqrt
 
 # program headed by Rivvnik#1111
 np.set_printoptions(16)
@@ -503,7 +505,7 @@ remove(temp_icon_file)
 
 # pbt generator courtesy of Aphrim#1337
 class Object:
-    def __init__(self, name, position, rotation, scale, parent_id, mesh_id):
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id, color):
         self.name = name
         self.position = position
         self.rotation = rotation
@@ -511,6 +513,7 @@ class Object:
         self.parent_id = parent_id
         self.mesh_id = mesh_id
         self.id = generate_id()
+        self.color = color
 
     def generate_pbt_part(self):
         return f"""Objects {{
@@ -533,7 +536,23 @@ class Object:
                         Z: {self.scale[2]}
                     }}
                     }}
-                    ParentId: {self.parent_id}    
+                    ParentId: {self.parent_id}
+                    UnregisteredParameters {{
+                        Overrides {{
+                            Name: "ma:Shared_BaseMaterial:color"
+                            Color {{
+                                R: {min(1, self.color[0])}
+                                G: {min(1, self.color[1])}
+                                B: {min(1, self.color[2])}
+                            }}
+                        }}
+                        Overrides {{
+                            Name: "ma:Shared_BaseMaterial:id"
+                            AssetReference {{
+                                Id: 6942069420
+                            }}
+                        }}
+                    }}
                     Collidable_v2 {{
                     Value: "mc:ecollisionsetting:inheritfromparent"
                     }}
@@ -566,13 +585,14 @@ class Object:
 
 
 class Folder:
-    def __init__(self, root):
+    def __init__(self, root, name):
         self.id = generate_id()
         self.children = []
         self.root = root
+        self.name = name
 
-    def add_child(self, name, mesh_name, position, rotation, scale, parent_id):
-        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name))
+    def add_child(self, name, mesh_name, position, rotation, scale, parent_id, color):
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name), color)
 
         if mesh_to_add.parent_id is None:
             mesh_to_add.parent_id = self.id
@@ -599,7 +619,7 @@ class Folder:
         this_string = f"""
                 Objects {{
                     Id: {self.id}
-                    Name: "Folder"
+                    Name: "{self.name}"
                     Transform {{
                         Location {{
                         }}
@@ -611,7 +631,7 @@ class Folder:
                             Z: {1}
                         }}
                     }}
-                    ParentId: {self.root.root_id}    
+                    ParentId: {self.root.root_id}
                     {self.children_to_string()}
                     Collidable_v2 {{
                     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -652,8 +672,8 @@ class PBT:
         self.meshes_by_id.append(new_mesh)
         return new_mesh['id']
 
-    def add_folder(self):
-        new_folder = Folder(self)
+    def add_folder(self, name):
+        new_folder = Folder(self, name)
         self.objects.append(new_folder)
         return new_folder
 
@@ -723,6 +743,15 @@ class PBT:
       }}
       {self.all_objects_pbt()[:-2]}}}
     {self.object_assets_pbt()}
+    Assets {{
+      Id: 6942069420
+      Name: "Basic Material"
+      PlatformAssetType: 2
+      PrimaryAsset {{
+        AssetType: "MaterialAssetRef"
+        AssetId: "mi_basic_pbr_material_001"
+      }}
+    }}
     PrimaryAssetId {{
       AssetType: "None"
       AssetId: "None"
@@ -835,7 +864,9 @@ def triangle(a, b, c):
 
 
 def run(path):
-    global root, progress_bar, btn
+    if path == '':
+        root.destroy()
+        return
     entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
     parent = str(Path(path).parent)
     pbt_output = PBT(name=f'{entry_name}')
@@ -844,29 +875,56 @@ def run(path):
     # read input and output files into memory
     open(f'{parent}/vertex.txt', 'w').close(), open(f'{parent}/map.txt', 'w').close()
     open(f'{parent}/{entry_name}.pbt', 'w').close()
-    vertex_file, map_file = open(f'{parent}/vertex.txt', 'a'), open(f'{parent}/map.txt', 'a')
-    input_file, output_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a')
+    vertex_file, map_file, texture_cords_file = open(f'{parent}/vertex.txt', 'a'), open(f'{parent}/map.txt', 'a'), open(f'{parent}/texturecords.txt', 'a')
+    input_file, output_file, mtl_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a'), None
     input_lines = input_file.readlines()
+    textures_by_index, textures = {}, {} #textures_by_index corresponds to the mat name of a group, textures is the actual texture data of a texture with the mat name being used as key.
 
     # extract vertices, face-maps, and groups from input .obj file
     object_number, g_count = 1, 0
-    folders = []
+    folders, group_names = [], []
     for line in input_lines:
         if line.startswith('v '):
             vertex_file.write(line[2:])
-        elif line.startswith('g '):
+        elif line.startswith('g ') or line.startswith('o '):
             object_number += 1
             g_count += 1
-            folders.append(pbt_output.add_folder())
+            group_names.append(line[2:].lower().strip())
+            folders.append(pbt_output.add_folder(f"{line[2:].title().strip()}"))
+        elif line.startswith('vt '):
+            texture_cords_file.write(line[3:])
         elif line.startswith('f '):
             map_file.write(f'{line[1:].strip()} {object_number - 1}\n')
+        elif line.startswith('mtllib '):
+            mtl_file = line[7:-1]
+        elif line.startswith('usemtl '):
+            textures_by_index[g_count - 1] = line[7:]
+
     if g_count == 0:
-        folders.append(pbt_output.add_folder())
-    vertex_file.close(), map_file.close()
+        folders.append(pbt_output.add_folder(f"Model"))
+    vertex_file.close(), map_file.close(), texture_cords_file.close()
 
     # get vertices and face-maps by line
     vertices_by_line = [n.strip() for n in open(f'{parent}/vertex.txt', 'r').readlines()]
     face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
+    texture_cords_by_line = [n.strip() for n in open(f'{parent}/texturecords.txt', 'r').readlines()]
+
+    if mtl_file is not None and texturize.get() == 1:
+        mtl_raw_data = open(f'{parent}/{mtl_file}')
+        mat_name = ""
+        for line in mtl_raw_data.readlines():
+            if line.startswith('newmtl '):
+                mat_name = line[7:]
+                textures[mat_name] = {}
+            elif line.startswith('map_Kd '):
+                if len(line[7:-1]) > 1:
+                    path = line[7:-1]
+                    if not isabs(path): #If the path isn't absolute it changes path to absolute
+                        path = Path(f'{parent}/{line[7:-1]}')
+                    texture = Image.open(path)
+                    textures[mat_name][0] = texture
+            elif line.startswith('Kd'):
+                textures[mat_name][1] = [float(n) for n in line[3:].split()]
 
     btn.place_forget()
     optimize_box.place_forget()
@@ -875,16 +933,69 @@ def run(path):
     progress_bar.place(x=0, y=0)
     root.geometry('60x21')
     root.update()
+
     progress_bar['maximum'] = len(face_maps_by_line)
 
+    if len(face_maps_by_line[0].split()) > 4: #If model isn't triangulated shows a warning
+        warning_lbl = ttk.Label(root, text='Please Triangulate Model', font=('Helvetica bold', 7))
+        warning_lbl.place(x=0, y=21)
+        root.geometry('60x41')
+        root.update()
+
+    mesh_index, current_group = 0, 0
     for triangle_map in face_maps_by_line:  # iterate through each face map
         a, b, c = [], [], []  # reset vectors to empty lists
         maps_gs = [s for s in findall(r'-?\d+\.?\d*/?\d*/?\d*', triangle_map)]
-        for target_line, point in zip([int(x.split('/')[0] if '/' in x else x) for x in maps_gs[:3]], [a, b, c]):
-            for value in [float(x) for x in findall(r'-?\d+\.?\d*', vertices_by_line[target_line - 1])]:
-                point.append(value)
-        group = 0 if int(maps_gs[3]) == 0 else int(maps_gs[3]) - 1
-        core_a = [a[2], -a[0], a[1]]
+        group = 0 if int(maps_gs[len(maps_gs) - 1]) == 0 else int(maps_gs[len(maps_gs) - 1]) - 1 #Get group index
+        if not current_group == group:
+            mesh_index = 0
+            current_group = group
+        texture_name = None
+        texture_image = None
+        diffuse_color = [1,1,1] #Diffuse color, is multiplied by texture color for color. Solid color for entire material
+        texture_color = [1,1,1] #Texture color, the color that is gotten from the texture image with the texture cords specified in the obj
+        color = [0,0,0] #Final color
+        texture_cords = []
+        if group in textures_by_index and texturize.get() == 1:
+            texture_name = textures_by_index[group]
+            if 0 in textures[texture_name]:
+                texture_image = textures[texture_name][0]
+            if 1 in textures[texture_name]:
+                diffuse_color = textures[texture_name][1]
+
+
+        for vI, vertex in enumerate(triangle_map.split()[:-1]): # Loop through all the triangles in the face
+            target_line = vertices_by_line[int(vertex.split('/')[0]) - 1] # Get the line that the v is on. The .split(/) is to get rid of unneeded info
+            vertex_position = [float(n) for n in target_line.split(' ')] # Get the position in form [x,y,z]
+            if vI == 0: a = vertex_position
+            elif vI == 1: b = vertex_position
+            elif vI == 2: c = vertex_position
+            if len(vertex.split('/')) > 1 and texture_image and texturize.get() == 1:
+                texture_cord = vertex.split('/')[1]
+                if texture_cord != '':
+                    cords = texture_cords_by_line[int(texture_cord) - 1].split()
+                    cords[0] = max(1, floor(float(cords[0]) * texture_image.width) - 1)
+                    cords[1] = max(1, floor(float(cords[1]) * texture_image.height) - 1)
+                    texture_cords.append(cords)
+
+        if len(texture_cords) > 0 and texturize.get() == 1:
+            center = {}
+            x1,x2,x3 = texture_cords[0][0], texture_cords[1][0], texture_cords[2][0]
+            y1,y2,y3 = texture_cords[0][1], texture_cords[2][1], texture_cords[2][1]
+            center[0] = round((x1 + x2 + x3) / 3, 2)
+            center[1] = round((y1 + y2 + y3) / 3, 2)
+            texture_color = [0,0,0]
+            texture_color = np.add(texture_color, np.multiply(np.divide(texture_image.getpixel((center[0], center[1])), 255), 3)[:3]) #Get the color in center of the triangle, count it as half of the color.
+            for cord in texture_cords:
+                cord_color = np.divide(texture_image.getpixel((cord[0], cord[1]))[:3], 255)
+                texture_color = np.add(texture_color, cord_color)
+            texture_color = np.divide(texture_color, len(texture_cords) + 3) #Divide to get final texture color for this triangle between 0 and 1
+
+        color = np.multiply(texture_color, diffuse_color) #Multiply the diffuse and texture colors
+
+
+
+        core_a = [a[2], -a[0], a[1]] #Convert to Core positions
         core_b = [b[2], -b[0], b[1]]
         core_c = [c[2], -c[0], c[1]]
 
@@ -895,7 +1006,9 @@ def run(path):
                                              [scale_one, scale_two],
                                              [rotation_one, rotation_two]):
             if position is not None and scale is not None and rotation is not None:
-                folders[group].add_child('testMesh', "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None)
+                mesh_index += 1
+                child_name = "{0}{1:05}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
+                folders[group].add_child(child_name, "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color)
             else:
                 continue
 
@@ -905,7 +1018,7 @@ def run(path):
     lbl.place(x=0, y=0)
     root.update()
     output_file.write(pbt_output.generate_pbt())
-    remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt')
+    remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt'), remove(f'{parent}/texturecords.txt')
     input_file.close(), output_file.close()
     root.destroy()
 
