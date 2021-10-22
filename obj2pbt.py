@@ -1,9 +1,9 @@
 from __future__ import division
-from re import findall, sub
+from re import findall
 from os import remove
 from base64 import b64decode
 from os.path import splitext, isabs
-from pathlib import Path
+from pathlib import Path, PurePath
 import tkinter as tk
 from tkinter import filedialog, ttk
 from random import randrange
@@ -11,7 +11,7 @@ import ctypes
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 from PIL import Image
-from math import floor, sqrt
+from math import floor
 
 # program headed by Rivvnik#1111
 np.set_printoptions(16)
@@ -19,7 +19,8 @@ anti_conflict, root = [], tk.Tk()
 myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)  # set taskbar icon
 root.title('obj2pbt')  # set window title
-root.geometry('60x123')  # set window geometry
+root.geometry('164x123')  # set window geometry
+root.resizable(width=False, height=False)  # prevent resizing
 progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
 
 # RIDICULOUS code block for making the icon work with --onefile
@@ -763,19 +764,38 @@ class PBT:
 
 
 def open_file():
-    root.withdraw()
+    global aesthetic_path, file_path
     file_path = filedialog.askopenfilename()
-    run(file_path)
+    path_name = PurePath(file_path).name
+    if len(path_name[:-4]) > 16:
+        path_name = path_name[:12]+'...'+path_name[-7:-4]+PurePath(file_path).suffix
+    aesthetic_path.set(f"{path_name}")
 
-btn_style = ttk.Style()
-btn_style.configure('TButton', font=('Helvetica bold', 14))
-btn = ttk.Button(root, text='select\ntriangulated\n.obj file', width=10, style='TButton', command=open_file)
-btn.place(x=0, y=0)
+
+def convert_file():
+    global file_path
+    if not file_path == '':
+        root.withdraw()
+        run(file_path)
+    else:
+        open_file()
+
+
 optimize, texturize = tk.IntVar(value=1), tk.IntVar(value=0)
+aesthetic_path, file_path = tk.StringVar(), ''
+input_lbl = ttk.Label(root, textvariable=aesthetic_path, background='#d8d8d8', width=23, anchor=tk.CENTER, font=('Helvetica', 9, 'italic'))
+input_lbl.place(x=0, y=0)
+input_style = ttk.Style()
+input_style.configure('TButton', font=('Helvetica', 10, 'bold'))
+input_btn = ttk.Button(root, text='Select triangulated .obj', width=22, style='TButton', command=open_file)
+input_btn.place(x=0, y=19)
 optimize_box = ttk.Checkbutton(root, text="Optimize objects", variable=optimize, onvalue=1, offvalue=0)
-optimize_box.place(x=3, y=80)
-texturize_box = ttk.Checkbutton(root, text="Add textures", variable=texturize, onvalue=1, offvalue=0)
-texturize_box.place(x=3, y=100)
+optimize_box.place(x=3, y=50)
+texturize_box = ttk.Checkbutton(root, text="Texturize using .mtl", variable=texturize, onvalue=1, offvalue=0)
+texturize_box.place(x=3, y=70)
+convert_btn = ttk.Button(root, text='Convert!', width=22, style='TButton', command=convert_file)
+convert_btn.place(x=0, y=97)
+
 
 def generate_id():
     global anti_conflict
@@ -864,9 +884,6 @@ def triangle(a, b, c):
 
 
 def run(path):
-    if path == '':
-        root.destroy()
-        return
     entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
     parent = str(Path(path).parent)
     pbt_output = PBT(name=f'{entry_name}')
@@ -926,7 +943,9 @@ def run(path):
             elif line.startswith('Kd'):
                 textures[mat_name][1] = [float(n) for n in line[3:].split()]
 
-    btn.place_forget()
+    input_btn.place_forget()
+    input_lbl.place_forget()
+    convert_btn.place_forget()
     optimize_box.place_forget()
     texturize_box.place_forget()
     root.deiconify()
@@ -935,12 +954,6 @@ def run(path):
     root.update()
 
     progress_bar['maximum'] = len(face_maps_by_line)
-
-    if len(face_maps_by_line[0].split()) > 4: #If model isn't triangulated shows a warning
-        warning_lbl = ttk.Label(root, text='Please Triangulate Model', font=('Helvetica bold', 7))
-        warning_lbl.place(x=0, y=21)
-        root.geometry('60x41')
-        root.update()
 
     mesh_index, current_group = 0, 0
     for triangle_map in face_maps_by_line:  # iterate through each face map
