@@ -9,6 +9,7 @@ from tkinter import filedialog, ttk
 from random import randrange
 import ctypes
 import numpy as np
+from uuid import uuid4
 from scipy.spatial.transform import Rotation as R
 from PIL import Image
 from math import floor
@@ -19,9 +20,8 @@ anti_conflict, root = [], tk.Tk()
 myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)  # set taskbar icon
 root.title('obj2pbt')  # set window title
-root.geometry('164x123')  # set window geometry
 root.resizable(width=False, height=False)  # prevent resizing
-progress_bar = ttk.Progressbar(root, orient='horizontal', length=120, mode='determinate', value=0)
+progress_bar = ttk.Progressbar(root, orient='horizontal', length=230, mode='determinate', value=0)
 
 # RIDICULOUS code block for making the icon work with --onefile
 # this massive string below is the program's icon as a Base64 string.
@@ -764,7 +764,7 @@ class PBT:
 
 
 def open_file():
-    global aesthetic_path, file_path
+    global aesthetic_path, file_path, pure_path
     file_path = filedialog.askopenfilename()
     path_name = PurePath(file_path).name
     if len(path_name[:-4]) > 16:
@@ -782,20 +782,25 @@ def convert_file():
 
 
 optimize, texturize = tk.IntVar(value=1), tk.IntVar(value=0)
-aesthetic_path, file_path = tk.StringVar(), ''
-input_lbl = ttk.Label(root, textvariable=aesthetic_path, background='#d8d8d8', width=23, anchor=tk.CENTER, font=('Helvetica', 9, 'italic'))
-input_lbl.place(x=0, y=0)
+aesthetic_path, file_path, path_name = tk.StringVar(), '', ''
 input_style = ttk.Style()
 input_style.configure('TButton', font=('Helvetica', 10, 'bold'))
+input_lbl = ttk.Label(root, textvariable=aesthetic_path, background='#d8d8d8', width=23, anchor=tk.CENTER, font=('Helvetica', 9, 'italic'))
 input_btn = ttk.Button(root, text='Select triangulated .obj', width=22, style='TButton', command=open_file)
-input_btn.place(x=0, y=19)
 optimize_box = ttk.Checkbutton(root, text="Optimize object count", variable=optimize, onvalue=1, offvalue=0)
-optimize_box.place(x=3, y=50)
 texturize_box = ttk.Checkbutton(root, text="Texturize using .mtl file", variable=texturize, onvalue=1, offvalue=0)
-texturize_box.place(x=3, y=70)
 convert_btn = ttk.Button(root, text='Convert', width=22, style='TButton', command=convert_file)
-convert_btn.place(x=0, y=97)
 
+
+def buttonize():
+    root.geometry('164x123')  # set window geometry
+    input_lbl.place(x=0, y=0)
+    input_btn.place(x=0, y=19)
+    optimize_box.place(x=3, y=50)
+    texturize_box.place(x=3, y=70)
+    convert_btn.place(x=0, y=97)
+
+buttonize()
 
 def generate_id():
     global anti_conflict
@@ -890,9 +895,10 @@ def run(path):
 
     # reset vertex, map, and output if they exist
     # read input and output files into memory
-    open(f'{parent}/vertex.txt', 'w').close(), open(f'{parent}/map.txt', 'w').close()
+    vertex_file_name, map_file_name, texture_file_name = str(uuid4()).split('-')[-1:][0], str(uuid4()).split('-')[-1:][0], str(uuid4()).split('-')[-1:][0]
+    open(f'{parent}/{vertex_file_name}.txt', 'w').close(), open(f'{parent}/{map_file_name}.txt', 'w').close()
     open(f'{parent}/{entry_name}.pbt', 'w').close()
-    vertex_file, map_file, texture_cords_file = open(f'{parent}/vertex.txt', 'a'), open(f'{parent}/map.txt', 'a'), open(f'{parent}/texturecords.txt', 'a')
+    vertex_file, map_file, texture_cords_file = open(f'{parent}/{vertex_file_name}.txt', 'a'), open(f'{parent}/{map_file_name}.txt', 'a'), open(f'{parent}/{texture_file_name}.txt', 'a')
     input_file, output_file, mtl_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a'), None
     input_lines = input_file.readlines()
     textures_by_index, textures = {}, {} #textures_by_index corresponds to the mat name of a group, textures is the actual texture data of a texture with the mat name being used as key.
@@ -922,9 +928,9 @@ def run(path):
     vertex_file.close(), map_file.close(), texture_cords_file.close()
 
     # get vertices and face-maps by line
-    vertices_by_line = [n.strip() for n in open(f'{parent}/vertex.txt', 'r').readlines()]
-    face_maps_by_line = [n.strip() for n in open(f'{parent}/map.txt', 'r').readlines()]
-    texture_cords_by_line = [n.strip() for n in open(f'{parent}/texturecords.txt', 'r').readlines()]
+    vertices_by_line = [n.strip() for n in open(f'{parent}/{vertex_file_name}.txt', 'r').readlines()]
+    face_maps_by_line = [n.strip() for n in open(f'{parent}/{map_file_name}.txt', 'r').readlines()]
+    texture_cords_by_line = [n.strip() for n in open(f'{parent}/{texture_file_name}.txt', 'r').readlines()]
 
     if mtl_file is not None and texturize.get() == 1:
         mtl_raw_data = open(f'{parent}/{mtl_file}')
@@ -949,8 +955,10 @@ def run(path):
     optimize_box.place_forget()
     texturize_box.place_forget()
     root.deiconify()
+    root.geometry('230x41')
     progress_bar.place(x=0, y=0)
-    root.geometry('60x21')
+    progress_lbl = ttk.Label(root, text=f'Generating {entry_name + ".pbt..."}', font=('Helvetica', 8))
+    progress_lbl.place(x=0, y=23)
     root.update()
 
     progress_bar['maximum'] = len(face_maps_by_line)
@@ -1026,14 +1034,19 @@ def run(path):
                 continue
 
     progress_bar.place_forget()
+    progress_lbl.place_forget()
     root.update()
-    lbl = ttk.Label(root, text='wrapping up...', font=('Helvetica bold', 8))
+    root.geometry('60x21')
+    lbl = ttk.Label(root, text='wrapping up...', font=('Helvetica', 10, 'bold italic'))
     lbl.place(x=0, y=0)
     root.update()
     output_file.write(pbt_output.generate_pbt())
-    remove(f'{parent}/vertex.txt'), remove(f'{parent}/map.txt'), remove(f'{parent}/texturecords.txt')
+    remove(f'{parent}/{vertex_file_name}.txt'), remove(f'{parent}/{map_file_name}.txt'), remove(f'{parent}/{texture_file_name}.txt')
     input_file.close(), output_file.close()
-    root.destroy()
+    lbl.place_forget()
+    aesthetic_path.set('')
+    file_path = ''
+    buttonize()
 
 
 root.mainloop()
