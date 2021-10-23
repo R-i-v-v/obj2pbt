@@ -1028,7 +1028,7 @@ def run(path):
                                              [rotation_one, rotation_two]):
             if position is not None and scale is not None and rotation is not None:
                 mesh_index += 1
-                child_name = "{0}{1:05}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
+                child_name = "{0}.{1:04}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
                 folders[group].add_child(child_name, "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color)
             else:
                 continue
