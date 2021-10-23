@@ -794,7 +794,8 @@ convert_btn = ttk.Button(root, text='Convert', width=22, style='TButton', comman
 
 def buttonize():
     root.geometry('164x123')  # set window geometry
-    input_lbl.place(x=0, y=0)
+    progress_bar['value'] = 0  # set progress bar to empty
+    input_lbl.place(x=0, y=0)  # place labels and buttons
     input_btn.place(x=0, y=19)
     optimize_box.place(x=3, y=50)
     texturize_box.place(x=3, y=70)
@@ -895,10 +896,10 @@ def run(path):
 
     # reset vertex, map, and output if they exist
     # read input and output files into memory
-    vertex_file_name, map_file_name, texture_file_name = str(uuid4()).split('-')[-1:][0], str(uuid4()).split('-')[-1:][0], str(uuid4()).split('-')[-1:][0]
-    open(f'{parent}/{vertex_file_name}.txt', 'w').close(), open(f'{parent}/{map_file_name}.txt', 'w').close()
+    uuid = str(uuid4()).split('-')[-1:][0]
+    open(f'{parent}/{uuid}-vertex.txt', 'w').close(), open(f'{parent}/{uuid}-map.txt', 'w').close()
     open(f'{parent}/{entry_name}.pbt', 'w').close()
-    vertex_file, map_file, texture_cords_file = open(f'{parent}/{vertex_file_name}.txt', 'a'), open(f'{parent}/{map_file_name}.txt', 'a'), open(f'{parent}/{texture_file_name}.txt', 'a')
+    vertex_file, map_file, texture_cords_file = open(f'{parent}/{uuid}-vertex.txt', 'a'), open(f'{parent}/{uuid}-map.txt', 'a'), open(f'{parent}/{uuid}-texture.txt', 'a')
     input_file, output_file, mtl_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a'), None
     input_lines = input_file.readlines()
     textures_by_index, textures = {}, {} #textures_by_index corresponds to the mat name of a group, textures is the actual texture data of a texture with the mat name being used as key.
@@ -928,9 +929,9 @@ def run(path):
     vertex_file.close(), map_file.close(), texture_cords_file.close()
 
     # get vertices and face-maps by line
-    vertices_by_line = [n.strip() for n in open(f'{parent}/{vertex_file_name}.txt', 'r').readlines()]
-    face_maps_by_line = [n.strip() for n in open(f'{parent}/{map_file_name}.txt', 'r').readlines()]
-    texture_cords_by_line = [n.strip() for n in open(f'{parent}/{texture_file_name}.txt', 'r').readlines()]
+    vertices_by_line = [n.strip() for n in open(f'{parent}/{uuid}-vertex.txt', 'r').readlines()]
+    face_maps_by_line = [n.strip() for n in open(f'{parent}/{uuid}-map.txt', 'r').readlines()]
+    texture_cords_by_line = [n.strip() for n in open(f'{parent}/{uuid}-texture.txt', 'r').readlines()]
 
     if mtl_file is not None and texturize.get() == 1:
         mtl_raw_data = open(f'{parent}/{mtl_file}')
@@ -955,10 +956,12 @@ def run(path):
     optimize_box.place_forget()
     texturize_box.place_forget()
     root.deiconify()
-    root.geometry('230x41')
+    root.geometry('230x61')
     progress_bar.place(x=0, y=0)
     progress_lbl = ttk.Label(root, text=f'Generating {entry_name + ".pbt..."}', font=('Helvetica', 8))
     progress_lbl.place(x=0, y=23)
+    progress_uuid = ttk.Label(root, text=f'UUID: {uuid}', font=('Helvetica', 8))
+    progress_uuid.place(x=0, y=40)
     root.update()
 
     progress_bar['maximum'] = len(face_maps_by_line)
@@ -1035,13 +1038,14 @@ def run(path):
 
     progress_bar.place_forget()
     progress_lbl.place_forget()
+    progress_uuid.place_forget()
     root.update()
     root.geometry('60x21')
     lbl = ttk.Label(root, text='wrapping up...', font=('Helvetica', 10, 'bold italic'))
     lbl.place(x=0, y=0)
     root.update()
     output_file.write(pbt_output.generate_pbt())
-    remove(f'{parent}/{vertex_file_name}.txt'), remove(f'{parent}/{map_file_name}.txt'), remove(f'{parent}/{texture_file_name}.txt')
+    remove(f'{parent}/{uuid}-vertex.txt'), remove(f'{parent}/{uuid}-map.txt'), remove(f'{parent}/{uuid}-texture.txt')
     input_file.close(), output_file.close()
     lbl.place_forget()
     aesthetic_path.set('')
