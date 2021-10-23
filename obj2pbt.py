@@ -768,7 +768,7 @@ def open_file():
     file_path = filedialog.askopenfilename()
     path_name = PurePath(file_path).name
     if len(path_name[:-4]) > 16:
-        path_name = path_name[:12]+'...'+path_name[-7:-4]+PurePath(file_path).suffix
+        path_name = path_name[:12] + '...' + path_name[-7:]
     aesthetic_path.set(f"{path_name}")
 
 
@@ -789,11 +789,11 @@ input_style = ttk.Style()
 input_style.configure('TButton', font=('Helvetica', 10, 'bold'))
 input_btn = ttk.Button(root, text='Select triangulated .obj', width=22, style='TButton', command=open_file)
 input_btn.place(x=0, y=19)
-optimize_box = ttk.Checkbutton(root, text="Optimize objects", variable=optimize, onvalue=1, offvalue=0)
+optimize_box = ttk.Checkbutton(root, text="Optimize object count", variable=optimize, onvalue=1, offvalue=0)
 optimize_box.place(x=3, y=50)
-texturize_box = ttk.Checkbutton(root, text="Texturize using .mtl", variable=texturize, onvalue=1, offvalue=0)
+texturize_box = ttk.Checkbutton(root, text="Texturize using .mtl file", variable=texturize, onvalue=1, offvalue=0)
 texturize_box.place(x=3, y=70)
-convert_btn = ttk.Button(root, text='Convert!', width=22, style='TButton', command=convert_file)
+convert_btn = ttk.Button(root, text='Convert', width=22, style='TButton', command=convert_file)
 convert_btn.place(x=0, y=97)
 
 
