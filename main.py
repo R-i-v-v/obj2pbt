@@ -3,7 +3,6 @@ from re import findall
 from os import remove
 from os.path import splitext, isabs
 from pathlib import Path, PurePath
-import tkinter as tk
 from tkinter import filedialog, ttk
 import ctypes
 import numpy as np
@@ -11,10 +10,10 @@ from uuid import uuid4
 from PIL import Image
 from math import floor
 
-from pbtGenerator import PBT
-from b64Image import icon_in_base_64
-from triangle import triangle
-from applicationGUI import AppUI
+from utils.pbt import PBT
+from utils.icon import icon_in_base_64
+from utils.calc import triangle
+from utils.gui import UI
 
 # program headed by Rivvnik#1111
 np.set_printoptions(16)
@@ -22,6 +21,7 @@ myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 app = None  # set taskbar icon
+
 
 def open_file():
     global file_path, pure_path
@@ -40,10 +40,10 @@ def convert_file():
     else:
         open_file()
 
-app = AppUI()
+
+app = UI()
 app.ui_init(icon_in_base_64, convert_file, open_file)
 app.buttonize()
-
 
 
 def run(path):

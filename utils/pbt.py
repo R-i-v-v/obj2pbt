@@ -2,6 +2,7 @@ from random import randrange
 
 anti_conflict = []
 
+
 def generate_id():
     global anti_conflict
     rando = randrange(10 ** 18, 10 ** 19)

@@ -3,7 +3,7 @@ import tkinter as tk
 from base64 import b64decode
 from os import remove
 
-class AppUI:
+class UI:
     def __init__(self):
         self.root = tk.Tk()
 
