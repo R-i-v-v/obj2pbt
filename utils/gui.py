@@ -22,7 +22,7 @@ class UI:
         self.root.wm_iconbitmap(temp_icon_file)
         remove(temp_icon_file)
 
-        self.optimize, self.texturize = tk.IntVar(value=1), tk.IntVar(value=0)
+        self.optimize, self.texturize, self.log = tk.IntVar(value=1), tk.IntVar(value=0), tk.IntVar(value=0)
         self.aesthetic_path, self.file_path, self.path_name = tk.StringVar(), '', ''
         self.input_style = ttk.Style()
         self.input_style.configure('TButton', font=('Helvetica', 10, 'bold'))
@@ -30,16 +30,18 @@ class UI:
         self.input_btn = ttk.Button(self.root, text='Select triangulated .obj', width=22, style='TButton', command=open_file_callback)
         self.optimize_box = ttk.Checkbutton(self.root, text="Optimize object count", variable=self.optimize, onvalue=1, offvalue=0)
         self.texturize_box = ttk.Checkbutton(self.root, text="Texturize using .mtl file", variable=self.texturize, onvalue=1, offvalue=0)
+        self.log_box = ttk.Checkbutton(self.root, text="Log from directory", variable=self.log, onvalue=1, offvalue=0)
         self.convert_btn = ttk.Button(self.root, text='Convert', width=22, style='TButton', command=convert_file_callback)
 
     def buttonize(self):
-        self.root.geometry('164x123')  # set window geometry
+        self.root.geometry('164x141')  # set window geometry
         self.progress_bar['value'] = 0  # set progress bar to empty
         self.input_lbl.place(x=0, y=0)  # place labels and buttons
         self.input_btn.place(x=0, y=19)
         self.optimize_box.place(x=3, y=50)
         self.texturize_box.place(x=3, y=70)
-        self.convert_btn.place(x=0, y=97)
+        self.log_box.place(x=3, y=90)
+        self.convert_btn.place(x=0, y=115)
 
     def set_wrapping_up(self):
         self.progress_bar.place_forget()
