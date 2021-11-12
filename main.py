@@ -1,7 +1,7 @@
 from __future__ import division
 from re import findall
 from os import remove, scandir
-from os.path import splitext
+from os.path import splitext, exists
 from pathlib import Path, PurePath
 from tkinter import filedialog, ttk
 import ctypes
@@ -60,7 +60,7 @@ app.buttonize()
 def run(path):
     global file_path
     parent = str(Path(path).parent) if not Path(path).is_dir() else str(path)
-    if app.log.get() == 1:
+    if app.log.get() == 1 and not exists(Path(f'{parent}/log.csv')):
         open(f'{parent}/log.csv', 'w').write('File name\tFace count\tTime elapsed (ms)\n')
     entries = []
     if not file_path:
@@ -77,9 +77,10 @@ def run(path):
                 continue
         start_time = time()
         entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
-        pbt_output = PBT(name=f'{entry_name}')
+        player, camera = app.setting()
+        pbt_output = PBT(name=f'{entry_name}', player=player, camera=camera, texturize=app.texturize.get() == 1)
 
-        # reset vertex, map, and output if they exist
+        # give vertex, and map files uuids, create output pbt
         # read input and output files into memory
         uuid = str(uuid4()).split('-')[-1:][0]
         open(f'{parent}/{uuid}-vertex.txt', 'w').close()
@@ -92,6 +93,14 @@ def run(path):
         app.optimize_box.place_forget()
         app.texturize_box.place_forget()
         app.log_box.place_forget()
+        app.player_collide_lbl.place_forget()
+        app.player_collision_cycle_lbl.place_forget()
+        app.player_collision_cycle_lbtn.place_forget()
+        app.player_collision_cycle_rbtn.place_forget()
+        app.camera_collide_lbl.place_forget()
+        app.camera_collision_cycle_lbl.place_forget()
+        app.camera_collision_cycle_lbtn.place_forget()
+        app.camera_collision_cycle_rbtn.place_forget()
         app.root.deiconify()
         app.root.geometry('230x61')
         app.progress_bar.place(x=0, y=0)
@@ -165,9 +174,8 @@ def run(path):
                     texture_color = np.add(texture_color, cord_color)
                 texture_color = np.divide(texture_color, len(texture_cords) + 3) #Divide to get final texture color for this triangle between 0 and 1
 
-            color = np.multiply(texture_color, diffuse_color) #Multiply the diffuse and texture colors
-
-
+            # Multiply the diffuse and texture colors
+            color = np.multiply(texture_color, diffuse_color) if app.texturize.get() == 1 else [0.118, 0.141, 0.384]
 
             core_a = [a[2], -a[0], a[1]] #Convert to Core positions
             core_b = [b[2], -b[0], b[1]]
@@ -195,7 +203,7 @@ def run(path):
         file_path = ''
         if log_file:
             log_file.write(f'{entry_name}\t{face_count}\t{round(Decimal(time()-start_time)*1000,3)}\n')
-        app.buttonize()
+    app.buttonize()
 
 
 app.root.mainloop()

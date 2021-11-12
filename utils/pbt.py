@@ -167,8 +167,11 @@ class Folder:
 
 
 class PBT:
-    def __init__(self, name):
+    def __init__(self, name, player, camera, texturize):
         self.template_name = name
+        self.player_collision = player
+        self.camera_collision = camera
+        self.texturize = texturize
         self.template_id = generate_id()
         self.root_id = generate_id()
         self.objects = []
@@ -236,13 +239,13 @@ class PBT:
         }}
         ParentId: {generate_id()}
         {self.children_to_string()}Collidable_v2 {{
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:{self.player_collision}"
         }}
         Visible_v2 {{
           Value: "mc:evisibilitysetting:inheritfromparent"
         }}
         CameraCollidable {{
-          Value: "mc:ecollisionsetting:inheritfromparent"
+          Value: "mc:ecollisionsetting:{self.camera_collision}"
         }}
         EditorIndicatorVisibility {{
           Value: "mc:eindicatorvisibility:visiblewhenselected"
@@ -259,7 +262,7 @@ class PBT:
       PlatformAssetType: 2
       PrimaryAsset {{
         AssetType: "MaterialAssetRef"
-        AssetId: "mi_basic_pbr_material_001"
+        AssetId: "{"mi_basic_pbr_material_001" if self.texturize else "grid_blue_001"}"
       }}
     }}
     PrimaryAssetId {{
