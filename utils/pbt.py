@@ -15,7 +15,7 @@ def generate_id():
 
 # pbt generator courtesy of Aphrim#1337
 class Object:
-    def __init__(self, name, position, rotation, scale, parent_id, mesh_id, color):
+    def __init__(self, name, position, rotation, scale, parent_id, mesh_id, color, texturize):
         self.name = name
         self.position = position
         self.rotation = rotation
@@ -24,6 +24,7 @@ class Object:
         self.mesh_id = mesh_id
         self.id = generate_id()
         self.color = color
+        self.texturize = texturize
 
     def generate_pbt_part(self):
         return f"""Objects {{
@@ -47,7 +48,7 @@ class Object:
                     }}
                     }}
                     ParentId: {self.parent_id}
-                    UnregisteredParameters {{
+                    {f'''UnregisteredParameters {{
                         Overrides {{
                             Name: "ma:Shared_BaseMaterial:color"
                             Color {{
@@ -62,7 +63,7 @@ class Object:
                                 Id: 6942069420
                             }}
                         }}
-                    }}
+                    }}''' if self.texturize else ''}
                     Collidable_v2 {{
                     Value: "mc:ecollisionsetting:inheritfromparent"
                     }}
@@ -101,8 +102,8 @@ class Folder:
         self.root = root
         self.name = name
 
-    def add_child(self, name, mesh_name, position, rotation, scale, parent_id, color):
-        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name), color)
+    def add_child(self, name, mesh_name, position, rotation, scale, parent_id, color, texturize):
+        mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name), color, texturize)
 
         if mesh_to_add.parent_id is None:
             mesh_to_add.parent_id = self.id
@@ -257,12 +258,12 @@ class PBT:
       {self.all_objects_pbt()[:-2]}}}
     {self.object_assets_pbt()}
     Assets {{
-      Id: 6942069420
-      Name: "Basic Material"
-      PlatformAssetType: 2
+      Id: {6942069420 if self.texturize else 5413997507012451432}
+      Name: "{"Basic Material" if self.texturize else "sm_wedge_001"}"
+      PlatformAssetType: {2 if self.texturize else 1}
       PrimaryAsset {{
-        AssetType: "MaterialAssetRef"
-        AssetId: "{"mi_basic_pbr_material_001" if self.texturize else "grid_blue_001"}"
+        AssetType: "{"MaterialAssetRef" if self.texturize else "StaticMeshAssetRef"}"
+        AssetId: "{"mi_basic_pbr_material_001" if self.texturize else "sm_wedge_001"}"
       }}
     }}
     PrimaryAssetId {{

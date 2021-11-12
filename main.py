@@ -175,7 +175,7 @@ def run(path):
                 texture_color = np.divide(texture_color, len(texture_cords) + 3) #Divide to get final texture color for this triangle between 0 and 1
 
             # Multiply the diffuse and texture colors
-            color = np.multiply(texture_color, diffuse_color) if app.texturize.get() == 1 else [0.118, 0.141, 0.384]
+            color = np.multiply(texture_color, diffuse_color)  # if app.texturize.get() == 1 else [0.118, 0.141, 0.384]
 
             core_a = [a[2], -a[0], a[1]] #Convert to Core positions
             core_b = [b[2], -b[0], b[1]]
@@ -190,7 +190,7 @@ def run(path):
                 if position is not None and scale is not None and rotation is not None:
                     mesh_index += 1
                     child_name = "{0}.{1:04}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
-                    folders[group].add_child(child_name, "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color)
+                    folders[group].add_child(child_name, "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color, app.texturize.get() == 1)
                 else:
                     continue
 
