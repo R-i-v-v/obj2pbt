@@ -5,8 +5,7 @@ from PIL import Image
 def readData(path, uuid, parent, pbt_output, entry_name, readTextures, do_logging):
     vertex_file, map_file, texture_cords_file = open(f'{parent}/{uuid}-vertex.txt', 'a'), open(f'{parent}/{uuid}-map.txt', 'a'), open(f'{parent}/{uuid}-texture.txt', 'a')
     if do_logging:
-        # logging_file = open(f'{parent}/log.csv', 'a')
-        logging_file = None
+        logging_file = open(f'{parent}/log.csv', 'a')
     input_file, output_file, mtl_file = open(f'{path}', 'r'), open(f'{parent}/{entry_name}.pbt', 'a'), None
     input_lines = input_file.readlines()
     textures_by_index, textures = {}, {} #textures_by_index corresponds to the mat name of a group, textures is the actual texture data of a texture with the mat name being used as key.
