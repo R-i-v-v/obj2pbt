@@ -60,8 +60,8 @@ app.buttonize()
 def run(path):
     global file_path
     parent = str(Path(path).parent) if not Path(path).is_dir() else str(path)
-    if app.log.get() == 1 and not exists(Path(f'{parent}/log.csv')):
-        open(f'{parent}/log.csv', 'w').write('File name\tFace count\tTime elapsed (ms)\n')
+    # if app.log.get() == 1 and not exists(Path(f'{parent}/log.csv')):
+    #     open(f'{parent}/log.csv', 'w').write('File name\tFace count\tTime elapsed (ms)\n')
     entries = []
     if not file_path:
         with scandir(path) as dirs:
@@ -190,7 +190,7 @@ def run(path):
                 if position is not None and scale is not None and rotation is not None:
                     mesh_index += 1
                     child_name = "{0}.{1:04}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
-                    folders[group].add_child(child_name, "sm_wedge_002", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color, app.texturize.get() == 1)
+                    folders[group].add_child(child_name, "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color, app.texturize.get() == 1)
                 else:
                     continue
 
@@ -201,8 +201,8 @@ def run(path):
         app.lbl.place_forget()
         app.aesthetic_path.set('')
         file_path = ''
-        if log_file:
-            log_file.write(f'{entry_name}\t{face_count}\t{round(Decimal(time()-start_time)*1000,3)}\n')
+        # if log_file:
+        #     log_file.write(f'{entry_name}\t{face_count}\t{round(Decimal(time()-start_time)*1000,3)}\n')
     app.buttonize()
 
 

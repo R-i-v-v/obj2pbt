@@ -39,7 +39,7 @@ def triangle(a, b, c, should_optimize):
 
         # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
         # which is always point c in our program
-        position = c
+        position = np.divide(np.add(a, c), 2)
 
         # scale calculation
         scale = np.divide([0.02, len_ac, len_bc], 100)
@@ -64,10 +64,12 @@ def triangle(a, b, c, should_optimize):
 
     # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
     # which is the same for both triangles, since they share the point where their right angles occur
-    position_1 = position_2 = np.add(a, l1)
+    o = np.add(a, l1)
+    r = np.multiply(x, 0.0002)
+    position_1 = position_2 = np.divide(np.add(c, np.add(o, r)), 2)
 
     # scale calculation
-    scale_1, scale_2 = np.divide([0.02, width, np.linalg.norm(l1)], 100), np.divide([0.02, width, np.linalg.norm(l2)], 100)
+    scale_1, scale_2 = np.divide([0.002, width, np.linalg.norm(l1)], 100), np.divide([0.002, width, np.linalg.norm(l2)], 100)
 
     # Rotation calculation
     matrix_1, matrix_2 = np.transpose([x, -y, -z]), np.transpose([-x, -y, z])
