@@ -43,9 +43,10 @@ class UI:
     def logbox(self):
         if self.log.get() == 1:
             self.obj_button_text.set("Select directory of .obj's")
-            self.aesthetic_path.set('')
         else:
             self.obj_button_text.set('Select triangulated .obj')
+        self.aesthetic_path.set('')
+        self.file_path, self.path_name = '', ''
 
     def ui_init(self, icon_in_base_64, convert_file_callback, open_file_callback):
         self.root.title('obj2pbt')  # set window title
