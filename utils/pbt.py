@@ -96,11 +96,12 @@ class Object:
 
 
 class Folder:
-    def __init__(self, root, name):
+    def __init__(self, root, name, modelize):
         self.id = generate_id()
         self.children = []
         self.root = root
         self.name = name
+        self.modelize = modelize
 
     def add_child(self, name, mesh_name, position, rotation, scale, parent_id, color, texturize):
         mesh_to_add = Object(name, position, rotation, scale, parent_id, self.root.get_mesh_id_for_name(mesh_name), color, texturize)
@@ -157,7 +158,8 @@ class Folder:
                     Value: "mc:eindicatorvisibility:visiblewhenselected"
                     }}
                     Folder {{
-                        IsFilePartition: true
+                        {'''Model {
+                        }''' if self.modelize else 'IsFilePartition: true'}
                     }}
                 }}\n      """
         children_strings = ""
@@ -168,11 +170,12 @@ class Folder:
 
 
 class PBT:
-    def __init__(self, name, player, camera, texturize):
+    def __init__(self, name, player, camera, texturize, modelize):
         self.template_name = name
         self.player_collision = player
         self.camera_collision = camera
         self.texturize = texturize
+        self.modelize = modelize
         self.template_id = generate_id()
         self.root_id = generate_id()
         self.objects = []
@@ -187,7 +190,7 @@ class PBT:
         return new_mesh['id']
 
     def add_folder(self, name):
-        new_folder = Folder(self, name)
+        new_folder = Folder(self, name, self.modelize)
         self.objects.append(new_folder)
         return new_folder
 

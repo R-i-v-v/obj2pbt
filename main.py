@@ -29,11 +29,14 @@ def open_file():
     global file_path, pure_path, dir_path
     if app.log.get() == 1:
         dir_path = filedialog.askdirectory()
-        dir_name = PurePath(dir_path).parts[-1]
-        file_path = None
-        app.aesthetic_path.set(f'../{dir_name}/')
+        try:
+            dir_name = PurePath(dir_path).parts[-1]
+            file_path = None
+            app.aesthetic_path.set(f'../{dir_name}/')
+        except Exception as e:
+            print(f"Caught '{e}'")
     else:
-        file_path = filedialog.askopenfilename()
+        file_path = filedialog.askopenfilename(filetypes=[('Wavefront objects', '*.obj'), ('All files', '*.*')])
         path_name = PurePath(file_path).name
         if len(path_name[:-4]) > 16:
             path_name = path_name[:12] + '...' + path_name[-7:]
@@ -78,7 +81,9 @@ def run(path):
         start_time = time()
         entry_name = str(Path(splitext(path)[0])).split('\\')[-1:][0]
         player, camera = app.setting()
-        pbt_output = PBT(name=f'{entry_name}', player=player, camera=camera, texturize=app.texturize.get() == 1)
+        pbt_output = PBT(name=f'{entry_name}', player=player, camera=camera,
+                         texturize=app.texturize.get() == 1,
+                         modelize=app.modelize.get() == 1)
 
         # give vertex, and map files uuids, create output pbt
         # read input and output files into memory
@@ -87,20 +92,7 @@ def run(path):
         open(f'{parent}/{uuid}-map.txt', 'w').close()
         open(f'{parent}/{entry_name}.pbt', 'w').close()
 
-        app.input_btn.place_forget()
-        app.input_lbl.place_forget()
-        app.convert_btn.place_forget()
-        app.optimize_box.place_forget()
-        app.texturize_box.place_forget()
-        app.log_box.place_forget()
-        app.player_collide_lbl.place_forget()
-        app.player_collision_cycle_lbl.place_forget()
-        app.player_collision_cycle_lbtn.place_forget()
-        app.player_collision_cycle_rbtn.place_forget()
-        app.camera_collide_lbl.place_forget()
-        app.camera_collision_cycle_lbl.place_forget()
-        app.camera_collision_cycle_lbtn.place_forget()
-        app.camera_collision_cycle_rbtn.place_forget()
+        app.unplace()
         app.root.deiconify()
         app.root.geometry('230x61')
         app.progress_bar.place(x=0, y=0)
@@ -177,9 +169,9 @@ def run(path):
             # Multiply the diffuse and texture colors
             color = np.multiply(texture_color, diffuse_color)  # if app.texturize.get() == 1 else [0.118, 0.141, 0.384]
 
-            core_a = [a[2], -a[0], a[1]] #Convert to Core positions
-            core_b = [b[2], -b[0], b[1]]
-            core_c = [c[2], -c[0], c[1]]
+            core_a = [a[2], a[0], a[1]] #Convert to Core positions
+            core_b = [b[2], b[0], b[1]]
+            core_c = [c[2], c[0], c[1]]
 
             position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c, app.optimize.get() == 1)
             app.progress_bar['value'] += 1
@@ -194,11 +186,14 @@ def run(path):
                 else:
                     continue
 
-        app.set_wrapping_up()
+        app.set_wrapping_up(uuid, entry_name)
         output_file.write(pbt_output.generate_pbt())
         remove(f'{parent}/{uuid}-vertex.txt'), remove(f'{parent}/{uuid}-map.txt'), remove(f'{parent}/{uuid}-texture.txt')
         input_file.close(), output_file.close()
         app.lbl.place_forget()
+        app.separator.place_forget()
+        app.name_lbl.place_forget()
+        app.uuid_lbl.place_forget()
         app.aesthetic_path.set('')
         file_path = ''
         if log_file:
