@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
-# Function given by Waffle and revised/commented by Zanth. See docs for details
+# Original function given by Waffle and revised/commented by Zanth. See docs for details
 def triangle(a, b, c, should_optimize):
 
     ab, ac, bc = np.subtract(b, a), np.subtract(c, a), np.subtract(c, b)  # vectors between the points
@@ -34,11 +34,10 @@ def triangle(a, b, c, should_optimize):
     dot_product = np.dot(ac_unit, bc_unit)
     angle_c = np.arccos(dot_product)
 
-    # if angle c is a right angle if and only if the triangle is a right triangle
+    # angle c is a right angle if and only if the triangle is a right triangle
     if angle_c == np.pi / 2 and should_optimize:
 
-        # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
-        # which is always point c in our program
+        # position calculation - our triangles are wedges, so position is the midpoint of the length surface
         position = np.divide(np.add(a, c), 2)
 
         # scale calculation
@@ -62,10 +61,9 @@ def triangle(a, b, c, should_optimize):
     y = np.divide(p, width)                 # y is the unit vector of p, aka p hat
     x = np.cross(y, z)                      # x is the cross product of y and z
 
-    # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
-    # which is the same for both triangles, since they share the point where their right angles occur
-    o = np.add(a, l1)
-    r = np.multiply(x, 0.0002)
+    # position calculation - our triangles are wedges, so position is the midpoint of the surface between the triangles
+    o = np.add(a, l1)                       # o is the splitting point of ab
+    r = np.multiply(x, 0.0002)              # r is the depth vector
     position_1 = position_2 = np.divide(np.add(c, np.add(o, r)), 2)
 
     # scale calculation
