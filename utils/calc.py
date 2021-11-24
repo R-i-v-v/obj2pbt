@@ -1,9 +1,17 @@
 import numpy as np
 from scipy.spatial.transform import Rotation as R
 
+
+class Shape:  # shape class that makes returning a bit easier
+    def __init__(self, position, scale, rotation, type):
+        self.position = position
+        self.scale = scale
+        self.rotation = rotation
+        self.type = type
+
+
 # Function given by Waffle and revised/commented by Zanth. See docs for details
 def triangle(a, b, c, should_optimize):
-
     ab, ac, bc = np.subtract(b, a), np.subtract(c, a), np.subtract(c, b)  # vectors between the points
 
     # by comparing the lengths of the sides, we can determine the largest angle
@@ -34,24 +42,31 @@ def triangle(a, b, c, should_optimize):
     dot_product = np.dot(ac_unit, bc_unit)
     angle_c = np.arccos(dot_product)
 
-    # if angle c is a right angle if and only if the triangle is a right triangle
-    if angle_c == np.pi / 2 and should_optimize:
+    if should_optimize:  # the following block of code runs only if 'optimize' checkbox is checked
+        # if angle c is a right angle if and only if the triangle is a right triangle
+        if angle_c == np.pi / 2:
+            # position calculation - our triangles are corner-aligned wedges
+            # so position is where the right angle occurs, which is always point c in our program
+            position = np.divide(np.add(a, c), 2)
 
-        # position calculation - our triangles are corner-aligned wedges, so position is where the right angle occurs
-        # which is always point c in our program
-        position = np.divide(np.add(a, c), 2)
+            # scale calculation
+            scale = np.divide([0.02, len_ac, len_bc], 100)
 
-        # scale calculation
-        scale = np.divide([0.02, len_ac, len_bc], 100)
+            # rotation calculation
+            z = -bc_unit                            # z is the unit vector of -bc (-bc hat). Length vector of triangle
+            y = -ac_unit                            # y is the unit vector of -ac (-ac hat). Width vector of triangle
+            x = np.cross(y, z)                      # x is the cross product of x and y
+            matrix = np.transpose([-x, -y, z])      # matrix is the rotation matrix of the triangle
+            rotation = R.from_matrix(matrix).as_euler('xyz', degrees=True) * [-1, -1, 1]
+            right_triangle = Shape(position, scale, rotation, "sm_wedge_001")
+            return [right_triangle]
 
-        # rotation calculation
-        z = -bc_unit                            # z is the unit vector of -bc, aka -bc hat. Length vector of triangle
-        y = -ac_unit                            # y is the unit vector of -ac, aka -ac hat. Width vector of triangle
-        x = np.cross(y, z)                      # x is the cross product of x and y
-        matrix = np.transpose([-x, -y, z])      # matrix is the rotation matrix of the triangle
-        rotation = R.from_matrix(matrix).as_euler('xyz', degrees=True) * [-1, -1, 1]
-
-        return position, None, scale, None, rotation, None
+        # isosceles check isn't ready yet
+        # elif len_ab == len_ac or len_ab == len_bc or len_bc == len_ac:  # isosceles triangle check
+        #     # isosceles prism position calculation
+        #     r = 0
+        #     position = [(a[0] + b[0] + c[0])/3, (a[1] + b[1] + c[1])/3, (a[2] + b[2] + c[2])/3 + r]
+        #     return
 
     z = np.divide(ab, len_ab)               # z is the unit vector of ab, aka ab hat
     l1 = np.multiply(np.dot(ac, z), z)      # l1 is the length vector of triangle_0
@@ -76,4 +91,6 @@ def triangle(a, b, c, should_optimize):
     rotation_1, rotation_2 = R.from_matrix(matrix_1).as_euler('xyz', degrees=True) * [-1, -1, 1], \
                              R.from_matrix(matrix_2).as_euler('xyz', degrees=True) * [-1, -1, 1]
 
-    return position_1, position_2, scale_1, scale_2, rotation_1, rotation_2
+    first_split = Shape(position_1, scale_1, rotation_1, "sm_wedge_001")
+    second_split = Shape(position_2, scale_2, rotation_2, "sm_wedge_001")
+    return [first_split, second_split]

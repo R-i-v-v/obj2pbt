@@ -173,18 +173,13 @@ def run(path):
             core_b = [b[2], b[0], b[1]]
             core_c = [c[2], c[0], c[1]]
 
-            position_one, position_two, scale_one, scale_two, rotation_one, rotation_two = triangle(core_a, core_b, core_c, app.optimize.get() == 1)
+            shapes = triangle(core_a, core_b, core_c, app.optimize.get() == 1)
             app.progress_bar['value'] += 1
             app.root.update_idletasks()
-            for position, scale, rotation in zip([position_one, position_two],
-                                                 [scale_one, scale_two],
-                                                 [rotation_one, rotation_two]):
-                if position is not None and scale is not None and rotation is not None:
+            for shape in shapes:
                     mesh_index += 1
                     child_name = "{0}.{1:04}".format(group_names[group] if g_count > 0 else 'mesh', mesh_index)
-                    folders[group].add_child(child_name, "sm_wedge_001", np.multiply(position, 10), rotation, np.multiply(scale, 10), None, color, app.texturize.get() == 1)
-                else:
-                    continue
+                    folders[group].add_child(child_name, shape.type, np.multiply(shape.position, 10), shape.rotation, np.multiply(shape.scale, 10), None, color, app.texturize.get() == 1)
 
         app.set_wrapping_up(uuid, entry_name)
         output_file.write(pbt_output.generate_pbt())
