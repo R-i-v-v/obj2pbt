@@ -56,6 +56,7 @@ def convert_file():
 
 
 app = UI()
+app.version(3.1)
 app.ui_init(icon_in_base_64, convert_file, open_file)
 app.buttonize()
 

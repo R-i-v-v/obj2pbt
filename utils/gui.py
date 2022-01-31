@@ -6,6 +6,10 @@ from os import remove
 class UI:
     def __init__(self):
         self.root = tk.Tk()
+        self.__version__ = 0.0
+
+    def version(self, number: float):
+        self.__version__ = number
 
     def setting(self):
         player = 'inheritfromparent' if self.player_cycle_name.get() == 'Inherit' else 'forceon' if self.player_cycle_name.get() == 'Force On' else 'forceoff'
@@ -49,7 +53,7 @@ class UI:
         self.file_path, self.path_name = '', ''
 
     def ui_init(self, icon_in_base_64, convert_file_callback, open_file_callback):
-        self.root.title('obj2pbt')  # set window title
+        self.root.title(f'obj2pbt v{str(self.__version__)}')  # set window title
         self.root.resizable(width=False, height=False)  # prevent resizing
         self.progress_bar = ttk.Progressbar(self.root, orient='horizontal', length=230, mode='determinate', value=0)
 
