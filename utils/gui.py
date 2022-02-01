@@ -69,6 +69,7 @@ class UI:
         ttk.Style().configure('cycle.TButton', font=('Helvetica', 6))
         ttk.Style().configure('cycle.TLabel', font=('Helvetica', 9), background='#d8d8d8')
         ttk.Style().configure('collide.TLabel', font=('Helvetica', 9))
+        ttk.Style().configure('version.TLabel', font=('Helvetica', 7, 'italic'), background='#d8d8d8')
 
         self.optimize, self.texturize, self.log = tk.IntVar(value=1), tk.IntVar(value=0), tk.IntVar(value=0)
         self.aesthetic_path, self.file_path, self.path_name, self.modelize = tk.StringVar(), '', '', tk.IntVar(value=0)
@@ -93,6 +94,7 @@ class UI:
         self.camera_collision_cycle_rbtn = ttk.Button(self.root, text='▶', width=1, style='cycle.TButton', command=self.right_cycle_camera)
 
         self.convert_btn = ttk.Button(self.root, text='Convert', width=25, style='std.TButton', command=convert_file_callback)
+        self.version_lbl = ttk.Label(self.root, text=f'obj2pbt v{self.__version__}', width=12, style='version.TLabel')
 
     def buttonize(self):
         self.root.geometry('185x200')  # set window geometry
@@ -113,6 +115,7 @@ class UI:
         self.camera_collision_cycle_lbl.place(x=115, y=151)
         self.camera_collision_cycle_rbtn.place(x=170, y=150)
         self.convert_btn.place(x=0, y=174)
+        self.version_lbl.place(x=128, y=3)
         
     def unplace(self):
         self.input_btn.place_forget()

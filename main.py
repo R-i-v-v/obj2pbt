@@ -18,6 +18,7 @@ from utils.gui import UI
 from utils.file import readData
 
 # program headed by Rivvnik#1111
+VERSION = 3.1
 np.set_printoptions(16)
 myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -27,6 +28,7 @@ app = None  # set taskbar icon
 
 def open_file():
     global file_path, pure_path, dir_path
+    app.version_lbl.place_forget()
     if app.log.get() == 1:
         dir_path = filedialog.askdirectory()
         try:
@@ -56,7 +58,7 @@ def convert_file():
 
 
 app = UI()
-app.version(3.1)
+app.version(VERSION)
 app.ui_init(icon_in_base_64, convert_file, open_file)
 app.buttonize()
 
