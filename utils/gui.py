@@ -115,7 +115,7 @@ class UI:
         self.camera_collision_cycle_lbl.place(x=115, y=151)
         self.camera_collision_cycle_rbtn.place(x=170, y=150)
         self.convert_btn.place(x=0, y=174)
-        self.version_lbl.place(x=128, y=3)
+        self.version_lbl.place(x=3, y=3)
         
     def unplace(self):
         self.input_btn.place_forget()
