@@ -44,7 +44,7 @@ def triangle(a, b, c, should_optimize):
 
     if should_optimize:  # the following block of code runs only if 'optimize' checkbox is checked
         # angle c is a right angle if and only if the triangle is a right triangle
-        if (np.pi/2 - 0.00001) < angle_c < (np.pi/2 + 0.00001):
+        if (np.pi/2 - 0.0001) < angle_c < (np.pi/2 + 0.0001):
 
             # position calculation - our triangles are wedges, so position is the midpoint of the length surface
             position = np.divide(np.add(a, c), 2)
