@@ -3,10 +3,32 @@ import tkinter as tk
 from base64 import b64decode
 from os import remove
 
+
 class UI:
     def __init__(self):
+        self.uuid_lbl, self.name_lbl, self.lbl, self.progress_uuid, self.progress_lbl = None, None, None, None, None
+        self.version_lbl, self.convert_btn, self.camera_collision_cycle_lbtn = None, None, None
+        self.camera_collision_cycle_rbtn, self.camera_collision_cycle_lbl, self.camera_collide_lbl = None, None, None
+        self.player_collision_cycle_rbtn, self.player_collision_cycle_lbl, self.log_box = None, None, None
+        self.player_collision_cycle_lbtn, self.player_collide_lbl, self.merged_model_box = None, None, None
+        self.texturize_box, self.optimize_box, self.input_btn, self.input_lbl = None, None, None, None
+        self.log, self.optimize, self.path_name, self.file_path = None, None, None, None
+        self.texturize, self.modelize, self.aesthetic_path, self.obj_button_text = None, None, None, None
+        self.separator, self.progress_bar, self.camera_cycle_name, self.player_cycle_name = None, None, None, None
         self.root = tk.Tk()
         self.__version__ = 0.0
+
+    def initialize_colors(self):
+        # custom_style = ttk.Style()
+        # self.root.call('source', 'forest-dark.tcl')
+        # custom_style.theme_use('forest-dark')
+        # custom_style.configure('TButton', background='RED', foreground='WHITE', width=20, borderwidth=1,
+        #                        focusthickness=3, focuscolor='none')
+        ttk.Style().configure('std.TButton', font=('Helvetica', 10, 'bold'))
+        ttk.Style().configure('cycle.TButton', font=('Helvetica', 6))
+        ttk.Style().configure('cycle.TLabel', font=('Helvetica', 9), background='#000000')
+        ttk.Style().configure('collide.TLabel', font=('Helvetica', 9))
+        ttk.Style().configure('version.TLabel', font=('Helvetica', 7, 'italic'), background='white', foreground='black')
 
     def version(self, number: float):
         self.__version__ = number
@@ -14,7 +36,7 @@ class UI:
     def setting(self):
         player = 'inheritfromparent' if self.player_cycle_name.get() == 'Inherit' else 'forceon' if self.player_cycle_name.get() == 'Force On' else 'forceoff'
         camera = 'inheritfromparent' if self.camera_cycle_name.get() == 'Inherit' else 'forceon' if self.camera_cycle_name.get() == 'Force On' else 'forceoff'
-        return (player, camera)
+        return player, camera
 
     def cycle(self, method: str, input: tk.StringVar):
         if method == 'left':
@@ -64,19 +86,15 @@ class UI:
         icon_file.close()
         self.root.wm_iconbitmap(temp_icon_file)
         remove(temp_icon_file)
-
-        ttk.Style().configure('std.TButton', font=('Helvetica', 10, 'bold'))
-        ttk.Style().configure('cycle.TButton', font=('Helvetica', 6))
-        ttk.Style().configure('cycle.TLabel', font=('Helvetica', 9), background='#d8d8d8')
-        ttk.Style().configure('collide.TLabel', font=('Helvetica', 9))
-        ttk.Style().configure('version.TLabel', font=('Helvetica', 7, 'italic'), background='#d8d8d8')
+        self.initialize_colors()
 
         self.optimize, self.texturize, self.log = tk.IntVar(value=1), tk.IntVar(value=0), tk.IntVar(value=0)
         self.aesthetic_path, self.file_path, self.path_name, self.modelize = tk.StringVar(), '', '', tk.IntVar(value=0)
         self.player_cycle_name, self.camera_cycle_name = tk.StringVar(value='Inherit'), tk.StringVar(value='Inherit')
         self.separator = ttk.Separator(self.root, orient='horizontal')
         self.obj_button_text = tk.StringVar(value='Select triangulated .obj')
-        self.input_lbl = ttk.Label(self.root, textvariable=self.aesthetic_path, background='#d8d8d8', width=26, anchor=tk.CENTER, font=('Helvetica', 9, 'italic'))
+        self.input_lbl = ttk.Label(self.root, textvariable=self.aesthetic_path, background='WHITE', width=26,
+                                   anchor=tk.CENTER, font=('Helvetica', 9, 'italic'), foreground='BLACK')
         self.input_btn = ttk.Button(self.root, textvariable=self.obj_button_text, width=25, style='std.TButton', command=open_file_callback)
         self.log_box = ttk.Checkbutton(self.root, text="Convert from directory", variable=self.log, onvalue=1, offvalue=0, command=self.logbox)
         self.optimize_box = ttk.Checkbutton(self.root, text="Optimize object count", variable=self.optimize, onvalue=1, offvalue=0)
