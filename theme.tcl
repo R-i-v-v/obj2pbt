@@ -9,7 +9,7 @@ namespace eval ttk::theme::obj2pbt {
     variable colors
     array set colors {
         -fg             "#F0F0F0"
-        -bg             "#000000"
+        -bg             "#0E0E0E"
         -disabledfg     "#313131"
         -disabledbg     "#ffffff"
         -selectfg       "#ffffff"
@@ -38,7 +38,7 @@ namespace eval ttk::theme::obj2pbt {
             -insertwidth 1 \
             -insertcolor $colors(-fg) \
             -fieldbackground $colors(-selectbg) \
-            -font {TkDefaultFont 10} \
+            -font {montserrat 10} \
             -borderwidth 1 \
             -relief flat
 
@@ -111,6 +111,9 @@ namespace eval ttk::theme::obj2pbt {
 
         # Arrow Cycle Button
         ttk::style configure cycle.TButton -padding {0 0 0 0} -width -10 -anchor center
+
+        # Standard Button
+        ttk::style configure std.TButton -padding {0 0 0 0} -width -10 -anchor center
 
         # Checkbutton
         ttk::style configure TCheckbutton -padding 4

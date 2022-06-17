@@ -18,7 +18,7 @@ from utils.gui import UI
 from utils.file import readData
 
 # program headed by Rivvnik#1111
-VERSION = 3.1
+VERSION = 4
 np.set_printoptions(16)
 myappid = u'mycompany.myproduct.subproduct.version'  # arbitrary string
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
@@ -97,12 +97,12 @@ def run(path):
 
         app.unplace()
         app.root.deiconify()
-        app.root.geometry('230x61')
+        app.root.geometry('230x51')
         app.progress_bar.place(x=0, y=0)
-        app.progress_lbl = ttk.Label(app.root, text=f'Generating {entry_name + ".pbt..."}', font=('Helvetica', 8))
-        app.progress_lbl.place(x=0, y=23)
-        app.progress_uuid = ttk.Label(app.root, text=f'UUID: {uuid}', font=('Helvetica', 8))
-        app.progress_uuid.place(x=0, y=40)
+        app.progress_lbl = ttk.Label(app.root, text=f'Generating {entry_name + ".pbt..."}', font=('monsterrat', 10))
+        app.progress_lbl.place(x=0, y=12)
+        app.progress_uuid = ttk.Label(app.root, text=f'UUID: {uuid}', font=('monsterrat', 10))
+        app.progress_uuid.place(x=0, y=30)
         app.root.update()
 
         (
