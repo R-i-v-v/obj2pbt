@@ -158,6 +158,17 @@ class UI:
         self.camera_collision_cycle_lbl.place_forget()
         self.camera_collision_cycle_lbtn.place_forget()
         self.camera_collision_cycle_rbtn.place_forget()
+    
+    def make_progress(self, uuid, entry_name):
+        self.unplace()
+        self.root.deiconify()
+        self.root.geometry('230x51')
+        self.progress_bar.place(x=0, y=0)
+        self.progress_lbl = ttk.Label(self.root, text=f'Generating {entry_name + ".pbt..."}', font=('montserrat', 10))
+        self.progress_lbl.place(x=0, y=12)
+        self.progress_uuid = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 10), foreground='#FF392B')
+        self.progress_uuid.place(x=0, y=30)
+        self.root.update()
 
     def set_wrapping_up(self, uuid, entry):
         self.progress_bar.place_forget()
@@ -170,7 +181,7 @@ class UI:
         self.separator.place(x=0, y=23, relwidth=1.0)
         self.name_lbl = ttk.Label(self.root, text=f'{entry}.pbt', font=('montserrat', 8))
         self.name_lbl.place(x=0, y=25)
-        self.uuid_lbl = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 8))
+        self.uuid_lbl = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 8), foreground='#FF392B')
         self.uuid_lbl.place(x=0, y=40)
         self.root.update()
 

@@ -7,6 +7,7 @@ from tkinter import filedialog, ttk
 import ctypes
 import numpy as np
 from uuid import uuid4
+from pyglet import font
 from math import floor
 from time import time
 from decimal import Decimal
@@ -95,15 +96,7 @@ def run(path):
         open(f'{parent}/{uuid}-map.txt', 'w').close()
         open(f'{parent}/{entry_name}.pbt', 'w').close()
 
-        app.unplace()
-        app.root.deiconify()
-        app.root.geometry('230x51')
-        app.progress_bar.place(x=0, y=0)
-        app.progress_lbl = ttk.Label(app.root, text=f'Generating {entry_name + ".pbt..."}', font=('monsterrat', 10))
-        app.progress_lbl.place(x=0, y=12)
-        app.progress_uuid = ttk.Label(app.root, text=f'UUID: {uuid}', font=('monsterrat', 10))
-        app.progress_uuid.place(x=0, y=30)
-        app.root.update()
+        app.make_progress(uuid, entry_name)
 
         (
             vertices_by_line,
