@@ -95,14 +95,6 @@ namespace eval ttk::theme::obj2pbt {
 
         ttk::style layout Vertical.TSeparator {
             Vertical.separator -sticky nswe
-        }      
-
-        ttk::style layout TLabelframe {
-            Labelframe.border {
-                Labelframe.padding -expand 1 -children {
-                    Labelframe.label -side left
-                }
-            }
         }
 
         # Elements
@@ -188,10 +180,6 @@ namespace eval ttk::theme::obj2pbt {
         ttk::style element create Horizontal.separator image $I(separator)
 
         ttk::style element create Vertical.separator image $I(separator)
-
-        # Labelframe
-        ttk::style element create Labelframe.border image $I(card) \
-            -border 5 -padding 4 -sticky nsew
 
         # Sashes
         #ttk::style map TPanedwindow -background [list hover $colors(-bg)]
