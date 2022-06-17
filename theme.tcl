@@ -1,6 +1,4 @@
-# Copyright (c) 2021 rdbende <rdbende@gmail.com>
-
-# The Forest theme is a beautiful and modern ttk theme inspired by Excel.
+# Adapted from rdbende's Forest-Dark theme
 
 package require Tk 8.6
 
