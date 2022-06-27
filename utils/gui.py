@@ -1,19 +1,25 @@
 from tkinter import ttk
 import tkinter as tk
 from base64 import b64decode
+from time import sleep
 from os import remove
+from .elements import start_progress, end_progress, load_progress
+from PIL import Image, ImageTk, ImageSequence
 from pyglet import font
-
+import threading
 
 class UI:
     def __init__(self):
+        self.some_flag = True
+        self.animated_gif, self.start_prog, self.end_prog, self.load_lbl, self.border = None, None, None, None, None
         self.uuid_lbl, self.name_lbl, self.lbl, self.progress_uuid, self.progress_lbl = None, None, None, None, None
-        self.version_lbl, self.convert_btn, self.camera_collision_cycle_lbtn = None, None, None
+        self.version_lbl, self.convert_btn, self.camera_collision_cycle_lbtn, self.temp_load = None, None, None, None
         self.camera_collision_cycle_rbtn, self.camera_collision_cycle_lbl, self.camera_collide_lbl = None, None, None
         self.player_collision_cycle_rbtn, self.player_collision_cycle_lbl, self.log_box = None, None, None
         self.player_collision_cycle_lbtn, self.player_collide_lbl, self.merged_model_box = None, None, None
         self.texturize_box, self.optimize_box, self.input_btn, self.input_lbl = None, None, None, None
-        self.log, self.optimize, self.path_name, self.file_path = None, None, None, None
+        self.prog_load_frames, self.prog_end, self.temp_end, self.prog_start, self.canvas = None, None, None, None, None
+        self.log, self.optimize, self.path_name, self.file_path, self.temp_start = None, None, None, None, None
         self.texturize, self.modelize, self.aesthetic_path, self.obj_button_text = None, None, None, None
         self.separator, self.progress_bar, self.camera_cycle_name, self.player_cycle_name = None, None, None, None
         self.root = tk.Tk()
@@ -83,7 +89,7 @@ class UI:
     def ui_init(self, icon_in_base_64, convert_file_callback, open_file_callback):
         self.root.title(f'obj2pbt v{str(self.__version__)}')  # set window title
         self.root.resizable(width=False, height=False)  # prevent resizing
-        self.progress_bar = ttk.Progressbar(self.root, orient='horizontal', length=230, mode='determinate', value=0)
+        self.progress_bar = ttk.Progressbar(self.root, orient='horizontal', length=370, mode='determinate', value=0)
 
         icon_data = b64decode(icon_in_base_64)
         temp_icon_file = 'temp_icon.ico'
@@ -140,7 +146,7 @@ class UI:
         self.camera_collision_cycle_rbtn.place(x=213, y=207)
         self.convert_btn.place(x=6, y=243)
         self.version_lbl.place(x=3, y=3)
-        
+
     def unplace(self):
         self.input_btn.place_forget()
         self.input_lbl.place_forget()
@@ -158,30 +164,62 @@ class UI:
         self.camera_collision_cycle_lbl.place_forget()
         self.camera_collision_cycle_lbtn.place_forget()
         self.camera_collision_cycle_rbtn.place_forget()
-    
-    def make_progress(self, uuid, entry_name):
+
+    async def play_gif(self):
+        global img
+        if self.some_flag:
+            img = Image.open(self.temp_load)
+            self.load_lbl = ttk.Label(self.root, borderwidth=0)
+            self.load_lbl.place(x=10, y=7)
+            for img in ImageSequence.Iterator(img):
+                img = img.resize((150, 150))
+                img = ImageTk.PhotoImage(img)
+                self.load_lbl.configure(image=img)
+                self.root.update()
+                sleep(0.0085)
+            self.root.after(0, await self.play_gif())
+        else:
+            img = Image.open(self.temp_load)
+            img.close()
+            remove(self.temp_load)
+
+    async def make_progress(self, uuid, entry_name):
         self.unplace()
         self.root.deiconify()
-        self.root.geometry('230x51')
-        self.progress_bar.place(x=0, y=0)
-        self.progress_lbl = ttk.Label(self.root, text=f'Generating {entry_name + ".pbt..."}', font=('montserrat', 10))
-        self.progress_lbl.place(x=0, y=12)
-        self.progress_uuid = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 10), foreground='#FF392B')
-        self.progress_uuid.place(x=0, y=30)
+        self.root.geometry('600x170')
+        self.some_flag = True
+        start, end, load = b64decode(start_progress), b64decode(end_progress), b64decode(load_progress)
+        self.temp_start, self.temp_end, self.temp_load = 'temp_start.png', 'temp_end.png', 'temp_load.gif'
+        for i, j in zip([self.temp_start, self.temp_end, self.temp_load], [start, end, load]):
+            file = open(i, 'wb')
+            file.write(j)
+            file.close()
+        self.prog_start, self.prog_end = ImageTk.PhotoImage(file=self.temp_start), ImageTk.PhotoImage(file=self.temp_end)
+        self.start_prog = ttk.Label(self.root, image=self.prog_start, borderwidth=0)
+        self.start_prog.place(x=181, y=15)
+        self.end_prog = ttk.Label(self.root, image=self.prog_end, borderwidth=0)
+        self.end_prog.place(x=560, y=15)
+        self.progress_bar.place(x=190, y=15)
+        self.progress_lbl = ttk.Label(self.root, text=f'Generating {entry_name + ".pbt..."}', font=('montserrat', 12))
+        self.progress_lbl.place(x=181, y=115)
+        self.progress_uuid = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 12), foreground='#FF392B')
+        self.progress_uuid.place(x=181, y=137)
         self.root.update()
 
     def set_wrapping_up(self, uuid, entry):
-        self.progress_bar.place_forget()
-        self.progress_lbl.place_forget()
-        self.progress_uuid.place_forget()
+        global img
+        self.some_flag = False
+        self.progress_bar.place_forget(), self.progress_lbl.place_forget(), self.progress_uuid.place_forget()
+        self.start_prog.place_forget(), self.end_prog.place_forget(), self.load_lbl.place_forget()
+        remove(self.temp_start), remove(self.temp_end)
         self.root.update()
-        self.root.geometry('130x61')
-        self.lbl = ttk.Label(self.root, text=f'wrapping up...', font=('montserrat', 10, 'bold italic'))
-        self.lbl.place(x=0, y=0)
-        self.separator.place(x=0, y=23, relwidth=1.0)
-        self.name_lbl = ttk.Label(self.root, text=f'{entry}.pbt', font=('montserrat', 8))
-        self.name_lbl.place(x=0, y=25)
-        self.uuid_lbl = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 8), foreground='#FF392B')
-        self.uuid_lbl.place(x=0, y=40)
+        self.root.geometry('180x90')
+        self.lbl = ttk.Label(self.root, text=f'wrapping up...', font=('montserrat', 16, 'bold italic'))
+        self.lbl.place(x=7, y=0)
+        self.separator.place(x=0, y=35, relwidth=1.0)
+        self.name_lbl = ttk.Label(self.root, text=f'{entry}.pbt', font=('montserrat', 12))
+        self.name_lbl.place(x=5, y=38)
+        self.uuid_lbl = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 12), foreground='#FF392B')
+        self.uuid_lbl.place(x=5, y=61)
         self.root.update()
 
