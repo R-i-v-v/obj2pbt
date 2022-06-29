@@ -12,6 +12,7 @@ namespace eval ttk::theme::obj2pbt {
         -bg             "#0E0E0E"
         -disabledfg     "#313131"
         -disabledbg     "#ffffff"
+        -bluest         "#2B4FFF"
         -selectfg       "#ffffff"
         -selectbg       "#FF392B"
     }
@@ -38,7 +39,7 @@ namespace eval ttk::theme::obj2pbt {
             -insertwidth 1 \
             -insertcolor $colors(-fg) \
             -fieldbackground $colors(-selectbg) \
-            -font {montserrat 10} \
+            -font {montserrat 11} \
             -borderwidth 1 \
             -relief flat
 
@@ -95,6 +96,14 @@ namespace eval ttk::theme::obj2pbt {
             Vertical.separator -sticky nswe
         }
 
+        ttk::style layout TLabelframe {
+            Labelframe.border {
+                Labelframe.padding -expand 1 -children {
+                    Labelframe.label -side left
+                }
+            }
+        }
+
         # Elements
 
         # Button
@@ -131,7 +140,7 @@ namespace eval ttk::theme::obj2pbt {
                 selected $I(check-accent) \
                 {pressed !selected} $I(check-unsel-pressed) \
                 active $I(check-unsel-hover) \
-            ] -width 26 -sticky w
+            ] -width 30 -sticky w
 
         # Scrollbar
         ttk::style element create Horizontal.Scrollbar.trough image $I(hor-basic) \
@@ -181,6 +190,10 @@ namespace eval ttk::theme::obj2pbt {
         ttk::style element create Horizontal.separator image $I(separator)
 
         ttk::style element create Vertical.separator image $I(separator)
+
+        # Labelframe
+        ttk::style element create Labelframe.border image $I(card) \
+            -border 10 -padding 4
 
         # Sashes
         #ttk::style map TPanedwindow -background [list hover $colors(-bg)]

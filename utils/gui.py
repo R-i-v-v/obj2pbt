@@ -1,16 +1,18 @@
 from tkinter import ttk
 import tkinter as tk
 from base64 import b64decode
+import asyncio
 from time import sleep
 from os import remove
-from .elements import start_progress, end_progress, load_progress
+from .elements import start_progress, end_progress, load_progress, version_four, logo_image
 from PIL import Image, ImageTk, ImageSequence
 from pyglet import font
 import threading
 
 class UI:
     def __init__(self):
-        self.some_flag = True
+        self.temp_logo_file, self.temp_version_file, self.logo_image, self.version_image = None, None, None, None
+        self.some_flag, self.central_frame, self.logo_img, self.version_img = True, None, None, None
         self.animated_gif, self.start_prog, self.end_prog, self.load_lbl, self.border = None, None, None, None, None
         self.uuid_lbl, self.name_lbl, self.lbl, self.progress_uuid, self.progress_lbl = None, None, None, None, None
         self.version_lbl, self.convert_btn, self.camera_collision_cycle_lbtn, self.temp_load = None, None, None, None
@@ -37,6 +39,8 @@ class UI:
         ttk.Style().configure('cycle.TLabel', font=('montserrat', 9), background='#0E0E0E')
         ttk.Style().configure('collide.TLabel', font=('montserrat', 9))
         ttk.Style().configure('version.TLabel', font=('montserrat', 10), background='white', foreground='black')
+        ttk.Style().configure('TLabelframe', labelmargins=(0, -4, 25, 13))
+        ttk.Style().configure('TLabelframe.Label', font=('montserrat', 9, 'bold'), background='#0E0E0E', foreground='#FF392B')
 
     def version(self, number: float):
         self.__version__ = number
@@ -90,62 +94,69 @@ class UI:
         self.root.title(f'obj2pbt v{str(self.__version__)}')  # set window title
         self.root.resizable(width=False, height=False)  # prevent resizing
         self.progress_bar = ttk.Progressbar(self.root, orient='horizontal', length=370, mode='determinate', value=0)
-
-        icon_data = b64decode(icon_in_base_64)
-        temp_icon_file = 'temp_icon.ico'
-        icon_file = open(temp_icon_file, 'wb')
-        icon_file.write(icon_data)
-        icon_file.close()
+        icon_data, logo_data, version_data = b64decode(icon_in_base_64), b64decode(logo_image), b64decode(version_four)
+        temp_icon_file, self.temp_logo_file, self.temp_version_file = 'temp_icon.ico', 'temp_logo.png', 'temp_version.png'
+        icon_file, logo_file, version_file = open(temp_icon_file, 'wb'), open(self.temp_logo_file, 'wb'), open(self.temp_version_file, 'wb')
+        icon_file.write(icon_data), logo_file.write(logo_data), version_file.write(version_data)
+        icon_file.close(), logo_file.close(), version_file.close()
+        self.version_img, self.logo_img = ImageTk.PhotoImage(file=self.temp_version_file), ImageTk.PhotoImage(file=self.temp_logo_file)
         self.root.wm_iconbitmap(temp_icon_file)
+        # self.root.wm_attributes('-alpha', 0.5)
         remove(temp_icon_file)
         self.initialize_colors()
 
         self.optimize, self.texturize, self.log = tk.IntVar(value=1), tk.IntVar(value=0), tk.IntVar(value=0)
         self.aesthetic_path, self.file_path, self.path_name, self.modelize = tk.StringVar(), '', '', tk.IntVar(value=0)
         self.player_cycle_name, self.camera_cycle_name = tk.StringVar(value='Inherit'), tk.StringVar(value='Inherit')
-        self.separator = ttk.Separator(self.root, orient='horizontal')
+        # self.canvas = tk.Canvas()
+        self.central_frame = ttk.Labelframe(self.root, labelanchor='se', text=f'   obj2pbt v{self.__version__}   ',
+                                            width=315, height=363, style='TLabelframe')
+        self.separator = ttk.Separator(self.central_frame, orient='horizontal')
         self.obj_button_text = tk.StringVar(value='Select triangulated .obj')
-        self.input_lbl = ttk.Label(self.root, textvariable=self.aesthetic_path, background='WHITE', width=22,
-                                   anchor=tk.CENTER, font=('montserrat', 12, 'italic'), foreground='BLACK')
-        self.input_btn = ttk.Button(self.root, textvariable=self.obj_button_text, width=20, style='std.TButton', command=open_file_callback)
-        self.log_box = ttk.Checkbutton(self.root, text="Convert from directory", variable=self.log, onvalue=1, offvalue=0, command=self.logbox)
-        self.optimize_box = ttk.Checkbutton(self.root, text="Optimize object count", variable=self.optimize, onvalue=1, offvalue=0)
-        self.texturize_box = ttk.Checkbutton(self.root, text="Texturize using .mtl file", variable=self.texturize, onvalue=1, offvalue=0)
-        self.merged_model_box = ttk.Checkbutton(self.root, text="Use merged models (beta)", variable=self.modelize, command=self.change_model)
+        self.input_lbl = ttk.Label(self.central_frame, textvariable=self.aesthetic_path, background='WHITE', width=20,
+                                   anchor=tk.W, font=('montserrat', 14, 'bold'), foreground='BLACK')
+        self.logo_image = ttk.Label(self.central_frame, borderwidth=0, image=self.logo_img)
+        self.input_btn = ttk.Button(self.central_frame, textvariable=self.obj_button_text, width=23, style='std.TButton', command=open_file_callback)
+        self.log_box = ttk.Checkbutton(self.central_frame, text="Convert from directory", variable=self.log, onvalue=1, offvalue=0, command=self.logbox)
+        self.optimize_box = ttk.Checkbutton(self.central_frame, text="Optimize object count", variable=self.optimize, onvalue=1, offvalue=0)
+        self.texturize_box = ttk.Checkbutton(self.central_frame, text="Texturize using .mtl file", variable=self.texturize, onvalue=1, offvalue=0)
+        self.merged_model_box = ttk.Checkbutton(self.central_frame, text="Use merged models (beta)", variable=self.modelize, command=self.change_model)
 
-        self.player_collide_lbl = ttk.Label(self.root, text='Player collision', width=16, style='collide.TLabel')
-        self.player_collision_cycle_lbtn = ttk.Button(self.root, text='◀', width=1, style='cycle.TButton', command=self.left_cycle_player)
-        self.player_collision_cycle_lbl = ttk.Label(self.root, textvariable=self.player_cycle_name, width=7, anchor=tk.CENTER, style='cycle.TLabel')
-        self.player_collision_cycle_rbtn = ttk.Button(self.root, text='▶', width=1, style='cycle.TButton', command=self.right_cycle_player)
+        self.player_collide_lbl = ttk.Label(self.central_frame, text='Player collision', width=16, style='collide.TLabel')
+        self.player_collision_cycle_lbtn = ttk.Button(self.central_frame, text='◀', width=1, style='cycle.TButton', command=self.left_cycle_player)
+        self.player_collision_cycle_lbl = ttk.Label(self.central_frame, textvariable=self.player_cycle_name, width=7, anchor=tk.CENTER, style='cycle.TLabel')
+        self.player_collision_cycle_rbtn = ttk.Button(self.central_frame, text='▶', width=1, style='cycle.TButton', command=self.right_cycle_player)
 
-        self.camera_collide_lbl = ttk.Label(self.root, text='Camera collision', width=15, style='collide.TLabel')
-        self.camera_collision_cycle_lbtn = ttk.Button(self.root, text='◀', width=1, style='cycle.TButton', command=self.left_cycle_camera)
-        self.camera_collision_cycle_lbl = ttk.Label(self.root, textvariable=self.camera_cycle_name, width=7, anchor=tk.CENTER, style='cycle.TLabel')
-        self.camera_collision_cycle_rbtn = ttk.Button(self.root, text='▶', width=1, style='cycle.TButton', command=self.right_cycle_camera)
+        self.camera_collide_lbl = ttk.Label(self.central_frame, text='Camera collision', width=15, style='collide.TLabel')
+        self.camera_collision_cycle_lbtn = ttk.Button(self.central_frame, text='◀', width=1, style='cycle.TButton', command=self.left_cycle_camera)
+        self.camera_collision_cycle_lbl = ttk.Label(self.central_frame, textvariable=self.camera_cycle_name, width=7, anchor=tk.CENTER, style='cycle.TLabel')
+        self.camera_collision_cycle_rbtn = ttk.Button(self.central_frame, text='▶', width=1, style='cycle.TButton', command=self.right_cycle_camera)
 
-        self.convert_btn = ttk.Button(self.root, text='Convert', width=20, style='std.TButton', command=convert_file_callback)
-        self.version_lbl = ttk.Label(self.root, text=f'obj2pbt v{self.__version__}', width=12, style='version.TLabel')
+        self.convert_btn = ttk.Button(self.central_frame, text='Convert', width=23, style='std.TButton', command=convert_file_callback)
+        # self.version_lbl = ttk.Label(self.root, text=f'obj2pbt v{self.__version__}', width=12, style='version.TLabel')
 
     def buttonize(self):
-        self.root.geometry('240x280')  # set window geometry
+        self.root.geometry('315x350')  # set window geometry
         self.progress_bar['value'] = 0  # set progress bar to empty
-        self.input_lbl.place(x=0, y=0)  # place labels and buttons
-        self.input_btn.place(x=6, y=30)
-        self.log_box.place(x=32, y=62)
-        self.separator.place(x=0, y=91, relwidth=1.0)
-        self.optimize_box.place(x=7, y=95)
-        self.texturize_box.place(x=7, y=120)
-        self.merged_model_box.place(x=7, y=146)
-        self.player_collide_lbl.place(x=22, y=182)
-        self.player_collision_cycle_lbtn.place(x=123, y=177)
-        self.player_collision_cycle_lbl.place(x=145, y=182)
-        self.player_collision_cycle_rbtn.place(x=213, y=177)
-        self.camera_collide_lbl.place(x=10, y=212)
-        self.camera_collision_cycle_lbtn.place(x=123, y=207)
-        self.camera_collision_cycle_lbl.place(x=145, y=212)
-        self.camera_collision_cycle_rbtn.place(x=213, y=207)
-        self.convert_btn.place(x=6, y=243)
-        self.version_lbl.place(x=3, y=3)
+        self.central_frame.configure(width=315, height=363)
+        self.central_frame.place(x=0, y=0)
+        self.logo_image.place(x=10, y=10)
+        self.input_lbl.place(x=25, y=22)  # place labels and buttons
+        self.input_btn.place(x=25, y=57)
+        self.log_box.place(x=40, y=92)
+        self.separator.place(x=10, y=124, relwidth=0.935)
+        self.optimize_box.place(x=25, y=132)
+        self.texturize_box.place(x=25, y=159)
+        self.merged_model_box.place(x=25, y=186)
+        self.player_collide_lbl.place(x=37, y=223)
+        self.player_collision_cycle_lbtn.place(x=165, y=222)
+        self.player_collision_cycle_lbl.place(x=188, y=223)
+        self.player_collision_cycle_rbtn.place(x=265, y=222)
+        self.camera_collide_lbl.place(x=25, y=256)
+        self.camera_collision_cycle_lbtn.place(x=165, y=255)
+        self.camera_collision_cycle_lbl.place(x=188, y=256)
+        self.camera_collision_cycle_rbtn.place(x=265, y=255)
+        self.convert_btn.place(x=25, y=295)
 
     def unplace(self):
         self.input_btn.place_forget()
@@ -164,6 +175,7 @@ class UI:
         self.camera_collision_cycle_lbl.place_forget()
         self.camera_collision_cycle_lbtn.place_forget()
         self.camera_collision_cycle_rbtn.place_forget()
+        self.central_frame.place_forget()
 
     async def play_gif(self):
         global img
@@ -176,8 +188,8 @@ class UI:
                 img = ImageTk.PhotoImage(img)
                 self.load_lbl.configure(image=img)
                 self.root.update()
-                sleep(0.0085)
-            self.root.after(0, await self.play_gif())
+                await asyncio.sleep(0.02)
+            # self.root.after(0, await self.play_gif())
         else:
             img = Image.open(self.temp_load)
             img.close()
@@ -213,13 +225,15 @@ class UI:
         self.start_prog.place_forget(), self.end_prog.place_forget(), self.load_lbl.place_forget()
         remove(self.temp_start), remove(self.temp_end)
         self.root.update()
-        self.root.geometry('180x90')
-        self.lbl = ttk.Label(self.root, text=f'wrapping up...', font=('montserrat', 16, 'bold italic'))
-        self.lbl.place(x=7, y=0)
-        self.separator.place(x=0, y=35, relwidth=1.0)
-        self.name_lbl = ttk.Label(self.root, text=f'{entry}.pbt', font=('montserrat', 12))
-        self.name_lbl.place(x=5, y=38)
-        self.uuid_lbl = ttk.Label(self.root, text=f'UUID: {uuid}', font=('montserrat', 12), foreground='#FF392B')
-        self.uuid_lbl.place(x=5, y=61)
+        self.root.geometry('210x120')
+        self.central_frame.configure(width=210, height=133)
+        self.central_frame.place(x=0, y=0)
+        self.lbl = ttk.Label(self.central_frame, text=f'wrapping up...', font=('montserrat', 16, 'bold italic'))
+        self.lbl.place(x=20, y=10)
+        self.separator.place(x=10, y=47, relwidth=0.905)
+        self.name_lbl = ttk.Label(self.central_frame, text=f'{entry}.pbt', font=('montserrat', 12))
+        self.name_lbl.place(x=15, y=52)
+        self.uuid_lbl = ttk.Label(self.central_frame, text=f'UUID: {uuid}', font=('montserrat', 12), foreground='#FF392B')
+        self.uuid_lbl.place(x=15, y=75)
         self.root.update()
 

@@ -33,13 +33,12 @@ app = None  # set taskbar icon
 
 def open_file():
     global file_path, pure_path, dir_path
-    app.version_lbl.place_forget()
     if app.log.get() == 1:
         dir_path = filedialog.askdirectory()
         try:
             dir_name = PurePath(dir_path).parts[-1]
             file_path = None
-            app.aesthetic_path.set(f'../{dir_name}/')
+            app.aesthetic_path.set(f' ../{dir_name}/')
         except Exception as e:
             print(f"Caught '{e}'")
     else:
@@ -47,7 +46,7 @@ def open_file():
         path_name = PurePath(file_path).name
         if len(path_name[:-4]) > 16:
             path_name = path_name[:12] + '...' + path_name[-7:]
-        app.aesthetic_path.set(f"{path_name}")
+        app.aesthetic_path.set(f"  {path_name}")
 
 
 def convert_file():
@@ -191,11 +190,12 @@ async def run(path):
         ) = readData(path, uuid, parent, pbt_output, entry_name, app.texturize.get() == 1, app.log.get() == 1)
         app.progress_bar['maximum'] = len(face_maps_by_line)
         mesh_index, current_group = 0, 0
-        await trianglize(), await app.play_gif()
+        await app.play_gif(), await trianglize()
         app.set_wrapping_up(uuid, entry_name)
         output_file.write(pbt_output.generate_pbt())
         remove(f'{parent}/{uuid}-vertex.txt'), remove(f'{parent}/{uuid}-map.txt'), remove(f'{parent}/{uuid}-texture.txt')
         input_file.close(), output_file.close()
+        app.central_frame.place_forget()
         app.lbl.place_forget()
         app.separator.place_forget()
         app.name_lbl.place_forget()
